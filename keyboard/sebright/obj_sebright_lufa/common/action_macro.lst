@@ -1,0 +1,344 @@
+   1               		.file	"action_macro.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               		.section	.text.action_macro_play,"ax",@progbits
+  17               	.global	action_macro_play
+  19               	action_macro_play:
+  20               	.LFB104:
+  21               	.LSM0:
+  22               	.LVL0:
+  23 0000 CF92      		push r12
+  24 0002 DF92      		push r13
+  25 0004 EF92      		push r14
+  26 0006 FF92      		push r15
+  27 0008 0F93      		push r16
+  28 000a 1F93      		push r17
+  29 000c CF93      		push r28
+  30 000e DF93      		push r29
+  31               	/* prologue: function */
+  32               	/* frame size = 0 */
+  33 0010 EC01      		movw r28,r24
+  34               	.LSM1:
+  35 0012 0097      		sbiw r24,0
+  36 0014 01F4      		brne .+2
+  37 0016 00C0      		rjmp .L22
+  38 0018 EE24      		clr r14
+  39               	.LVL1:
+  40 001a FF24      		clr r15
+  41               	.LVL2:
+  42               	.LBB25:
+  43               	.LBB26:
+  44               	.LBB27:
+  45               	.LBB28:
+  46               	.LBB29:
+  47               	.LSM2:
+  48 001c 80EA      		ldi r24,lo8(4000)
+  49 001e C82E      		mov r12,r24
+  50 0020 8FE0      		ldi r24,hi8(4000)
+  51 0022 D82E      		mov r13,r24
+  52               	.LVL3:
+  53               	.LBE29:
+  54               	.LBE28:
+  55               	.LBE27:
+  56               	.LBE26:
+  57               	.LBE25:
+  58               	.LSM3:
+  59 0024 01E0      		ldi r16,lo8(1)
+  60 0026 10E0      		ldi r17,hi8(1)
+  61               	.LVL4:
+  62               	.L21:
+  63               	.LBB34:
+  64               	.LSM4:
+  65 0028 FE01      		movw r30,r28
+  66               	.LVL5:
+  67 002a 2196      		adiw r28,1
+  68               	/* #APP */
+  69               	 ;  41 "../../tmk_core/common/action_macro.c" 1
+  70 002c 9491      		lpm r25, Z
+  71               		
+  72               	 ;  0 "" 2
+  73               	/* #NOAPP */
+  74               	.LBE34:
+  75 002e 9537      		cpi r25,lo8(117)
+  76 0030 01F4      		brne .+2
+  77 0032 00C0      		rjmp .L7
+  78 0034 9637      		cpi r25,lo8(118)
+  79 0036 00F4      		brsh .L12
+  80 0038 9437      		cpi r25,lo8(116)
+  81 003a 00F0      		brlo .+2
+  82 003c 00C0      		rjmp .L6
+  83 003e 9430      		cpi r25,lo8(4)
+  84 0040 00F0      		brlo .+2
+  85 0042 00C0      		rjmp .L5
+  86 0044 9130      		cpi r25,lo8(1)
+  87 0046 01F0      		breq .L3
+  88 0048 9230      		cpi r25,lo8(2)
+  89 004a 01F0      		breq .+2
+  90 004c 00C0      		rjmp .L22
+  91 004e 00C0      		rjmp .L26
+  92               	.L12:
+  93 0050 9837      		cpi r25,lo8(120)
+  94 0052 01F4      		brne .+2
+  95 0054 00C0      		rjmp .L10
+  96 0056 9937      		cpi r25,lo8(121)
+  97 0058 00F4      		brsh .L13
+  98 005a 9637      		cpi r25,lo8(118)
+  99 005c 01F4      		brne .+2
+ 100 005e 00C0      		rjmp .L8
+ 101 0060 9737      		cpi r25,lo8(119)
+ 102 0062 01F0      		breq .+2
+ 103 0064 00C0      		rjmp .L22
+ 104 0066 00C0      		rjmp .L27
+ 105               	.L13:
+ 106 0068 892F      		mov r24,r25
+ 107               	.LVL6:
+ 108 006a 8458      		subi r24,lo8(-(124))
+ 109 006c 8037      		cpi r24,lo8(112)
+ 110 006e 00F0      		brlo .+2
+ 111 0070 00C0      		rjmp .L22
+ 112 0072 00C0      		rjmp .L28
+ 113               	.LVL7:
+ 114               	.L3:
+ 115               	.LBB35:
+ 116               	.LSM5:
+ 117 0074 FE01      		movw r30,r28
+ 118               	.LVL8:
+ 119 0076 2196      		adiw r28,1
+ 120               	/* #APP */
+ 121               	 ;  43 "../../tmk_core/common/action_macro.c" 1
+ 122 0078 9491      		lpm r25, Z
+ 123               		
+ 124               	 ;  0 "" 2
+ 125               	.LVL9:
+ 126               	/* #NOAPP */
+ 127               	.LBE35:
+ 128               	.LSM6:
+ 129 007a 892F      		mov r24,r25
+ 130               	.LVL10:
+ 131 007c 805E      		subi r24,lo8(-(32))
+ 132 007e 8830      		cpi r24,lo8(8)
+ 133 0080 00F0      		brlo .+2
+ 134 0082 00C0      		rjmp .L5
+ 135               	.LSM7:
+ 136 0084 9770      		andi r25,lo8(7)
+ 137 0086 802F      		mov r24,r16
+ 138 0088 00C0      		rjmp 2f
+ 139 008a 880F      	1:	lsl r24
+ 140 008c 9A95      	2:	dec r25
+ 141 008e 02F4      		brpl 1b
+ 142 0090 0E94 0000 		call add_weak_mods
+ 143               	.LVL11:
+ 144 0094 00C0      		rjmp .L24
+ 145               	.LVL12:
+ 146               	.L26:
+ 147               	.LBB36:
+ 148               	.LSM8:
+ 149 0096 FE01      		movw r30,r28
+ 150               	.LVL13:
+ 151 0098 2196      		adiw r28,1
+ 152               	/* #APP */
+ 153               	 ;  53 "../../tmk_core/common/action_macro.c" 1
+ 154 009a 9491      		lpm r25, Z
+ 155               		
+ 156               	 ;  0 "" 2
+ 157               	.LVL14:
+ 158               	/* #NOAPP */
+ 159               	.LBE36:
+ 160               	.LSM9:
+ 161 009c 892F      		mov r24,r25
+ 162               	.LVL15:
+ 163 009e 805E      		subi r24,lo8(-(32))
+ 164 00a0 8830      		cpi r24,lo8(8)
+ 165 00a2 00F4      		brsh .L16
+ 166               	.LSM10:
+ 167 00a4 9770      		andi r25,lo8(7)
+ 168 00a6 802F      		mov r24,r16
+ 169 00a8 00C0      		rjmp 2f
+ 170 00aa 880F      	1:	lsl r24
+ 171 00ac 9A95      	2:	dec r25
+ 172 00ae 02F4      		brpl 1b
+ 173 00b0 0E94 0000 		call del_weak_mods
+ 174               	.LVL16:
+ 175               	.L24:
+ 176               	.LSM11:
+ 177 00b4 0E94 0000 		call send_keyboard_report
+ 178 00b8 00C0      		rjmp .L15
+ 179               	.LVL17:
+ 180               	.L16:
+ 181               	.LSM12:
+ 182 00ba 892F      		mov r24,r25
+ 183 00bc 00C0      		rjmp .L25
+ 184               	.LVL18:
+ 185               	.L6:
+ 186               	.LBB37:
+ 187               	.LSM13:
+ 188 00be FE01      		movw r30,r28
+ 189               	.LVL19:
+ 190               	/* #APP */
+ 191               	 ;  63 "../../tmk_core/common/action_macro.c" 1
+ 192 00c0 2491      		lpm r18, Z
+ 193               		
+ 194               	 ;  0 "" 2
+ 195               	.LVL20:
+ 196               	/* #NOAPP */
+ 197 00c2 00C0      		rjmp .L17
+ 198               	.L18:
+ 199               	.LBE37:
+ 200               	.LBB38:
+ 201               	.LBB33:
+ 202               	.LBB32:
+ 203               	.LBB31:
+ 204               	.LBB30:
+ 205               	.LSM14:
+ 206 00c4 C601      		movw r24,r12
+ 207               	.LVL21:
+ 208               	/* #APP */
+ 209               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 210 00c6 0197      		1: sbiw r24,1
+ 211 00c8 01F4      		brne 1b
+ 212               	 ;  0 "" 2
+ 213               	/* #NOAPP */
+ 214 00ca 2150      		subi r18,lo8(-(-1))
+ 215               	.LVL22:
+ 216               	.L17:
+ 217               	.LBE30:
+ 218               	.LBE31:
+ 219               	.LBE32:
+ 220               	.LBE33:
+ 221               	.LSM15:
+ 222 00cc 2223      		tst r18
+ 223 00ce 01F4      		brne .L18
+ 224               	.LBE38:
+ 225               	.LBB39:
+ 226               	.LSM16:
+ 227 00d0 2196      		adiw r28,1
+ 228 00d2 00C0      		rjmp .L15
+ 229               	.LVL23:
+ 230               	.L7:
+ 231               	.LBE39:
+ 232               	.LBB40:
+ 233               	.LSM17:
+ 234 00d4 FE01      		movw r30,r28
+ 235               	.LVL24:
+ 236 00d6 2196      		adiw r28,1
+ 237               	/* #APP */
+ 238               	 ;  68 "../../tmk_core/common/action_macro.c" 1
+ 239 00d8 E490      		lpm r14, Z
+ 240               		
+ 241               	 ;  0 "" 2
+ 242               	/* #NOAPP */
+ 243 00da 00C0      		rjmp .L15
+ 244               	.LVL25:
+ 245               	.L8:
+ 246               	.LBE40:
+ 247               	.LSM18:
+ 248 00dc 0E94 0000 		call get_mods
+ 249               	.LVL26:
+ 250 00e0 F82E      		mov r15,r24
+ 251 00e2 00C0      		rjmp .L15
+ 252               	.LVL27:
+ 253               	.L27:
+ 254               	.LSM19:
+ 255 00e4 8F2D      		mov r24,r15
+ 256               	.LVL28:
+ 257 00e6 0E94 0000 		call set_mods
+ 258               	.LVL29:
+ 259 00ea 00C0      		rjmp .L24
+ 260               	.LVL30:
+ 261               	.L10:
+ 262               	.LSM20:
+ 263 00ec 0E94 0000 		call clear_mods
+ 264               	.LVL31:
+ 265 00f0 00C0      		rjmp .L24
+ 266               	.LVL32:
+ 267               	.L5:
+ 268               	.LSM21:
+ 269 00f2 892F      		mov r24,r25
+ 270               	.LVL33:
+ 271 00f4 0E94 0000 		call register_code
+ 272               	.LVL34:
+ 273 00f8 00C0      		rjmp .L15
+ 274               	.LVL35:
+ 275               	.L28:
+ 276               	.LSM22:
+ 277 00fa 892F      		mov r24,r25
+ 278 00fc 8F77      		andi r24,lo8(127)
+ 279               	.LVL36:
+ 280               	.L25:
+ 281 00fe 0E94 0000 		call unregister_code
+ 282               	.LVL37:
+ 283               	.L15:
+ 284 0102 2E2D      		mov r18,r14
+ 285               	.LVL38:
+ 286 0104 00C0      		rjmp .L19
+ 287               	.LVL39:
+ 288               	.L29:
+ 289               	.LBB41:
+ 290               	.LBB42:
+ 291               	.LBB43:
+ 292               	.LBB44:
+ 293               	.LBB45:
+ 294               	.LSM23:
+ 295 0106 C601      		movw r24,r12
+ 296               	.LVL40:
+ 297               	/* #APP */
+ 298               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 299 0108 0197      		1: sbiw r24,1
+ 300 010a 01F4      		brne 1b
+ 301               	 ;  0 "" 2
+ 302               	/* #NOAPP */
+ 303 010c 2150      		subi r18,lo8(-(-1))
+ 304               	.LVL41:
+ 305               	.L19:
+ 306               	.LBE45:
+ 307               	.LBE44:
+ 308               	.LBE43:
+ 309               	.LBE42:
+ 310               	.LSM24:
+ 311 010e 2223      		tst r18
+ 312 0110 01F4      		brne .+2
+ 313 0112 00C0      		rjmp .L21
+ 314 0114 00C0      		rjmp .L29
+ 315               	.LVL42:
+ 316               	.L22:
+ 317               	/* epilogue start */
+ 318               	.LBE41:
+ 319               	.LSM25:
+ 320 0116 DF91      		pop r29
+ 321 0118 CF91      		pop r28
+ 322               	.LVL43:
+ 323 011a 1F91      		pop r17
+ 324 011c 0F91      		pop r16
+ 325 011e FF90      		pop r15
+ 326               	.LVL44:
+ 327 0120 EF90      		pop r14
+ 328               	.LVL45:
+ 329 0122 DF90      		pop r13
+ 330 0124 CF90      		pop r12
+ 331 0126 0895      		ret
+ 332               	.LFE104:
+ 358               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 action_macro.c
+C:\Users\owner\AppData\Local\Temp/ccLNdtEj.s:2      *ABS*:0000003f __SREG__
+C:\Users\owner\AppData\Local\Temp/ccLNdtEj.s:3      *ABS*:0000003e __SP_H__
+C:\Users\owner\AppData\Local\Temp/ccLNdtEj.s:4      *ABS*:0000003d __SP_L__
+C:\Users\owner\AppData\Local\Temp/ccLNdtEj.s:5      *ABS*:00000034 __CCP__
+C:\Users\owner\AppData\Local\Temp/ccLNdtEj.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\owner\AppData\Local\Temp/ccLNdtEj.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\owner\AppData\Local\Temp/ccLNdtEj.s:19     .text.action_macro_play:00000000 action_macro_play
+
+UNDEFINED SYMBOLS
+add_weak_mods
+del_weak_mods
+send_keyboard_report
+get_mods
+set_mods
+clear_mods
+register_code
+unregister_code

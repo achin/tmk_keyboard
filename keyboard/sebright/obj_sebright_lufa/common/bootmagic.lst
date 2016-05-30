@@ -1,0 +1,638 @@
+   1               		.file	"bootmagic.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               		.section	.text.scan_key,"ax",@progbits
+  18               	scan_key:
+  19               	.LFB105:
+  20               	.LSM0:
+  21               	.LVL0:
+  22 0000 AF92      		push r10
+  23 0002 BF92      		push r11
+  24 0004 CF92      		push r12
+  25 0006 DF92      		push r13
+  26 0008 EF92      		push r14
+  27 000a FF92      		push r15
+  28 000c 1F93      		push r17
+  29 000e CF93      		push r28
+  30 0010 DF93      		push r29
+  31               	/* prologue: function */
+  32               	/* frame size = 0 */
+  33 0012 7C01      		movw r14,r24
+  34               	.LSM1:
+  35 0014 10E0      		ldi r17,lo8(0)
+  36               	.LVL1:
+  37               	.LBB14:
+  38               	.LBB15:
+  39               	.LBB16:
+  40               	.LSM2:
+  41 0016 81E0      		ldi r24,lo8(1)
+  42 0018 A82E      		mov r10,r24
+  43 001a B12C      		mov r11,__zero_reg__
+  44               	.LVL2:
+  45               	.L6:
+  46               	.LBE16:
+  47               	.LSM3:
+  48 001c 812F      		mov r24,r17
+  49               	.LVL3:
+  50 001e 0E94 0000 		call matrix_get_row
+  51               	.LVL4:
+  52 0022 6C01      		movw r12,r24
+  53 0024 C0E0      		ldi r28,lo8(0)
+  54 0026 D0E0      		ldi r29,hi8(0)
+  55               	.LVL5:
+  56               	.L5:
+  57               	.LBB18:
+  58               	.LSM4:
+  59 0028 C501      		movw r24,r10
+  60               	.LVL6:
+  61 002a 0C2E      		mov r0,r28
+  62 002c 00C0      		rjmp 2f
+  63 002e 880F      	1:	lsl r24
+  64 0030 991F      		rol r25
+  65 0032 0A94      	2:	dec r0
+  66 0034 02F4      		brpl 1b
+  67 0036 8C21      		and r24,r12
+  68 0038 9D21      		and r25,r13
+  69 003a 892B      		or r24,r25
+  70 003c 01F0      		breq .L2
+  71               	.LBB17:
+  72               	.LSM5:
+  73 003e 80E0      		ldi r24,lo8(0)
+  74 0040 6C2F      		mov r22,r28
+  75 0042 712F      		mov r23,r17
+  76 0044 0E94 0000 		call action_for_key
+  77               	.LVL7:
+  78 0048 9C01      		movw r18,r24
+  79               	.LSM6:
+  80 004a 8E15      		cp r24,r14
+  81 004c 9F05      		cpc r25,r15
+  82               	.LVL8:
+  83 004e 01F0      		breq .L3
+  84 0050 832F      		mov r24,r19
+  85               	.LVL9:
+  86 0052 807F      		andi r24,lo8(-16)
+  87 0054 01F0      		breq .L4
+  88 0056 8031      		cpi r24,lo8(16)
+  89 0058 01F0      		breq .L4
+  90 005a 8032      		cpi r24,lo8(32)
+  91 005c 01F0      		breq .L4
+  92 005e 8033      		cpi r24,lo8(48)
+  93 0060 01F0      		breq .L4
+  94 0062 803A      		cpi r24,lo8(-96)
+  95 0064 01F0      		breq .L4
+  96 0066 803B      		cpi r24,lo8(-80)
+  97 0068 01F4      		brne .L2
+  98               	.L4:
+  99 006a 822F      		mov r24,r18
+ 100               	.LVL10:
+ 101 006c 90E0      		ldi r25,lo8(0)
+ 102               	.LVL11:
+ 103 006e 8E15      		cp r24,r14
+ 104 0070 9F05      		cpc r25,r15
+ 105 0072 01F0      		breq .L3
+ 106               	.L2:
+ 107 0074 2196      		adiw r28,1
+ 108               	.LBE17:
+ 109               	.LSM7:
+ 110 0076 CC30      		cpi r28,12
+ 111 0078 D105      		cpc r29,__zero_reg__
+ 112 007a 01F4      		brne .L5
+ 113               	.LVL12:
+ 114               	.LBE18:
+ 115               	.LBE15:
+ 116               	.LSM8:
+ 117 007c 1F5F      		subi r17,lo8(-(1))
+ 118 007e 1430      		cpi r17,lo8(4)
+ 119 0080 01F4      		brne .L6
+ 120 0082 80E0      		ldi r24,lo8(0)
+ 121               	.LVL13:
+ 122 0084 00C0      		rjmp .L7
+ 123               	.LVL14:
+ 124               	.L3:
+ 125 0086 81E0      		ldi r24,lo8(1)
+ 126               	.LVL15:
+ 127               	.L7:
+ 128               	/* epilogue start */
+ 129               	.LBE14:
+ 130               	.LSM9:
+ 131 0088 DF91      		pop r29
+ 132 008a CF91      		pop r28
+ 133 008c 1F91      		pop r17
+ 134               	.LVL16:
+ 135 008e FF90      		pop r15
+ 136 0090 EF90      		pop r14
+ 137               	.LVL17:
+ 138 0092 DF90      		pop r13
+ 139 0094 CF90      		pop r12
+ 140               	.LVL18:
+ 141 0096 BF90      		pop r11
+ 142 0098 AF90      		pop r10
+ 143 009a 0895      		ret
+ 144               	.LFE105:
+ 146               		.section	.text.bootmagic_scan_key,"ax",@progbits
+ 147               	.global	bootmagic_scan_key
+ 149               	bootmagic_scan_key:
+ 150               	.LFB106:
+ 151               	.LSM10:
+ 152               	.LVL19:
+ 153 0000 CF93      		push r28
+ 154 0002 DF93      		push r29
+ 155               	/* prologue: function */
+ 156               	/* frame size = 0 */
+ 157 0004 EC01      		movw r28,r24
+ 158               	.LSM11:
+ 159 0006 8CE2      		ldi r24,lo8(44)
+ 160 0008 90E0      		ldi r25,hi8(44)
+ 161               	.LVL20:
+ 162 000a 0E94 0000 		call scan_key
+ 163 000e 8823      		tst r24
+ 164 0010 01F0      		breq .L13
+ 165               	.LSM12:
+ 166 0012 CE01      		movw r24,r28
+ 167 0014 0E94 0000 		call scan_key
+ 168               	.L13:
+ 169               	/* epilogue start */
+ 170               	.LSM13:
+ 171 0018 DF91      		pop r29
+ 172 001a CF91      		pop r28
+ 173               	.LVL21:
+ 174 001c 0895      		ret
+ 175               	.LFE106:
+ 177               		.section	.text.bootmagic,"ax",@progbits
+ 178               	.global	bootmagic
+ 180               	bootmagic:
+ 181               	.LFB104:
+ 182               	.LSM14:
+ 183 0000 1F93      		push r17
+ 184 0002 CF93      		push r28
+ 185 0004 DF93      		push r29
+ 186               	/* prologue: function */
+ 187               	/* frame size = 0 */
+ 188               	.LSM15:
+ 189 0006 0E94 0000 		call eeconfig_is_enabled
+ 190 000a 8823      		tst r24
+ 191 000c 01F4      		brne .L16
+ 192               	.LSM16:
+ 193 000e 0E94 0000 		call eeconfig_init
+ 194               	.L16:
+ 195               	.LSM17:
+ 196 0012 80E0      		ldi r24,lo8(__c.4841)
+ 197 0014 90E0      		ldi r25,hi8(__c.4841)
+ 198 0016 0E94 0000 		call xputs
+ 199 001a 14E6      		ldi r17,lo8(100)
+ 200               	.LVL22:
+ 201               	.LBB19:
+ 202               	.LBB20:
+ 203               	.LBB21:
+ 204               	.LBB22:
+ 205               	.LSM18:
+ 206 001c C0E4      		ldi r28,lo8(-25536)
+ 207 001e DCE9      		ldi r29,hi8(-25536)
+ 208 0020 00C0      		rjmp .L17
+ 209               	.LVL23:
+ 210               	.L18:
+ 211               	.LBE22:
+ 212               	.LBE21:
+ 213               	.LBE20:
+ 214               	.LBE19:
+ 215               	.LSM19:
+ 216 0022 0E94 0000 		call matrix_scan
+ 217               	.LVL24:
+ 218               	.LBB26:
+ 219               	.LBB25:
+ 220               	.LBB24:
+ 221               	.LBB23:
+ 222               	.LSM20:
+ 223 0026 CE01      		movw r24,r28
+ 224               	.LVL25:
+ 225               	/* #APP */
+ 226               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 227 0028 0197      		1: sbiw r24,1
+ 228 002a 01F4      		brne 1b
+ 229               	 ;  0 "" 2
+ 230               	/* #NOAPP */
+ 231               	.L17:
+ 232               	.LBE23:
+ 233               	.LBE24:
+ 234               	.LBE25:
+ 235               	.LBE26:
+ 236               	.LSM21:
+ 237 002c 1150      		subi r17,1
+ 238 002e 00F4      		brcc .L18
+ 239               	.LSM22:
+ 240 0030 80E0      		ldi r24,lo8(__c.4847)
+ 241 0032 90E0      		ldi r25,hi8(__c.4847)
+ 242               	.LVL26:
+ 243 0034 0E94 0000 		call xputs
+ 244               	.LSM23:
+ 245 0038 89E2      		ldi r24,lo8(41)
+ 246 003a 90E0      		ldi r25,hi8(41)
+ 247 003c 0E94 0000 		call bootmagic_scan_key
+ 248 0040 8823      		tst r24
+ 249 0042 01F0      		breq .+2
+ 250 0044 00C0      		rjmp .L42
+ 251               	.LSM24:
+ 252 0046 8AE2      		ldi r24,lo8(42)
+ 253 0048 90E0      		ldi r25,hi8(42)
+ 254 004a 0E94 0000 		call bootmagic_scan_key
+ 255 004e 8823      		tst r24
+ 256 0050 01F0      		breq .L20
+ 257               	.LSM25:
+ 258 0052 0E94 0000 		call eeconfig_init
+ 259               	.L20:
+ 260               	.LSM26:
+ 261 0056 85E0      		ldi r24,lo8(5)
+ 262 0058 90E0      		ldi r25,hi8(5)
+ 263 005a 0E94 0000 		call bootmagic_scan_key
+ 264 005e 8823      		tst r24
+ 265 0060 01F0      		breq .L21
+ 266               	.LSM27:
+ 267 0062 0E94 0000 		call bootloader_jump
+ 268               	.L21:
+ 269               	.LSM28:
+ 270 0066 0E94 0000 		call eeconfig_read_debug
+ 271 006a 8093 0000 		sts debug_config,r24
+ 272               	.LSM29:
+ 273 006e 87E0      		ldi r24,lo8(7)
+ 274 0070 90E0      		ldi r25,hi8(7)
+ 275 0072 0E94 0000 		call bootmagic_scan_key
+ 276 0076 8823      		tst r24
+ 277 0078 01F0      		breq .L22
+ 278               	.LSM30:
+ 279 007a 8BE1      		ldi r24,lo8(27)
+ 280 007c 90E0      		ldi r25,hi8(27)
+ 281 007e 0E94 0000 		call bootmagic_scan_key
+ 282 0082 8823      		tst r24
+ 283 0084 01F0      		breq .L23
+ 284               	.LSM31:
+ 285 0086 9091 0000 		lds r25,debug_config
+ 286 008a 892F      		mov r24,r25
+ 287 008c 8695      		lsr r24
+ 288 008e 8095      		com r24
+ 289 0090 8170      		andi r24,lo8(1)
+ 290 0092 880F      		lsl r24
+ 291 0094 9D7F      		andi r25,lo8(-3)
+ 292 0096 00C0      		rjmp .L43
+ 293               	.L23:
+ 294               	.LSM32:
+ 295 0098 8EE0      		ldi r24,lo8(14)
+ 296 009a 90E0      		ldi r25,hi8(14)
+ 297 009c 0E94 0000 		call bootmagic_scan_key
+ 298 00a0 8823      		tst r24
+ 299 00a2 01F0      		breq .L24
+ 300               	.LSM33:
+ 301 00a4 9091 0000 		lds r25,debug_config
+ 302 00a8 892F      		mov r24,r25
+ 303 00aa 8695      		lsr r24
+ 304 00ac 8695      		lsr r24
+ 305 00ae 8095      		com r24
+ 306 00b0 8170      		andi r24,lo8(1)
+ 307 00b2 880F      		lsl r24
+ 308 00b4 880F      		lsl r24
+ 309 00b6 9B7F      		andi r25,lo8(-5)
+ 310 00b8 00C0      		rjmp .L43
+ 311               	.L24:
+ 312               	.LSM34:
+ 313 00ba 80E1      		ldi r24,lo8(16)
+ 314 00bc 90E0      		ldi r25,hi8(16)
+ 315 00be 0E94 0000 		call bootmagic_scan_key
+ 316 00c2 9091 0000 		lds r25,debug_config
+ 317 00c6 8823      		tst r24
+ 318 00c8 01F0      		breq .L25
+ 319               	.LSM35:
+ 320 00ca 892F      		mov r24,r25
+ 321 00cc 8695      		lsr r24
+ 322 00ce 8695      		lsr r24
+ 323 00d0 8695      		lsr r24
+ 324 00d2 8095      		com r24
+ 325 00d4 8170      		andi r24,lo8(1)
+ 326 00d6 880F      		lsl r24
+ 327 00d8 880F      		lsl r24
+ 328 00da 880F      		lsl r24
+ 329 00dc 977F      		andi r25,lo8(-9)
+ 330 00de 00C0      		rjmp .L43
+ 331               	.L25:
+ 332               	.LSM36:
+ 333 00e0 892F      		mov r24,r25
+ 334 00e2 8095      		com r24
+ 335 00e4 8170      		andi r24,lo8(1)
+ 336 00e6 9E7F      		andi r25,lo8(-2)
+ 337               	.L43:
+ 338 00e8 982B      		or r25,r24
+ 339 00ea 9093 0000 		sts debug_config,r25
+ 340               	.L22:
+ 341               	.LSM37:
+ 342 00ee 8091 0000 		lds r24,debug_config
+ 343 00f2 0E94 0000 		call eeconfig_write_debug
+ 344               	.LSM38:
+ 345 00f6 0E94 0000 		call eeconfig_read_keymap
+ 346 00fa 8093 0000 		sts keymap_config,r24
+ 347               	.LSM39:
+ 348 00fe 80EE      		ldi r24,lo8(224)
+ 349 0100 90E0      		ldi r25,hi8(224)
+ 350 0102 0E94 0000 		call bootmagic_scan_key
+ 351 0106 8823      		tst r24
+ 352 0108 01F0      		breq .L26
+ 353               	.LSM40:
+ 354 010a 8091 0000 		lds r24,keymap_config
+ 355 010e 982F      		mov r25,r24
+ 356 0110 9095      		com r25
+ 357 0112 9170      		andi r25,lo8(1)
+ 358 0114 8E7F      		andi r24,lo8(-2)
+ 359 0116 892B      		or r24,r25
+ 360 0118 8093 0000 		sts keymap_config,r24
+ 361               	.L26:
+ 362               	.LSM41:
+ 363 011c 89E3      		ldi r24,lo8(57)
+ 364 011e 90E0      		ldi r25,hi8(57)
+ 365 0120 0E94 0000 		call bootmagic_scan_key
+ 366 0124 8823      		tst r24
+ 367 0126 01F0      		breq .L27
+ 368               	.LSM42:
+ 369 0128 9091 0000 		lds r25,keymap_config
+ 370 012c 892F      		mov r24,r25
+ 371 012e 8695      		lsr r24
+ 372 0130 8095      		com r24
+ 373 0132 8170      		andi r24,lo8(1)
+ 374 0134 880F      		lsl r24
+ 375 0136 9D7F      		andi r25,lo8(-3)
+ 376 0138 982B      		or r25,r24
+ 377 013a 9093 0000 		sts keymap_config,r25
+ 378               	.L27:
+ 379               	.LSM43:
+ 380 013e 82EE      		ldi r24,lo8(226)
+ 381 0140 90E0      		ldi r25,hi8(226)
+ 382 0142 0E94 0000 		call bootmagic_scan_key
+ 383 0146 8823      		tst r24
+ 384 0148 01F0      		breq .L28
+ 385               	.LSM44:
+ 386 014a 9091 0000 		lds r25,keymap_config
+ 387 014e 892F      		mov r24,r25
+ 388 0150 8695      		lsr r24
+ 389 0152 8695      		lsr r24
+ 390 0154 8095      		com r24
+ 391 0156 8170      		andi r24,lo8(1)
+ 392 0158 880F      		lsl r24
+ 393 015a 880F      		lsl r24
+ 394 015c 9B7F      		andi r25,lo8(-5)
+ 395 015e 982B      		or r25,r24
+ 396 0160 9093 0000 		sts keymap_config,r25
+ 397               	.L28:
+ 398               	.LSM45:
+ 399 0164 86EE      		ldi r24,lo8(230)
+ 400 0166 90E0      		ldi r25,hi8(230)
+ 401 0168 0E94 0000 		call bootmagic_scan_key
+ 402 016c 8823      		tst r24
+ 403 016e 01F0      		breq .L29
+ 404               	.LSM46:
+ 405 0170 9091 0000 		lds r25,keymap_config
+ 406 0174 892F      		mov r24,r25
+ 407 0176 8695      		lsr r24
+ 408 0178 8695      		lsr r24
+ 409 017a 8695      		lsr r24
+ 410 017c 8095      		com r24
+ 411 017e 8170      		andi r24,lo8(1)
+ 412 0180 880F      		lsl r24
+ 413 0182 880F      		lsl r24
+ 414 0184 880F      		lsl r24
+ 415 0186 977F      		andi r25,lo8(-9)
+ 416 0188 982B      		or r25,r24
+ 417 018a 9093 0000 		sts keymap_config,r25
+ 418               	.L29:
+ 419               	.LSM47:
+ 420 018e 83EE      		ldi r24,lo8(227)
+ 421 0190 90E0      		ldi r25,hi8(227)
+ 422 0192 0E94 0000 		call bootmagic_scan_key
+ 423 0196 8823      		tst r24
+ 424 0198 01F0      		breq .L30
+ 425               	.LSM48:
+ 426 019a 9091 0000 		lds r25,keymap_config
+ 427 019e 892F      		mov r24,r25
+ 428 01a0 8295      		swap r24
+ 429 01a2 8F70      		andi r24,lo8(15)
+ 430 01a4 8095      		com r24
+ 431 01a6 8170      		andi r24,lo8(1)
+ 432 01a8 8295      		swap r24
+ 433 01aa 807F      		andi r24,lo8(-16)
+ 434 01ac 9F7E      		andi r25,lo8(-17)
+ 435 01ae 982B      		or r25,r24
+ 436 01b0 9093 0000 		sts keymap_config,r25
+ 437               	.L30:
+ 438               	.LSM49:
+ 439 01b4 85E3      		ldi r24,lo8(53)
+ 440 01b6 90E0      		ldi r25,hi8(53)
+ 441 01b8 0E94 0000 		call bootmagic_scan_key
+ 442 01bc 8823      		tst r24
+ 443 01be 01F0      		breq .L31
+ 444               	.LSM50:
+ 445 01c0 9091 0000 		lds r25,keymap_config
+ 446 01c4 892F      		mov r24,r25
+ 447 01c6 8295      		swap r24
+ 448 01c8 8695      		lsr r24
+ 449 01ca 8770      		andi r24,lo8(7)
+ 450 01cc 8095      		com r24
+ 451 01ce 8170      		andi r24,lo8(1)
+ 452 01d0 8295      		swap r24
+ 453 01d2 880F      		lsl r24
+ 454 01d4 807E      		andi r24,lo8(-32)
+ 455 01d6 9F7D      		andi r25,lo8(-33)
+ 456 01d8 982B      		or r25,r24
+ 457 01da 9093 0000 		sts keymap_config,r25
+ 458               	.L31:
+ 459               	.LSM51:
+ 460 01de 81E3      		ldi r24,lo8(49)
+ 461 01e0 90E0      		ldi r25,hi8(49)
+ 462 01e2 0E94 0000 		call bootmagic_scan_key
+ 463 01e6 8823      		tst r24
+ 464 01e8 01F0      		breq .L32
+ 465               	.LSM52:
+ 466 01ea 9091 0000 		lds r25,keymap_config
+ 467 01ee 892F      		mov r24,r25
+ 468 01f0 8295      		swap r24
+ 469 01f2 8695      		lsr r24
+ 470 01f4 8695      		lsr r24
+ 471 01f6 8370      		andi r24,lo8(3)
+ 472 01f8 8095      		com r24
+ 473 01fa 8170      		andi r24,lo8(1)
+ 474 01fc 8295      		swap r24
+ 475 01fe 880F      		lsl r24
+ 476 0200 880F      		lsl r24
+ 477 0202 807C      		andi r24,lo8(-64)
+ 478 0204 9F7B      		andi r25,lo8(-65)
+ 479 0206 982B      		or r25,r24
+ 480 0208 9093 0000 		sts keymap_config,r25
+ 481               	.L32:
+ 482               	.LSM53:
+ 483 020c 81E1      		ldi r24,lo8(17)
+ 484 020e 90E0      		ldi r25,hi8(17)
+ 485 0210 0E94 0000 		call bootmagic_scan_key
+ 486 0214 8823      		tst r24
+ 487 0216 01F0      		breq .L33
+ 488               	.LSM54:
+ 489 0218 8091 0000 		lds r24,keymap_config
+ 490 021c 982F      		mov r25,r24
+ 491 021e 991F      		rol r25
+ 492 0220 9927      		clr r25
+ 493 0222 991F      		rol r25
+ 494 0224 21E0      		ldi r18,lo8(1)
+ 495 0226 9227      		eor r25,r18
+ 496 0228 9795      		ror r25
+ 497 022a 9927      		clr r25
+ 498 022c 9795      		ror r25
+ 499 022e 8F77      		andi r24,lo8(127)
+ 500 0230 892B      		or r24,r25
+ 501 0232 8093 0000 		sts keymap_config,r24
+ 502               	.L33:
+ 503               	.LSM55:
+ 504 0236 8091 0000 		lds r24,keymap_config
+ 505 023a 0E94 0000 		call eeconfig_write_keymap
+ 506               	.LSM56:
+ 507 023e 8091 0000 		lds r24,keymap_config
+ 508 0242 881F      		rol r24
+ 509 0244 8827      		clr r24
+ 510 0246 881F      		rol r24
+ 511 0248 8093 0000 		sts keyboard_nkro,r24
+ 512               	.LSM57:
+ 513 024c 87E2      		ldi r24,lo8(39)
+ 514 024e 90E0      		ldi r25,hi8(39)
+ 515 0250 0E94 0000 		call bootmagic_scan_key
+ 516 0254 182F      		mov r17,r24
+ 517               	.LVL27:
+ 518               	.LSM58:
+ 519 0256 8EE1      		ldi r24,lo8(30)
+ 520 0258 90E0      		ldi r25,hi8(30)
+ 521 025a 0E94 0000 		call bootmagic_scan_key
+ 522 025e 8111      		cpse r24,__zero_reg__
+ 523 0260 1260      		ori r17,lo8(2)
+ 524               	.L34:
+ 525               	.LSM59:
+ 526 0262 8FE1      		ldi r24,lo8(31)
+ 527 0264 90E0      		ldi r25,hi8(31)
+ 528 0266 0E94 0000 		call bootmagic_scan_key
+ 529 026a 8111      		cpse r24,__zero_reg__
+ 530 026c 1460      		ori r17,lo8(4)
+ 531               	.L35:
+ 532               	.LSM60:
+ 533 026e 80E2      		ldi r24,lo8(32)
+ 534 0270 90E0      		ldi r25,hi8(32)
+ 535 0272 0E94 0000 		call bootmagic_scan_key
+ 536 0276 8111      		cpse r24,__zero_reg__
+ 537 0278 1860      		ori r17,lo8(8)
+ 538               	.L36:
+ 539               	.LSM61:
+ 540 027a 81E2      		ldi r24,lo8(33)
+ 541 027c 90E0      		ldi r25,hi8(33)
+ 542 027e 0E94 0000 		call bootmagic_scan_key
+ 543 0282 8111      		cpse r24,__zero_reg__
+ 544 0284 1061      		ori r17,lo8(16)
+ 545               	.L37:
+ 546               	.LSM62:
+ 547 0286 82E2      		ldi r24,lo8(34)
+ 548 0288 90E0      		ldi r25,hi8(34)
+ 549 028a 0E94 0000 		call bootmagic_scan_key
+ 550 028e 8111      		cpse r24,__zero_reg__
+ 551 0290 1062      		ori r17,lo8(32)
+ 552               	.L38:
+ 553               	.LSM63:
+ 554 0292 83E2      		ldi r24,lo8(35)
+ 555 0294 90E0      		ldi r25,hi8(35)
+ 556 0296 0E94 0000 		call bootmagic_scan_key
+ 557 029a 8111      		cpse r24,__zero_reg__
+ 558 029c 1064      		ori r17,lo8(64)
+ 559               	.L39:
+ 560               	.LSM64:
+ 561 029e 84E2      		ldi r24,lo8(36)
+ 562 02a0 90E0      		ldi r25,hi8(36)
+ 563 02a2 0E94 0000 		call bootmagic_scan_key
+ 564 02a6 8111      		cpse r24,__zero_reg__
+ 565 02a8 1068      		ori r17,lo8(-128)
+ 566               	.L40:
+ 567               	.LSM65:
+ 568 02aa 1123      		tst r17
+ 569 02ac 01F0      		breq .L41
+ 570               	.LSM66:
+ 571 02ae 812F      		mov r24,r17
+ 572 02b0 0E94 0000 		call eeconfig_write_default_layer
+ 573               	.LSM67:
+ 574 02b4 612F      		mov r22,r17
+ 575 02b6 70E0      		ldi r23,lo8(0)
+ 576               	.LVL28:
+ 577 02b8 80E0      		ldi r24,lo8(0)
+ 578 02ba 90E0      		ldi r25,hi8(0)
+ 579               	.LVL29:
+ 580 02bc 00C0      		rjmp .L44
+ 581               	.LVL30:
+ 582               	.L41:
+ 583               	.LSM68:
+ 584 02be 0E94 0000 		call eeconfig_read_default_layer
+ 585               	.LSM69:
+ 586 02c2 90E0      		ldi r25,lo8(0)
+ 587               	.LVL31:
+ 588 02c4 A0E0      		ldi r26,lo8(0)
+ 589 02c6 B0E0      		ldi r27,hi8(0)
+ 590               	.LVL32:
+ 591 02c8 BC01      		movw r22,r24
+ 592 02ca CD01      		movw r24,r26
+ 593               	.LVL33:
+ 594               	.L44:
+ 595 02cc 0E94 0000 		call default_layer_set
+ 596               	.LVL34:
+ 597               	.L42:
+ 598               	/* epilogue start */
+ 599               	.LSM70:
+ 600 02d0 DF91      		pop r29
+ 601 02d2 CF91      		pop r28
+ 602 02d4 1F91      		pop r17
+ 603               	.LVL35:
+ 604 02d6 0895      		ret
+ 605               	.LFE104:
+ 607               		.section	.progmem.data,"a",@progbits
+ 610               	__c.4847:
+ 611 0000 646F 6E65 		.string	"done.\n"
+ 611      2E0A 00
+ 614               	__c.4841:
+ 615 0007 626F 6F74 		.string	"bootmagic scan: ... "
+ 615      6D61 6769 
+ 615      6320 7363 
+ 615      616E 3A20 
+ 615      2E2E 2E20 
+ 616               		.comm keymap_config,1,1
+ 657               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 bootmagic.c
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:2      *ABS*:0000003f __SREG__
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:3      *ABS*:0000003e __SP_H__
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:4      *ABS*:0000003d __SP_L__
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:5      *ABS*:00000034 __CCP__
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:18     .text.scan_key:00000000 scan_key
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:149    .text.bootmagic_scan_key:00000000 bootmagic_scan_key
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:180    .text.bootmagic:00000000 bootmagic
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:614    .progmem.data:00000007 __c.4841
+C:\Users\owner\AppData\Local\Temp/ccwzsCgW.s:610    .progmem.data:00000000 __c.4847
+                            *COM*:00000001 keymap_config
+
+UNDEFINED SYMBOLS
+matrix_get_row
+action_for_key
+eeconfig_is_enabled
+eeconfig_init
+xputs
+matrix_scan
+bootloader_jump
+eeconfig_read_debug
+debug_config
+eeconfig_write_debug
+eeconfig_read_keymap
+eeconfig_write_keymap
+keyboard_nkro
+eeconfig_write_default_layer
+eeconfig_read_default_layer
+default_layer_set
+__do_clear_bss
