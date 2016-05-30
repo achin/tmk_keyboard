@@ -1,0 +1,112 @@
+   1               		.file	"hook.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               		.section	.text.hook_keyboard_loop,"ax",@progbits
+  17               		.weak	hook_keyboard_loop
+  19               	hook_keyboard_loop:
+  20               	.LFB5:
+  21               	.LSM0:
+  22               	/* prologue: function */
+  23               	/* frame size = 0 */
+  24               	/* epilogue start */
+  25               	.LSM1:
+  26 0000 0895      		ret
+  27               	.LFE5:
+  29               		.section	.text.hook_matrix_change,"ax",@progbits
+  30               		.weak	hook_matrix_change
+  32               	hook_matrix_change:
+  33               	.LFB6:
+  34               	.LSM2:
+  35 0000 DF93      		push r29
+  36 0002 CF93      		push r28
+  37 0004 00D0      		rcall .
+  38 0006 00D0      		rcall .
+  39 0008 0F92      		push __tmp_reg__
+  40 000a CDB7      		in r28,__SP_L__
+  41 000c DEB7      		in r29,__SP_H__
+  42               	/* prologue: function */
+  43               	/* frame size = 5 */
+  44               	/* epilogue start */
+  45               	.LSM3:
+  46 000e 0F90      		pop __tmp_reg__
+  47 0010 0F90      		pop __tmp_reg__
+  48 0012 0F90      		pop __tmp_reg__
+  49 0014 0F90      		pop __tmp_reg__
+  50 0016 0F90      		pop __tmp_reg__
+  51 0018 CF91      		pop r28
+  52 001a DF91      		pop r29
+  53 001c 0895      		ret
+  54               	.LFE6:
+  56               		.section	.text.hook_default_layer_change,"ax",@progbits
+  57               		.weak	hook_default_layer_change
+  59               	hook_default_layer_change:
+  60               	.LFB7:
+  61               	.LSM4:
+  62               	.LVL0:
+  63               	/* prologue: function */
+  64               	/* frame size = 0 */
+  65               	/* epilogue start */
+  66               	.LSM5:
+  67 0000 0895      		ret
+  68               	.LFE7:
+  70               		.section	.text.hook_layer_change,"ax",@progbits
+  71               		.weak	hook_layer_change
+  73               	hook_layer_change:
+  74               	.LFB8:
+  75               	.LSM6:
+  76               	.LVL1:
+  77               	/* prologue: function */
+  78               	/* frame size = 0 */
+  79               	/* epilogue start */
+  80               	.LSM7:
+  81 0000 0895      		ret
+  82               	.LFE8:
+  84               		.section	.text.hook_bootmagic,"ax",@progbits
+  85               		.weak	hook_bootmagic
+  87               	hook_bootmagic:
+  88               	.LFB10:
+  89               	.LSM8:
+  90               	/* prologue: function */
+  91               	/* frame size = 0 */
+  92               	/* epilogue start */
+  93               	.LSM9:
+  94 0000 0895      		ret
+  95               	.LFE10:
+  97               		.section	.text.hook_keyboard_leds_change,"ax",@progbits
+  98               		.weak	hook_keyboard_leds_change
+ 100               	hook_keyboard_leds_change:
+ 101               	.LFB9:
+ 102               	.LSM10:
+ 103               	.LVL2:
+ 104               	/* prologue: function */
+ 105               	/* frame size = 0 */
+ 106               	.LSM11:
+ 107 0000 0E94 0000 		call keyboard_set_leds
+ 108               	.LVL3:
+ 109               	/* epilogue start */
+ 110               	.LSM12:
+ 111 0004 0895      		ret
+ 112               	.LFE9:
+ 178               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 hook.c
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:2      *ABS*:0000003f __SREG__
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:3      *ABS*:0000003e __SP_H__
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:4      *ABS*:0000003d __SP_L__
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:5      *ABS*:00000034 __CCP__
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:19     .text.hook_keyboard_loop:00000000 hook_keyboard_loop
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:32     .text.hook_matrix_change:00000000 hook_matrix_change
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:59     .text.hook_default_layer_change:00000000 hook_default_layer_change
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:73     .text.hook_layer_change:00000000 hook_layer_change
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:87     .text.hook_bootmagic:00000000 hook_bootmagic
+C:\Users\owner\AppData\Local\Temp/ccHBt3uk.s:100    .text.hook_keyboard_leds_change:00000000 hook_keyboard_leds_change
+
+UNDEFINED SYMBOLS
+keyboard_set_leds
