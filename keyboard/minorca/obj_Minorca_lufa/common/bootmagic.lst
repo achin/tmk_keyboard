@@ -1,623 +1,1079 @@
    1               		.file	"bootmagic.c"
-   2               	__SREG__ = 0x3f
-   3               	__SP_H__ = 0x3e
-   4               	__SP_L__ = 0x3d
-   5               	__CCP__  = 0x34
-   6               	__tmp_reg__ = 0
-   7               	__zero_reg__ = 1
-  15               	.Ltext0:
-  16               		.section	.text.scan_key,"ax",@progbits
-  18               	scan_key:
-  19               	.LFB105:
-  20               	.LSM0:
-  21               	.LVL0:
-  22 0000 AF92      		push r10
-  23 0002 BF92      		push r11
-  24 0004 CF92      		push r12
-  25 0006 DF92      		push r13
-  26 0008 EF92      		push r14
-  27 000a FF92      		push r15
-  28 000c 1F93      		push r17
-  29 000e CF93      		push r28
-  30 0010 DF93      		push r29
-  31               	/* prologue: function */
-  32               	/* frame size = 0 */
-  33 0012 7C01      		movw r14,r24
-  34               	.LSM1:
-  35 0014 10E0      		ldi r17,lo8(0)
-  36               	.LVL1:
-  37               	.LBB14:
-  38               	.LBB15:
-  39               	.LBB16:
-  40               	.LSM2:
-  41 0016 81E0      		ldi r24,lo8(1)
-  42 0018 A82E      		mov r10,r24
-  43 001a B12C      		mov r11,__zero_reg__
-  44               	.LVL2:
-  45               	.L6:
-  46               	.LBE16:
-  47               	.LSM3:
-  48 001c 812F      		mov r24,r17
-  49               	.LVL3:
-  50 001e 0E94 0000 		call matrix_get_row
-  51               	.LVL4:
-  52 0022 6C01      		movw r12,r24
-  53 0024 C0E0      		ldi r28,lo8(0)
-  54 0026 D0E0      		ldi r29,hi8(0)
-  55               	.LVL5:
-  56               	.L5:
-  57               	.LBB18:
-  58               	.LSM4:
-  59 0028 C501      		movw r24,r10
-  60               	.LVL6:
-  61 002a 0C2E      		mov r0,r28
-  62 002c 00C0      		rjmp 2f
-  63 002e 880F      	1:	lsl r24
-  64 0030 991F      		rol r25
-  65 0032 0A94      	2:	dec r0
-  66 0034 02F4      		brpl 1b
-  67 0036 8C21      		and r24,r12
-  68 0038 9D21      		and r25,r13
-  69 003a 892B      		or r24,r25
-  70 003c 01F0      		breq .L2
-  71               	.LBB17:
-  72               	.LSM5:
-  73 003e 80E0      		ldi r24,lo8(0)
-  74 0040 6C2F      		mov r22,r28
-  75 0042 712F      		mov r23,r17
-  76 0044 0E94 0000 		call action_for_key
-  77               	.LVL7:
-  78 0048 9C01      		movw r18,r24
-  79               	.LSM6:
-  80 004a 8E15      		cp r24,r14
-  81 004c 9F05      		cpc r25,r15
-  82               	.LVL8:
-  83 004e 01F0      		breq .L3
-  84 0050 832F      		mov r24,r19
-  85               	.LVL9:
-  86 0052 807F      		andi r24,lo8(-16)
-  87 0054 01F0      		breq .L4
-  88 0056 8031      		cpi r24,lo8(16)
-  89 0058 01F0      		breq .L4
-  90 005a 8032      		cpi r24,lo8(32)
-  91 005c 01F0      		breq .L4
-  92 005e 8033      		cpi r24,lo8(48)
-  93 0060 01F0      		breq .L4
-  94 0062 803A      		cpi r24,lo8(-96)
-  95 0064 01F0      		breq .L4
-  96 0066 803B      		cpi r24,lo8(-80)
-  97 0068 01F4      		brne .L2
-  98               	.L4:
-  99 006a 822F      		mov r24,r18
- 100               	.LVL10:
- 101 006c 90E0      		ldi r25,lo8(0)
- 102               	.LVL11:
- 103 006e 8E15      		cp r24,r14
- 104 0070 9F05      		cpc r25,r15
- 105 0072 01F0      		breq .L3
- 106               	.L2:
- 107 0074 2196      		adiw r28,1
- 108               	.LBE17:
- 109               	.LSM7:
- 110 0076 CD30      		cpi r28,13
- 111 0078 D105      		cpc r29,__zero_reg__
- 112 007a 01F4      		brne .L5
- 113               	.LVL12:
- 114               	.LBE18:
- 115               	.LBE15:
- 116               	.LSM8:
- 117 007c 1F5F      		subi r17,lo8(-(1))
- 118 007e 1430      		cpi r17,lo8(4)
- 119 0080 01F4      		brne .L6
- 120 0082 80E0      		ldi r24,lo8(0)
- 121               	.LVL13:
- 122 0084 00C0      		rjmp .L7
- 123               	.LVL14:
- 124               	.L3:
- 125 0086 81E0      		ldi r24,lo8(1)
- 126               	.LVL15:
- 127               	.L7:
- 128               	/* epilogue start */
- 129               	.LBE14:
- 130               	.LSM9:
- 131 0088 DF91      		pop r29
- 132 008a CF91      		pop r28
- 133 008c 1F91      		pop r17
- 134               	.LVL16:
- 135 008e FF90      		pop r15
- 136 0090 EF90      		pop r14
- 137               	.LVL17:
- 138 0092 DF90      		pop r13
- 139 0094 CF90      		pop r12
- 140               	.LVL18:
- 141 0096 BF90      		pop r11
- 142 0098 AF90      		pop r10
- 143 009a 0895      		ret
- 144               	.LFE105:
- 146               		.section	.text.bootmagic_scan_key,"ax",@progbits
- 147               	.global	bootmagic_scan_key
- 149               	bootmagic_scan_key:
- 150               	.LFB106:
- 151               	.LSM10:
- 152               	.LVL19:
- 153 0000 CF93      		push r28
- 154 0002 DF93      		push r29
- 155               	/* prologue: function */
- 156               	/* frame size = 0 */
- 157 0004 EC01      		movw r28,r24
- 158               	.LSM11:
- 159 0006 8CE2      		ldi r24,lo8(44)
- 160 0008 90E0      		ldi r25,hi8(44)
- 161               	.LVL20:
- 162 000a 0E94 0000 		call scan_key
- 163 000e 8823      		tst r24
- 164 0010 01F0      		breq .L13
- 165               	.LSM12:
- 166 0012 CE01      		movw r24,r28
- 167 0014 0E94 0000 		call scan_key
- 168               	.L13:
- 169               	/* epilogue start */
- 170               	.LSM13:
- 171 0018 DF91      		pop r29
- 172 001a CF91      		pop r28
- 173               	.LVL21:
- 174 001c 0895      		ret
- 175               	.LFE106:
- 177               		.section	.text.bootmagic,"ax",@progbits
- 178               	.global	bootmagic
- 180               	bootmagic:
- 181               	.LFB104:
- 182               	.LSM14:
- 183 0000 1F93      		push r17
- 184 0002 CF93      		push r28
- 185 0004 DF93      		push r29
- 186               	/* prologue: function */
- 187               	/* frame size = 0 */
- 188               	.LSM15:
- 189 0006 0E94 0000 		call eeconfig_is_enabled
- 190 000a 8823      		tst r24
- 191 000c 01F4      		brne .L16
- 192               	.LSM16:
- 193 000e 0E94 0000 		call eeconfig_init
- 194               	.L16:
- 195               	.LSM17:
- 196 0012 80E0      		ldi r24,lo8(__c.4865)
- 197 0014 90E0      		ldi r25,hi8(__c.4865)
- 198 0016 0E94 0000 		call xputs
- 199 001a 14E6      		ldi r17,lo8(100)
- 200               	.LVL22:
- 201               	.LBB19:
- 202               	.LBB20:
- 203               	.LBB21:
- 204               	.LBB22:
- 205               	.LSM18:
- 206 001c C0E4      		ldi r28,lo8(-25536)
- 207 001e DCE9      		ldi r29,hi8(-25536)
- 208 0020 00C0      		rjmp .L17
- 209               	.LVL23:
- 210               	.L18:
- 211               	.LBE22:
- 212               	.LBE21:
- 213               	.LBE20:
- 214               	.LBE19:
- 215               	.LSM19:
- 216 0022 0E94 0000 		call matrix_scan
- 217               	.LVL24:
- 218               	.LBB26:
- 219               	.LBB25:
- 220               	.LBB24:
- 221               	.LBB23:
- 222               	.LSM20:
- 223 0026 CE01      		movw r24,r28
- 224               	.LVL25:
- 225               	/* #APP */
- 226               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
- 227 0028 0197      		1: sbiw r24,1
- 228 002a 01F4      		brne 1b
- 229               	 ;  0 "" 2
- 230               	/* #NOAPP */
- 231               	.L17:
- 232               	.LBE23:
- 233               	.LBE24:
- 234               	.LBE25:
- 235               	.LBE26:
- 236               	.LSM21:
- 237 002c 1150      		subi r17,1
- 238 002e 00F4      		brcc .L18
- 239               	.LSM22:
- 240 0030 80E0      		ldi r24,lo8(__c.4871)
- 241 0032 90E0      		ldi r25,hi8(__c.4871)
- 242               	.LVL26:
- 243 0034 0E94 0000 		call xputs
- 244               	.LSM23:
- 245 0038 89E2      		ldi r24,lo8(41)
- 246 003a 90E0      		ldi r25,hi8(41)
- 247 003c 0E94 0000 		call bootmagic_scan_key
- 248 0040 8823      		tst r24
- 249 0042 01F0      		breq .+2
- 250 0044 00C0      		rjmp .L42
- 251               	.LSM24:
- 252 0046 8AE2      		ldi r24,lo8(42)
- 253 0048 90E0      		ldi r25,hi8(42)
- 254 004a 0E94 0000 		call bootmagic_scan_key
- 255 004e 8823      		tst r24
- 256 0050 01F0      		breq .L20
- 257               	.LSM25:
- 258 0052 0E94 0000 		call eeconfig_init
- 259               	.L20:
- 260               	.LSM26:
- 261 0056 85E0      		ldi r24,lo8(5)
- 262 0058 90E0      		ldi r25,hi8(5)
- 263 005a 0E94 0000 		call bootmagic_scan_key
- 264 005e 8823      		tst r24
- 265 0060 01F0      		breq .L21
- 266               	.LSM27:
- 267 0062 0E94 0000 		call bootloader_jump
- 268               	.L21:
- 269               	.LSM28:
- 270 0066 0E94 0000 		call hook_bootmagic
- 271               	.LSM29:
- 272 006a 0E94 0000 		call eeconfig_read_debug
- 273 006e 8093 0000 		sts debug_config,r24
- 274               	.LSM30:
- 275 0072 87E0      		ldi r24,lo8(7)
- 276 0074 90E0      		ldi r25,hi8(7)
- 277 0076 0E94 0000 		call bootmagic_scan_key
- 278 007a 8823      		tst r24
- 279 007c 01F0      		breq .L22
- 280               	.LSM31:
- 281 007e 8BE1      		ldi r24,lo8(27)
- 282 0080 90E0      		ldi r25,hi8(27)
- 283 0082 0E94 0000 		call bootmagic_scan_key
- 284 0086 8823      		tst r24
- 285 0088 01F0      		breq .L23
- 286               	.LSM32:
- 287 008a 9091 0000 		lds r25,debug_config
- 288 008e 892F      		mov r24,r25
- 289 0090 8695      		lsr r24
- 290 0092 8095      		com r24
- 291 0094 8170      		andi r24,lo8(1)
- 292 0096 880F      		lsl r24
- 293 0098 9D7F      		andi r25,lo8(-3)
- 294 009a 00C0      		rjmp .L43
- 295               	.L23:
- 296               	.LSM33:
- 297 009c 8EE0      		ldi r24,lo8(14)
- 298 009e 90E0      		ldi r25,hi8(14)
- 299 00a0 0E94 0000 		call bootmagic_scan_key
- 300 00a4 8823      		tst r24
- 301 00a6 01F0      		breq .L24
- 302               	.LSM34:
- 303 00a8 9091 0000 		lds r25,debug_config
- 304 00ac 892F      		mov r24,r25
- 305 00ae 8695      		lsr r24
- 306 00b0 8695      		lsr r24
- 307 00b2 8095      		com r24
- 308 00b4 8170      		andi r24,lo8(1)
- 309 00b6 880F      		lsl r24
- 310 00b8 880F      		lsl r24
- 311 00ba 9B7F      		andi r25,lo8(-5)
- 312 00bc 00C0      		rjmp .L43
- 313               	.L24:
- 314               	.LSM35:
- 315 00be 80E1      		ldi r24,lo8(16)
- 316 00c0 90E0      		ldi r25,hi8(16)
- 317 00c2 0E94 0000 		call bootmagic_scan_key
- 318 00c6 9091 0000 		lds r25,debug_config
- 319 00ca 8823      		tst r24
- 320 00cc 01F0      		breq .L25
- 321               	.LSM36:
- 322 00ce 892F      		mov r24,r25
- 323 00d0 8695      		lsr r24
- 324 00d2 8695      		lsr r24
- 325 00d4 8695      		lsr r24
- 326 00d6 8095      		com r24
- 327 00d8 8170      		andi r24,lo8(1)
- 328 00da 880F      		lsl r24
- 329 00dc 880F      		lsl r24
- 330 00de 880F      		lsl r24
- 331 00e0 977F      		andi r25,lo8(-9)
- 332 00e2 00C0      		rjmp .L43
- 333               	.L25:
- 334               	.LSM37:
- 335 00e4 892F      		mov r24,r25
- 336 00e6 8095      		com r24
- 337 00e8 8170      		andi r24,lo8(1)
- 338 00ea 9E7F      		andi r25,lo8(-2)
- 339               	.L43:
- 340 00ec 982B      		or r25,r24
- 341 00ee 9093 0000 		sts debug_config,r25
- 342               	.L22:
- 343               	.LSM38:
- 344 00f2 8091 0000 		lds r24,debug_config
- 345 00f6 0E94 0000 		call eeconfig_write_debug
- 346               	.LSM39:
- 347 00fa 0E94 0000 		call eeconfig_read_keymap
- 348 00fe 8093 0000 		sts keymap_config,r24
- 349               	.LSM40:
- 350 0102 80EE      		ldi r24,lo8(224)
- 351 0104 90E0      		ldi r25,hi8(224)
- 352 0106 0E94 0000 		call bootmagic_scan_key
- 353 010a 8823      		tst r24
- 354 010c 01F0      		breq .L26
- 355               	.LSM41:
- 356 010e 8091 0000 		lds r24,keymap_config
- 357 0112 982F      		mov r25,r24
- 358 0114 9095      		com r25
- 359 0116 9170      		andi r25,lo8(1)
- 360 0118 8E7F      		andi r24,lo8(-2)
- 361 011a 892B      		or r24,r25
- 362 011c 8093 0000 		sts keymap_config,r24
- 363               	.L26:
- 364               	.LSM42:
- 365 0120 89E3      		ldi r24,lo8(57)
- 366 0122 90E0      		ldi r25,hi8(57)
- 367 0124 0E94 0000 		call bootmagic_scan_key
- 368 0128 8823      		tst r24
- 369 012a 01F0      		breq .L27
- 370               	.LSM43:
- 371 012c 9091 0000 		lds r25,keymap_config
- 372 0130 892F      		mov r24,r25
- 373 0132 8695      		lsr r24
- 374 0134 8095      		com r24
- 375 0136 8170      		andi r24,lo8(1)
- 376 0138 880F      		lsl r24
- 377 013a 9D7F      		andi r25,lo8(-3)
- 378 013c 982B      		or r25,r24
- 379 013e 9093 0000 		sts keymap_config,r25
- 380               	.L27:
- 381               	.LSM44:
- 382 0142 82EE      		ldi r24,lo8(226)
- 383 0144 90E0      		ldi r25,hi8(226)
- 384 0146 0E94 0000 		call bootmagic_scan_key
- 385 014a 8823      		tst r24
- 386 014c 01F0      		breq .L28
- 387               	.LSM45:
- 388 014e 9091 0000 		lds r25,keymap_config
- 389 0152 892F      		mov r24,r25
- 390 0154 8695      		lsr r24
- 391 0156 8695      		lsr r24
- 392 0158 8095      		com r24
- 393 015a 8170      		andi r24,lo8(1)
- 394 015c 880F      		lsl r24
- 395 015e 880F      		lsl r24
- 396 0160 9B7F      		andi r25,lo8(-5)
- 397 0162 982B      		or r25,r24
- 398 0164 9093 0000 		sts keymap_config,r25
- 399               	.L28:
- 400               	.LSM46:
- 401 0168 86EE      		ldi r24,lo8(230)
- 402 016a 90E0      		ldi r25,hi8(230)
- 403 016c 0E94 0000 		call bootmagic_scan_key
- 404 0170 8823      		tst r24
- 405 0172 01F0      		breq .L29
- 406               	.LSM47:
- 407 0174 9091 0000 		lds r25,keymap_config
- 408 0178 892F      		mov r24,r25
- 409 017a 8695      		lsr r24
- 410 017c 8695      		lsr r24
- 411 017e 8695      		lsr r24
- 412 0180 8095      		com r24
- 413 0182 8170      		andi r24,lo8(1)
- 414 0184 880F      		lsl r24
- 415 0186 880F      		lsl r24
- 416 0188 880F      		lsl r24
- 417 018a 977F      		andi r25,lo8(-9)
- 418 018c 982B      		or r25,r24
- 419 018e 9093 0000 		sts keymap_config,r25
- 420               	.L29:
- 421               	.LSM48:
- 422 0192 83EE      		ldi r24,lo8(227)
- 423 0194 90E0      		ldi r25,hi8(227)
- 424 0196 0E94 0000 		call bootmagic_scan_key
- 425 019a 8823      		tst r24
- 426 019c 01F0      		breq .L30
- 427               	.LSM49:
- 428 019e 9091 0000 		lds r25,keymap_config
- 429 01a2 892F      		mov r24,r25
- 430 01a4 8295      		swap r24
- 431 01a6 8F70      		andi r24,lo8(15)
- 432 01a8 8095      		com r24
- 433 01aa 8170      		andi r24,lo8(1)
- 434 01ac 8295      		swap r24
- 435 01ae 807F      		andi r24,lo8(-16)
- 436 01b0 9F7E      		andi r25,lo8(-17)
- 437 01b2 982B      		or r25,r24
- 438 01b4 9093 0000 		sts keymap_config,r25
- 439               	.L30:
- 440               	.LSM50:
- 441 01b8 85E3      		ldi r24,lo8(53)
- 442 01ba 90E0      		ldi r25,hi8(53)
- 443 01bc 0E94 0000 		call bootmagic_scan_key
- 444 01c0 8823      		tst r24
- 445 01c2 01F0      		breq .L31
- 446               	.LSM51:
- 447 01c4 9091 0000 		lds r25,keymap_config
- 448 01c8 892F      		mov r24,r25
- 449 01ca 8295      		swap r24
- 450 01cc 8695      		lsr r24
- 451 01ce 8770      		andi r24,lo8(7)
- 452 01d0 8095      		com r24
- 453 01d2 8170      		andi r24,lo8(1)
- 454 01d4 8295      		swap r24
- 455 01d6 880F      		lsl r24
- 456 01d8 807E      		andi r24,lo8(-32)
- 457 01da 9F7D      		andi r25,lo8(-33)
- 458 01dc 982B      		or r25,r24
- 459 01de 9093 0000 		sts keymap_config,r25
- 460               	.L31:
- 461               	.LSM52:
- 462 01e2 81E3      		ldi r24,lo8(49)
- 463 01e4 90E0      		ldi r25,hi8(49)
- 464 01e6 0E94 0000 		call bootmagic_scan_key
- 465 01ea 8823      		tst r24
- 466 01ec 01F0      		breq .L32
- 467               	.LSM53:
- 468 01ee 9091 0000 		lds r25,keymap_config
- 469 01f2 892F      		mov r24,r25
- 470 01f4 8295      		swap r24
- 471 01f6 8695      		lsr r24
- 472 01f8 8695      		lsr r24
- 473 01fa 8370      		andi r24,lo8(3)
- 474 01fc 8095      		com r24
- 475 01fe 8170      		andi r24,lo8(1)
- 476 0200 8295      		swap r24
- 477 0202 880F      		lsl r24
- 478 0204 880F      		lsl r24
- 479 0206 807C      		andi r24,lo8(-64)
- 480 0208 9F7B      		andi r25,lo8(-65)
- 481 020a 982B      		or r25,r24
- 482 020c 9093 0000 		sts keymap_config,r25
- 483               	.L32:
- 484               	.LSM54:
- 485 0210 81E1      		ldi r24,lo8(17)
- 486 0212 90E0      		ldi r25,hi8(17)
- 487 0214 0E94 0000 		call bootmagic_scan_key
- 488 0218 8823      		tst r24
- 489 021a 01F0      		breq .L33
- 490               	.LSM55:
- 491 021c 8091 0000 		lds r24,keymap_config
- 492 0220 982F      		mov r25,r24
- 493 0222 991F      		rol r25
- 494 0224 9927      		clr r25
- 495 0226 991F      		rol r25
- 496 0228 21E0      		ldi r18,lo8(1)
- 497 022a 9227      		eor r25,r18
- 498 022c 9795      		ror r25
- 499 022e 9927      		clr r25
- 500 0230 9795      		ror r25
- 501 0232 8F77      		andi r24,lo8(127)
- 502 0234 892B      		or r24,r25
- 503 0236 8093 0000 		sts keymap_config,r24
- 504               	.L33:
- 505               	.LSM56:
- 506 023a 8091 0000 		lds r24,keymap_config
- 507 023e 0E94 0000 		call eeconfig_write_keymap
- 508               	.LSM57:
- 509 0242 8091 0000 		lds r24,keymap_config
- 510 0246 881F      		rol r24
- 511 0248 8827      		clr r24
- 512 024a 881F      		rol r24
- 513 024c 8093 0000 		sts keyboard_nkro,r24
- 514               	.LSM58:
- 515 0250 87E2      		ldi r24,lo8(39)
- 516 0252 90E0      		ldi r25,hi8(39)
- 517 0254 0E94 0000 		call bootmagic_scan_key
- 518 0258 182F      		mov r17,r24
- 519               	.LVL27:
- 520               	.LSM59:
- 521 025a 8EE1      		ldi r24,lo8(30)
- 522 025c 90E0      		ldi r25,hi8(30)
- 523 025e 0E94 0000 		call bootmagic_scan_key
- 524 0262 8111      		cpse r24,__zero_reg__
- 525 0264 1260      		ori r17,lo8(2)
- 526               	.L34:
- 527               	.LSM60:
- 528 0266 8FE1      		ldi r24,lo8(31)
- 529 0268 90E0      		ldi r25,hi8(31)
- 530 026a 0E94 0000 		call bootmagic_scan_key
- 531 026e 8111      		cpse r24,__zero_reg__
- 532 0270 1460      		ori r17,lo8(4)
- 533               	.L35:
- 534               	.LSM61:
- 535 0272 80E2      		ldi r24,lo8(32)
- 536 0274 90E0      		ldi r25,hi8(32)
- 537 0276 0E94 0000 		call bootmagic_scan_key
- 538 027a 8111      		cpse r24,__zero_reg__
- 539 027c 1860      		ori r17,lo8(8)
- 540               	.L36:
- 541               	.LSM62:
- 542 027e 81E2      		ldi r24,lo8(33)
- 543 0280 90E0      		ldi r25,hi8(33)
- 544 0282 0E94 0000 		call bootmagic_scan_key
- 545 0286 8111      		cpse r24,__zero_reg__
- 546 0288 1061      		ori r17,lo8(16)
- 547               	.L37:
- 548               	.LSM63:
- 549 028a 82E2      		ldi r24,lo8(34)
- 550 028c 90E0      		ldi r25,hi8(34)
- 551 028e 0E94 0000 		call bootmagic_scan_key
- 552 0292 8111      		cpse r24,__zero_reg__
- 553 0294 1062      		ori r17,lo8(32)
- 554               	.L38:
- 555               	.LSM64:
- 556 0296 83E2      		ldi r24,lo8(35)
- 557 0298 90E0      		ldi r25,hi8(35)
- 558 029a 0E94 0000 		call bootmagic_scan_key
- 559 029e 8111      		cpse r24,__zero_reg__
- 560 02a0 1064      		ori r17,lo8(64)
- 561               	.L39:
- 562               	.LSM65:
- 563 02a2 84E2      		ldi r24,lo8(36)
- 564 02a4 90E0      		ldi r25,hi8(36)
- 565 02a6 0E94 0000 		call bootmagic_scan_key
- 566 02aa 8111      		cpse r24,__zero_reg__
- 567 02ac 1068      		ori r17,lo8(-128)
- 568               	.L40:
- 569               	.LSM66:
- 570 02ae 1123      		tst r17
- 571 02b0 01F0      		breq .L41
- 572               	.LSM67:
- 573 02b2 812F      		mov r24,r17
- 574 02b4 0E94 0000 		call eeconfig_write_default_layer
- 575               	.LSM68:
- 576 02b8 612F      		mov r22,r17
- 577 02ba 70E0      		ldi r23,lo8(0)
- 578               	.LVL28:
- 579 02bc 80E0      		ldi r24,lo8(0)
- 580 02be 90E0      		ldi r25,hi8(0)
- 581               	.LVL29:
- 582 02c0 00C0      		rjmp .L44
- 583               	.LVL30:
- 584               	.L41:
- 585               	.LSM69:
- 586 02c2 0E94 0000 		call eeconfig_read_default_layer
- 587               	.LSM70:
- 588 02c6 90E0      		ldi r25,lo8(0)
- 589               	.LVL31:
- 590 02c8 A0E0      		ldi r26,lo8(0)
- 591 02ca B0E0      		ldi r27,hi8(0)
- 592               	.LVL32:
- 593 02cc BC01      		movw r22,r24
- 594 02ce CD01      		movw r24,r26
- 595               	.LVL33:
- 596               	.L44:
- 597 02d0 0E94 0000 		call default_layer_set
- 598               	.LVL34:
- 599               	.L42:
- 600               	/* epilogue start */
- 601               	.LSM71:
- 602 02d4 DF91      		pop r29
- 603 02d6 CF91      		pop r28
- 604 02d8 1F91      		pop r17
- 605               	.LVL35:
- 606 02da 0895      		ret
- 607               	.LFE104:
- 609               		.section	.progmem.data,"a",@progbits
- 612               	__c.4871:
- 613 0000 646F 6E65 		.string	"done.\n"
- 613      2E0A 00
- 616               	__c.4865:
- 617 0007 626F 6F74 		.string	"bootmagic scan: ... "
- 617      6D61 6769 
- 617      6320 7363 
- 617      616E 3A20 
- 617      2E2E 2E20 
- 618               		.comm keymap_config,1,1
- 659               	.Letext0:
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.scan_key,"ax",@progbits
+  12               	scan_key:
+  13               	.LFB104:
+  14               		.file 1 "../../tmk_core/common/bootmagic.c"
+   1:../../tmk_core/common/bootmagic.c **** #include <stdint.h>
+   2:../../tmk_core/common/bootmagic.c **** #include <stdbool.h>
+   3:../../tmk_core/common/bootmagic.c **** #include "wait.h"
+   4:../../tmk_core/common/bootmagic.c **** #include "matrix.h"
+   5:../../tmk_core/common/bootmagic.c **** #include "bootloader.h"
+   6:../../tmk_core/common/bootmagic.c **** #include "debug.h"
+   7:../../tmk_core/common/bootmagic.c **** #include "keymap.h"
+   8:../../tmk_core/common/bootmagic.c **** #include "actionmap.h"
+   9:../../tmk_core/common/bootmagic.c **** #include "host.h"
+  10:../../tmk_core/common/bootmagic.c **** #include "action_layer.h"
+  11:../../tmk_core/common/bootmagic.c **** #include "eeconfig.h"
+  12:../../tmk_core/common/bootmagic.c **** #include "bootmagic.h"
+  13:../../tmk_core/common/bootmagic.c **** #include "hook.h"
+  14:../../tmk_core/common/bootmagic.c **** 
+  15:../../tmk_core/common/bootmagic.c **** keymap_config_t keymap_config;
+  16:../../tmk_core/common/bootmagic.c **** 
+  17:../../tmk_core/common/bootmagic.c **** void bootmagic(void)
+  18:../../tmk_core/common/bootmagic.c **** {
+  19:../../tmk_core/common/bootmagic.c ****     /* check signature */
+  20:../../tmk_core/common/bootmagic.c ****     if (!eeconfig_is_enabled()) {
+  21:../../tmk_core/common/bootmagic.c ****         eeconfig_init();
+  22:../../tmk_core/common/bootmagic.c ****     }
+  23:../../tmk_core/common/bootmagic.c **** 
+  24:../../tmk_core/common/bootmagic.c ****     /* do scans in case of bounce */
+  25:../../tmk_core/common/bootmagic.c ****     print("bootmagic scan: ... ");
+  26:../../tmk_core/common/bootmagic.c ****     uint8_t scan = 100;
+  27:../../tmk_core/common/bootmagic.c ****     while (scan--) { matrix_scan(); wait_ms(10); }
+  28:../../tmk_core/common/bootmagic.c ****     print("done.\n");
+  29:../../tmk_core/common/bootmagic.c **** 
+  30:../../tmk_core/common/bootmagic.c ****     /* bootmagic skip */
+  31:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SKIP)) {
+  32:../../tmk_core/common/bootmagic.c ****         return;
+  33:../../tmk_core/common/bootmagic.c ****     }
+  34:../../tmk_core/common/bootmagic.c **** 
+  35:../../tmk_core/common/bootmagic.c ****     /* eeconfig clear */
+  36:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_EEPROM_CLEAR)) {
+  37:../../tmk_core/common/bootmagic.c ****         eeconfig_init();
+  38:../../tmk_core/common/bootmagic.c ****     }
+  39:../../tmk_core/common/bootmagic.c **** 
+  40:../../tmk_core/common/bootmagic.c ****     /* bootloader */
+  41:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_BOOTLOADER)) {
+  42:../../tmk_core/common/bootmagic.c ****         bootloader_jump();
+  43:../../tmk_core/common/bootmagic.c ****     }
+  44:../../tmk_core/common/bootmagic.c **** 
+  45:../../tmk_core/common/bootmagic.c ****     /* user-defined checks */
+  46:../../tmk_core/common/bootmagic.c ****     hook_bootmagic();
+  47:../../tmk_core/common/bootmagic.c **** 
+  48:../../tmk_core/common/bootmagic.c ****     /* debug enable */
+  49:../../tmk_core/common/bootmagic.c ****     debug_config.raw = eeconfig_read_debug();
+  50:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEBUG_ENABLE)) {
+  51:../../tmk_core/common/bootmagic.c ****         if (bootmagic_scan_key(BOOTMAGIC_KEY_DEBUG_MATRIX)) {
+  52:../../tmk_core/common/bootmagic.c ****             debug_config.matrix = !debug_config.matrix;
+  53:../../tmk_core/common/bootmagic.c ****         } else if (bootmagic_scan_key(BOOTMAGIC_KEY_DEBUG_KEYBOARD)) {
+  54:../../tmk_core/common/bootmagic.c ****             debug_config.keyboard = !debug_config.keyboard;
+  55:../../tmk_core/common/bootmagic.c ****         } else if (bootmagic_scan_key(BOOTMAGIC_KEY_DEBUG_MOUSE)) {
+  56:../../tmk_core/common/bootmagic.c ****             debug_config.mouse = !debug_config.mouse;
+  57:../../tmk_core/common/bootmagic.c ****         } else {
+  58:../../tmk_core/common/bootmagic.c ****             debug_config.enable = !debug_config.enable;
+  59:../../tmk_core/common/bootmagic.c ****         }
+  60:../../tmk_core/common/bootmagic.c ****     }
+  61:../../tmk_core/common/bootmagic.c ****     eeconfig_write_debug(debug_config.raw);
+  62:../../tmk_core/common/bootmagic.c **** 
+  63:../../tmk_core/common/bootmagic.c ****     /* keymap config */
+  64:../../tmk_core/common/bootmagic.c ****     keymap_config.raw = eeconfig_read_keymap();
+  65:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SWAP_CONTROL_CAPSLOCK)) {
+  66:../../tmk_core/common/bootmagic.c ****         keymap_config.swap_control_capslock = !keymap_config.swap_control_capslock;
+  67:../../tmk_core/common/bootmagic.c ****     }
+  68:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_CAPSLOCK_TO_CONTROL)) {
+  69:../../tmk_core/common/bootmagic.c ****         keymap_config.capslock_to_control = !keymap_config.capslock_to_control;
+  70:../../tmk_core/common/bootmagic.c ****     }
+  71:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SWAP_LALT_LGUI)) {
+  72:../../tmk_core/common/bootmagic.c ****         keymap_config.swap_lalt_lgui = !keymap_config.swap_lalt_lgui;
+  73:../../tmk_core/common/bootmagic.c ****     }
+  74:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SWAP_RALT_RGUI)) {
+  75:../../tmk_core/common/bootmagic.c ****         keymap_config.swap_ralt_rgui = !keymap_config.swap_ralt_rgui;
+  76:../../tmk_core/common/bootmagic.c ****     }
+  77:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_NO_GUI)) {
+  78:../../tmk_core/common/bootmagic.c ****         keymap_config.no_gui = !keymap_config.no_gui;
+  79:../../tmk_core/common/bootmagic.c ****     }
+  80:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SWAP_GRAVE_ESC)) {
+  81:../../tmk_core/common/bootmagic.c ****         keymap_config.swap_grave_esc = !keymap_config.swap_grave_esc;
+  82:../../tmk_core/common/bootmagic.c ****     }
+  83:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SWAP_BACKSLASH_BACKSPACE)) {
+  84:../../tmk_core/common/bootmagic.c ****         keymap_config.swap_backslash_backspace = !keymap_config.swap_backslash_backspace;
+  85:../../tmk_core/common/bootmagic.c ****     }
+  86:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_HOST_NKRO)) {
+  87:../../tmk_core/common/bootmagic.c ****         keymap_config.nkro = !keymap_config.nkro;
+  88:../../tmk_core/common/bootmagic.c ****     }
+  89:../../tmk_core/common/bootmagic.c ****     eeconfig_write_keymap(keymap_config.raw);
+  90:../../tmk_core/common/bootmagic.c **** 
+  91:../../tmk_core/common/bootmagic.c **** #ifdef NKRO_ENABLE
+  92:../../tmk_core/common/bootmagic.c ****     keyboard_nkro = keymap_config.nkro;
+  93:../../tmk_core/common/bootmagic.c **** #endif
+  94:../../tmk_core/common/bootmagic.c **** 
+  95:../../tmk_core/common/bootmagic.c ****     /* default layer */
+  96:../../tmk_core/common/bootmagic.c ****     uint8_t default_layer = 0;
+  97:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_0)) { default_layer |= (1<<0); }
+  98:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_1)) { default_layer |= (1<<1); }
+  99:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_2)) { default_layer |= (1<<2); }
+ 100:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_3)) { default_layer |= (1<<3); }
+ 101:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_4)) { default_layer |= (1<<4); }
+ 102:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_5)) { default_layer |= (1<<5); }
+ 103:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_6)) { default_layer |= (1<<6); }
+ 104:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_7)) { default_layer |= (1<<7); }
+ 105:../../tmk_core/common/bootmagic.c ****     if (default_layer) {
+ 106:../../tmk_core/common/bootmagic.c ****         eeconfig_write_default_layer(default_layer);
+ 107:../../tmk_core/common/bootmagic.c ****         default_layer_set((uint32_t)default_layer);
+ 108:../../tmk_core/common/bootmagic.c ****     } else {
+ 109:../../tmk_core/common/bootmagic.c ****         default_layer = eeconfig_read_default_layer();
+ 110:../../tmk_core/common/bootmagic.c ****         default_layer_set((uint32_t)default_layer);
+ 111:../../tmk_core/common/bootmagic.c ****     }
+ 112:../../tmk_core/common/bootmagic.c **** }
+ 113:../../tmk_core/common/bootmagic.c **** 
+ 114:../../tmk_core/common/bootmagic.c **** static bool scan_key(uint16_t code)
+ 115:../../tmk_core/common/bootmagic.c **** {
+  15               		.loc 1 115 0
+  16               		.cfi_startproc
+  17               	.LVL0:
+  18 0000 BF92      		push r11
+  19               	.LCFI0:
+  20               		.cfi_def_cfa_offset 3
+  21               		.cfi_offset 11, -2
+  22 0002 CF92      		push r12
+  23               	.LCFI1:
+  24               		.cfi_def_cfa_offset 4
+  25               		.cfi_offset 12, -3
+  26 0004 DF92      		push r13
+  27               	.LCFI2:
+  28               		.cfi_def_cfa_offset 5
+  29               		.cfi_offset 13, -4
+  30 0006 EF92      		push r14
+  31               	.LCFI3:
+  32               		.cfi_def_cfa_offset 6
+  33               		.cfi_offset 14, -5
+  34 0008 FF92      		push r15
+  35               	.LCFI4:
+  36               		.cfi_def_cfa_offset 7
+  37               		.cfi_offset 15, -6
+  38 000a 0F93      		push r16
+  39               	.LCFI5:
+  40               		.cfi_def_cfa_offset 8
+  41               		.cfi_offset 16, -7
+  42 000c 1F93      		push r17
+  43               	.LCFI6:
+  44               		.cfi_def_cfa_offset 9
+  45               		.cfi_offset 17, -8
+  46 000e CF93      		push r28
+  47               	.LCFI7:
+  48               		.cfi_def_cfa_offset 10
+  49               		.cfi_offset 28, -9
+  50 0010 DF93      		push r29
+  51               	.LCFI8:
+  52               		.cfi_def_cfa_offset 11
+  53               		.cfi_offset 29, -10
+  54               	/* prologue: function */
+  55               	/* frame size = 0 */
+  56               	/* stack size = 9 */
+  57               	.L__stack_usage = 9
+  58 0012 8C01      		movw r16,r24
+  59               	.LVL1:
+  60               	.LBB6:
+ 116:../../tmk_core/common/bootmagic.c ****     for (uint8_t r = 0; r < MATRIX_ROWS; r++) {
+  61               		.loc 1 116 0
+  62 0014 B12C      		mov r11,__zero_reg__
+  63               	.LBB7:
+  64               	.LBB8:
+ 117:../../tmk_core/common/bootmagic.c ****         matrix_row_t matrix_row = matrix_get_row(r);
+ 118:../../tmk_core/common/bootmagic.c ****         for (uint8_t c = 0; c < MATRIX_COLS; c++) {
+ 119:../../tmk_core/common/bootmagic.c ****             if (matrix_row & ((matrix_row_t)1<<c)) {
+  65               		.loc 1 119 0
+  66 0016 EE24      		clr r14
+  67 0018 E394      		inc r14
+  68 001a F12C      		mov r15,__zero_reg__
+  69               	.LVL2:
+  70               	.L9:
+  71               	.LBE8:
+ 117:../../tmk_core/common/bootmagic.c ****         matrix_row_t matrix_row = matrix_get_row(r);
+  72               		.loc 1 117 0
+  73 001c 8B2D      		mov r24,r11
+  74 001e 0E94 0000 		call matrix_get_row
+  75               	.LVL3:
+  76 0022 6C01      		movw r12,r24
+  77               	.LVL4:
+  78 0024 C0E0      		ldi r28,0
+  79 0026 D0E0      		ldi r29,0
+  80               	.LVL5:
+  81               	.L8:
+  82               	.LBB10:
+  83               		.loc 1 119 0
+  84 0028 9701      		movw r18,r14
+  85 002a 0C2E      		mov r0,r28
+  86 002c 00C0      		rjmp 2f
+  87               		1:
+  88 002e 220F      		lsl r18
+  89 0030 331F      		rol r19
+  90               		2:
+  91 0032 0A94      		dec r0
+  92 0034 02F4      		brpl 1b
+  93 0036 2C21      		and r18,r12
+  94 0038 3D21      		and r19,r13
+  95 003a 232B      		or r18,r19
+  96 003c 01F0      		breq .L2
+  97               	.LBB9:
+ 120:../../tmk_core/common/bootmagic.c ****                 // read key from Layer 0
+ 121:../../tmk_core/common/bootmagic.c ****                 action_t action = action_for_key(0, (keypos_t){ .row = r, .col = c });
+  98               		.loc 1 121 0
+  99 003e 6C2F      		mov r22,r28
+ 100 0040 7B2D      		mov r23,r11
+ 101 0042 80E0      		ldi r24,0
+ 102 0044 0E94 0000 		call action_for_key
+ 103               	.LVL6:
+ 104 0048 9C01      		movw r18,r24
+ 105               	.LVL7:
+ 122:../../tmk_core/common/bootmagic.c ****                 if (action.code == code ||
+ 106               		.loc 1 122 0
+ 107 004a 8017      		cp r24,r16
+ 108 004c 9107      		cpc r25,r17
+ 109               	.LVL8:
+ 110 004e 01F0      		breq .L3
+ 111               		.loc 1 122 0 is_stmt 0 discriminator 1
+ 112 0050 832F      		mov r24,r19
+ 113               	.LVL9:
+ 114 0052 807E      		andi r24,lo8(-32)
+ 115 0054 932F      		mov r25,r19
+ 116 0056 907C      		andi r25,lo8(-64)
+ 117 0058 01F0      		breq .L4
+ 123:../../tmk_core/common/bootmagic.c ****                     ((action.kind.id == ACT_LMODS ||
+ 124:../../tmk_core/common/bootmagic.c ****                       action.kind.id == ACT_RMODS ||
+ 125:../../tmk_core/common/bootmagic.c ****                       action.kind.id == ACT_LMODS_TAP ||
+ 126:../../tmk_core/common/bootmagic.c ****                       action.kind.id == ACT_RMODS_TAP ||
+ 118               		.loc 1 126 0 is_stmt 1
+ 119 005a 803A      		cpi r24,lo8(-96)
+ 120 005c 01F4      		brne .L2
+ 121               	.L4:
+ 127:../../tmk_core/common/bootmagic.c ****                       action.kind.id == ACT_LAYER_TAP ||
+ 128:../../tmk_core/common/bootmagic.c ****                       action.kind.id == ACT_LAYER_TAP_EXT) &&
+ 129:../../tmk_core/common/bootmagic.c ****                      action.key.code == code)) {
+ 122               		.loc 1 129 0
+ 123 005e 30E0      		ldi r19,0
+ 128:../../tmk_core/common/bootmagic.c ****                       action.kind.id == ACT_LAYER_TAP_EXT) &&
+ 124               		.loc 1 128 0
+ 125 0060 2017      		cp r18,r16
+ 126 0062 3107      		cpc r19,r17
+ 127 0064 01F4      		brne .L2
+ 128               	.LVL10:
+ 129               	.L3:
+ 130:../../tmk_core/common/bootmagic.c ****                     return true;
+ 130               		.loc 1 130 0
+ 131 0066 81E0      		ldi r24,lo8(1)
+ 132               	.LVL11:
+ 133 0068 00C0      		rjmp .L6
+ 134               	.L2:
+ 135               	.LVL12:
+ 136 006a 2196      		adiw r28,1
+ 137               	.LVL13:
+ 138               	.LBE9:
+ 118:../../tmk_core/common/bootmagic.c ****         for (uint8_t c = 0; c < MATRIX_COLS; c++) {
+ 139               		.loc 1 118 0
+ 140 006c CC30      		cpi r28,12
+ 141 006e D105      		cpc r29,__zero_reg__
+ 142 0070 01F4      		brne .L8
+ 143               	.LBE10:
+ 144               	.LBE7:
+ 116:../../tmk_core/common/bootmagic.c ****     for (uint8_t r = 0; r < MATRIX_ROWS; r++) {
+ 145               		.loc 1 116 0
+ 146 0072 B394      		inc r11
+ 147               	.LVL14:
+ 148 0074 84E0      		ldi r24,lo8(4)
+ 149 0076 B812      		cpse r11,r24
+ 150 0078 00C0      		rjmp .L9
+ 151               	.LBE6:
+ 131:../../tmk_core/common/bootmagic.c ****                 }
+ 132:../../tmk_core/common/bootmagic.c ****             }
+ 133:../../tmk_core/common/bootmagic.c ****         }
+ 134:../../tmk_core/common/bootmagic.c ****     }
+ 135:../../tmk_core/common/bootmagic.c ****     return false;
+ 152               		.loc 1 135 0
+ 153 007a 80E0      		ldi r24,0
+ 154               	.LVL15:
+ 155               	.L6:
+ 156               	/* epilogue start */
+ 136:../../tmk_core/common/bootmagic.c **** }
+ 157               		.loc 1 136 0
+ 158 007c DF91      		pop r29
+ 159 007e CF91      		pop r28
+ 160 0080 1F91      		pop r17
+ 161 0082 0F91      		pop r16
+ 162               	.LVL16:
+ 163 0084 FF90      		pop r15
+ 164 0086 EF90      		pop r14
+ 165 0088 DF90      		pop r13
+ 166 008a CF90      		pop r12
+ 167               	.LVL17:
+ 168 008c BF90      		pop r11
+ 169               	.LVL18:
+ 170 008e 0895      		ret
+ 171               		.cfi_endproc
+ 172               	.LFE104:
+ 174               		.section	.text.bootmagic_scan_key,"ax",@progbits
+ 175               	.global	bootmagic_scan_key
+ 177               	bootmagic_scan_key:
+ 178               	.LFB105:
+ 137:../../tmk_core/common/bootmagic.c **** 
+ 138:../../tmk_core/common/bootmagic.c **** bool bootmagic_scan_key(uint16_t code)
+ 139:../../tmk_core/common/bootmagic.c **** {
+ 179               		.loc 1 139 0
+ 180               		.cfi_startproc
+ 181               	.LVL19:
+ 182 0000 CF93      		push r28
+ 183               	.LCFI9:
+ 184               		.cfi_def_cfa_offset 3
+ 185               		.cfi_offset 28, -2
+ 186 0002 DF93      		push r29
+ 187               	.LCFI10:
+ 188               		.cfi_def_cfa_offset 4
+ 189               		.cfi_offset 29, -3
+ 190               	/* prologue: function */
+ 191               	/* frame size = 0 */
+ 192               	/* stack size = 2 */
+ 193               	.L__stack_usage = 2
+ 194 0004 EC01      		movw r28,r24
+ 140:../../tmk_core/common/bootmagic.c ****     if (!scan_key(BOOTMAGIC_KEY_SALT)) return false;
+ 195               		.loc 1 140 0
+ 196 0006 8CE2      		ldi r24,lo8(44)
+ 197 0008 90E0      		ldi r25,0
+ 198               	.LVL20:
+ 199 000a 0E94 0000 		call scan_key
+ 200               	.LVL21:
+ 201 000e 8823      		tst r24
+ 202 0010 01F0      		breq .L19
+ 141:../../tmk_core/common/bootmagic.c **** 
+ 142:../../tmk_core/common/bootmagic.c ****     return scan_key(code);
+ 203               		.loc 1 142 0
+ 204 0012 CE01      		movw r24,r28
+ 205               	/* epilogue start */
+ 143:../../tmk_core/common/bootmagic.c **** }
+ 206               		.loc 1 143 0
+ 207 0014 DF91      		pop r29
+ 208 0016 CF91      		pop r28
+ 209               	.LVL22:
+ 142:../../tmk_core/common/bootmagic.c ****     return scan_key(code);
+ 210               		.loc 1 142 0
+ 211 0018 0C94 0000 		jmp scan_key
+ 212               	.LVL23:
+ 213               	.L19:
+ 214               		.loc 1 143 0
+ 215 001c 80E0      		ldi r24,0
+ 216               	/* epilogue start */
+ 217 001e DF91      		pop r29
+ 218 0020 CF91      		pop r28
+ 219               	.LVL24:
+ 220 0022 0895      		ret
+ 221               		.cfi_endproc
+ 222               	.LFE105:
+ 224               		.section	.text.bootmagic,"ax",@progbits
+ 225               	.global	bootmagic
+ 227               	bootmagic:
+ 228               	.LFB103:
+  18:../../tmk_core/common/bootmagic.c **** {
+ 229               		.loc 1 18 0
+ 230               		.cfi_startproc
+ 231 0000 CF93      		push r28
+ 232               	.LCFI11:
+ 233               		.cfi_def_cfa_offset 3
+ 234               		.cfi_offset 28, -2
+ 235               	/* prologue: function */
+ 236               	/* frame size = 0 */
+ 237               	/* stack size = 1 */
+ 238               	.L__stack_usage = 1
+  20:../../tmk_core/common/bootmagic.c ****     if (!eeconfig_is_enabled()) {
+ 239               		.loc 1 20 0
+ 240 0002 0E94 0000 		call eeconfig_is_enabled
+ 241               	.LVL25:
+ 242 0006 8111      		cpse r24,__zero_reg__
+ 243 0008 00C0      		rjmp .L21
+  21:../../tmk_core/common/bootmagic.c ****         eeconfig_init();
+ 244               		.loc 1 21 0
+ 245 000a 0E94 0000 		call eeconfig_init
+ 246               	.LVL26:
+ 247               	.L21:
+  25:../../tmk_core/common/bootmagic.c ****     print("bootmagic scan: ... ");
+ 248               		.loc 1 25 0
+ 249 000e 80E0      		ldi r24,lo8(__c.4695)
+ 250 0010 90E0      		ldi r25,hi8(__c.4695)
+ 251 0012 0E94 0000 		call xputs
+ 252               	.LVL27:
+  27:../../tmk_core/common/bootmagic.c ****     while (scan--) { matrix_scan(); wait_ms(10); }
+ 253               		.loc 1 27 0
+ 254 0016 C5E6      		ldi r28,lo8(101)
+ 255               	.LVL28:
+ 256               	.L22:
+ 257 0018 C150      		subi r28,lo8(-(-1))
+ 258               	.LVL29:
+  27:../../tmk_core/common/bootmagic.c ****     while (scan--) { matrix_scan(); wait_ms(10); }
+ 259               		.loc 1 27 0 is_stmt 0 discriminator 1
+ 260 001a 01F0      		breq .L101
+ 261               	.LVL30:
+  27:../../tmk_core/common/bootmagic.c ****     while (scan--) { matrix_scan(); wait_ms(10); }
+ 262               		.loc 1 27 0 discriminator 2
+ 263 001c 0E94 0000 		call matrix_scan
+ 264               	.LVL31:
+ 265               	.LBB11:
+ 266               	.LBB12:
+ 267               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h"
+   1:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
+   2:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
+   3:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
+   4:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    All rights reserved.
+   5:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+   6:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    Redistribution and use in source and binary forms, with or without
+   7:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    modification, are permitted provided that the following conditions are met:
+   8:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+   9:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    * Redistributions of source code must retain the above copyright
+  10:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer.
+  11:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  12:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    * Redistributions in binary form must reproduce the above copyright
+  13:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****      notice, this list of conditions and the following disclaimer in
+  14:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****      the documentation and/or other materials provided with the
+  15:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****      distribution.
+  16:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  17:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    * Neither the name of the copyright holders nor the names of
+  18:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****      contributors may be used to endorse or promote products derived
+  19:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****      from this software without specific prior written permission.
+  20:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  21:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  22:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  23:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+  24:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+  25:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  26:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  27:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+  28:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+  29:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+  30:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+  31:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   POSSIBILITY OF SUCH DAMAGE. */
+  32:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  33:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** /* $Id$ */
+  34:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  35:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #ifndef _UTIL_DELAY_H_
+  36:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #define _UTIL_DELAY_H_ 1
+  37:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  38:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #ifndef __HAS_DELAY_CYCLES
+  39:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #define __HAS_DELAY_CYCLES 1
+  40:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #endif
+  41:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  42:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #include <inttypes.h>
+  43:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #include <util/delay_basic.h>
+  44:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #include <math.h>
+  45:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  46:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** /** \file */
+  47:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** /** \defgroup util_delay <util/delay.h>: Convenience functions for busy-wait delay loops
+  48:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     \code
+  49:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     #define F_CPU 1000000UL  // 1 MHz
+  50:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     //#define F_CPU 14.7456E6
+  51:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     #include <util/delay.h>
+  52:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     \endcode
+  53:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  54:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     \note As an alternative method, it is possible to pass the
+  55:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     F_CPU macro down to the compiler from the Makefile.
+  56:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     Obviously, in that case, no \c \#define statement should be
+  57:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     used.
+  58:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  59:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     The functions in this header file are wrappers around the basic
+  60:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     busy-wait functions from <util/delay_basic.h>.  They are meant as
+  61:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     convenience functions where actual time values can be specified
+  62:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     rather than a number of cycles to wait for.  The idea behind is
+  63:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     that compile-time constant expressions will be eliminated by
+  64:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     compiler optimization so floating-point expressions can be used
+  65:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     to calculate the number of delay cycles needed based on the CPU
+  66:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     frequency passed by the macro F_CPU.
+  67:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  68:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     \note In order for these functions to work as intended, compiler
+  69:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     optimizations <em>must</em> be enabled, and the delay time
+  70:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     <em>must</em> be an expression that is a known constant at
+  71:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     compile-time.  If these requirements are not met, the resulting
+  72:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     delay will be much longer (and basically unpredictable), and
+  73:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     applications that otherwise do not use floating-point calculations
+  74:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     will experience severe code bloat by the floating-point library
+  75:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     routines linked into the application.
+  76:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  77:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     The functions available allow the specification of microsecond, and
+  78:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     millisecond delays directly, using the application-supplied macro
+  79:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     F_CPU as the CPU clock frequency (in Hertz).
+  80:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  81:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** */
+  82:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  83:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #if !defined(__DOXYGEN__)
+  84:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** static inline void _delay_us(double __us) __attribute__((always_inline));
+  85:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** static inline void _delay_ms(double __ms) __attribute__((always_inline));
+  86:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #endif
+  87:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  88:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #ifndef F_CPU
+  89:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** /* prevent compiler error by supplying a default */
+  90:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** # warning "F_CPU not defined for <util/delay.h>"
+  91:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** # define F_CPU 1000000UL
+  92:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #endif
+  93:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  94:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #ifndef __OPTIMIZE__
+  95:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** # warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+  96:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #endif
+  97:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+  98:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+  99:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 100:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 101:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #  include <math.h>
+ 102:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #endif
+ 103:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 104:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** /**
+ 105:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    \ingroup util_delay
+ 106:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 107:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    Perform a delay of \c __ms milliseconds, using _delay_loop_2().
+ 108:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 109:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    The macro F_CPU is supposed to be defined to a
+ 110:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    constant defining the CPU clock frequency (in Hertz).
+ 111:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 112:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    The maximal possible delay is 262.14 ms / F_CPU in MHz.
+ 113:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 114:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    When the user request delay which exceed the maximum possible one,
+ 115:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    _delay_ms() provides a decreased resolution functionality. In this
+ 116:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    mode _delay_ms() will work with a resolution of 1/10 ms, providing
+ 117:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    delays up to 6.5535 seconds (independent from CPU frequency).  The
+ 118:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    user will not be informed about decreased resolution.
+ 119:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 120:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    If the avr-gcc toolchain has __builtin_avr_delay_cycles(unsigned long)
+ 121:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    support, maximal possible delay is 4294967.295 ms/ F_CPU in MHz. For
+ 122:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    values greater than the maximal possible delay, overflows results in
+ 123:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    no delay i.e., 0ms.
+ 124:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 125:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    Conversion of __us into clock cycles may not always result in integer.
+ 126:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    By default, the clock cycles rounded up to next integer. This ensures that
+ 127:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    the user gets atleast __us microseconds of delay.
+ 128:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 129:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    Alternatively, user can define __DELAY_ROUND_DOWN__ and __DELAY_ROUND_CLOSEST__
+ 130:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    to round down and round to closest integer.
+ 131:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 132:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    Note: The new implementation of _delay_ms(double __ms) with 
+ 133:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****     __builtin_avr_delay_cycles(unsigned long) support is not backward compatible. 
+ 134:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    User can define __DELAY_BACKWARD_COMPATIBLE__ to get a backward compatible delay.
+ 135:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    Also, the backward compatible
+ 136:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    algorithm will be chosen if the code is compiled in a <em>freestanding
+ 137:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    environment</em> (GCC option \c -ffreestanding), as the math functions
+ 138:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    required for rounding are not available to the compiler then.
+ 139:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 140:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****  */
+ 141:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** void
+ 142:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** _delay_ms(double __ms)
+ 143:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** {
+ 144:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	double __tmp ; 
+ 145:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** #if __HAS_DELAY_CYCLES && defined(__OPTIMIZE__) && \
+ 146:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   !defined(__DELAY_BACKWARD_COMPATIBLE__) &&	   \
+ 147:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****   __STDC_HOSTED__
+ 148:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	uint32_t __ticks_dc;
+ 149:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	extern void __builtin_avr_delay_cycles(unsigned long);
+ 150:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	__tmp = ((F_CPU) / 1e3) * __ms;
+ 151:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 152:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	#if defined(__DELAY_ROUND_DOWN__)
+ 153:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)fabs(__tmp);
+ 154:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 155:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	#elif defined(__DELAY_ROUND_CLOSEST__)
+ 156:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(fabs(__tmp)+0.5);
+ 157:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 158:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	#else
+ 159:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 		//round up by default
+ 160:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+ 161:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	#endif
+ 162:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
+ 163:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
+ 268               		.loc 2 163 0 is_stmt 1 discriminator 2
+ 269 0020 8FE3      		ldi r24,lo8(-25537)
+ 270 0022 9CE9      		ldi r25,hi8(-25537)
+ 271 0024 0197      		1: sbiw r24,1
+ 272 0026 01F4      		brne 1b
+ 273 0028 00C0      		rjmp .
+ 274 002a 0000      		nop
+ 275 002c 00C0      		rjmp .L22
+ 276               	.LVL32:
+ 277               	.L101:
+ 278               	.LBE12:
+ 279               	.LBE11:
+  28:../../tmk_core/common/bootmagic.c ****     print("done.\n");
+ 280               		.loc 1 28 0
+ 281 002e 80E0      		ldi r24,lo8(__c.4701)
+ 282 0030 90E0      		ldi r25,hi8(__c.4701)
+ 283 0032 0E94 0000 		call xputs
+ 284               	.LVL33:
+  31:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SKIP)) {
+ 285               		.loc 1 31 0
+ 286 0036 89E2      		ldi r24,lo8(41)
+ 287 0038 90E0      		ldi r25,0
+ 288 003a 0E94 0000 		call bootmagic_scan_key
+ 289               	.LVL34:
+ 290 003e 8111      		cpse r24,__zero_reg__
+ 291 0040 00C0      		rjmp .L20
+  36:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_EEPROM_CLEAR)) {
+ 292               		.loc 1 36 0
+ 293 0042 8AE2      		ldi r24,lo8(42)
+ 294 0044 90E0      		ldi r25,0
+ 295 0046 0E94 0000 		call bootmagic_scan_key
+ 296               	.LVL35:
+ 297 004a 8111      		cpse r24,__zero_reg__
+  37:../../tmk_core/common/bootmagic.c ****         eeconfig_init();
+ 298               		.loc 1 37 0
+ 299 004c 0E94 0000 		call eeconfig_init
+ 300               	.LVL36:
+ 301               	.L25:
+  41:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_BOOTLOADER)) {
+ 302               		.loc 1 41 0
+ 303 0050 85E0      		ldi r24,lo8(5)
+ 304 0052 90E0      		ldi r25,0
+ 305 0054 0E94 0000 		call bootmagic_scan_key
+ 306               	.LVL37:
+ 307 0058 8111      		cpse r24,__zero_reg__
+  42:../../tmk_core/common/bootmagic.c ****         bootloader_jump();
+ 308               		.loc 1 42 0
+ 309 005a 0E94 0000 		call bootloader_jump
+ 310               	.LVL38:
+ 311               	.L26:
+  46:../../tmk_core/common/bootmagic.c ****     hook_bootmagic();
+ 312               		.loc 1 46 0
+ 313 005e 0E94 0000 		call hook_bootmagic
+ 314               	.LVL39:
+  49:../../tmk_core/common/bootmagic.c ****     debug_config.raw = eeconfig_read_debug();
+ 315               		.loc 1 49 0
+ 316 0062 0E94 0000 		call eeconfig_read_debug
+ 317               	.LVL40:
+ 318 0066 8093 0000 		sts debug_config,r24
+  50:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEBUG_ENABLE)) {
+ 319               		.loc 1 50 0
+ 320 006a 87E0      		ldi r24,lo8(7)
+ 321 006c 90E0      		ldi r25,0
+ 322 006e 0E94 0000 		call bootmagic_scan_key
+ 323               	.LVL41:
+ 324 0072 8823      		tst r24
+ 325 0074 01F0      		breq .L27
+  51:../../tmk_core/common/bootmagic.c ****         if (bootmagic_scan_key(BOOTMAGIC_KEY_DEBUG_MATRIX)) {
+ 326               		.loc 1 51 0
+ 327 0076 8BE1      		ldi r24,lo8(27)
+ 328 0078 90E0      		ldi r25,0
+ 329 007a 0E94 0000 		call bootmagic_scan_key
+ 330               	.LVL42:
+ 331 007e 8823      		tst r24
+ 332 0080 01F0      		breq .L28
+  52:../../tmk_core/common/bootmagic.c ****             debug_config.matrix = !debug_config.matrix;
+ 333               		.loc 1 52 0
+ 334 0082 9091 0000 		lds r25,debug_config
+ 335 0086 91FB      		bst r25,1
+ 336 0088 8827      		clr r24
+ 337 008a 80F9      		bld r24,0
+ 338 008c 21E0      		ldi r18,lo8(1)
+ 339 008e 8227      		eor r24,r18
+ 340 0090 80FB      		bst r24,0
+ 341 0092 91F9      		bld r25,1
+ 342 0094 00C0      		rjmp .L99
+ 343               	.L28:
+  53:../../tmk_core/common/bootmagic.c ****         } else if (bootmagic_scan_key(BOOTMAGIC_KEY_DEBUG_KEYBOARD)) {
+ 344               		.loc 1 53 0
+ 345 0096 8EE0      		ldi r24,lo8(14)
+ 346 0098 90E0      		ldi r25,0
+ 347 009a 0E94 0000 		call bootmagic_scan_key
+ 348               	.LVL43:
+ 349 009e 8823      		tst r24
+ 350 00a0 01F0      		breq .L29
+  54:../../tmk_core/common/bootmagic.c ****             debug_config.keyboard = !debug_config.keyboard;
+ 351               		.loc 1 54 0
+ 352 00a2 9091 0000 		lds r25,debug_config
+ 353 00a6 92FB      		bst r25,2
+ 354 00a8 8827      		clr r24
+ 355 00aa 80F9      		bld r24,0
+ 356 00ac 21E0      		ldi r18,lo8(1)
+ 357 00ae 8227      		eor r24,r18
+ 358 00b0 80FB      		bst r24,0
+ 359 00b2 92F9      		bld r25,2
+ 360 00b4 00C0      		rjmp .L99
+ 361               	.L29:
+  55:../../tmk_core/common/bootmagic.c ****         } else if (bootmagic_scan_key(BOOTMAGIC_KEY_DEBUG_MOUSE)) {
+ 362               		.loc 1 55 0
+ 363 00b6 80E1      		ldi r24,lo8(16)
+ 364 00b8 90E0      		ldi r25,0
+ 365 00ba 0E94 0000 		call bootmagic_scan_key
+ 366               	.LVL44:
+ 367 00be 9091 0000 		lds r25,debug_config
+ 368 00c2 8823      		tst r24
+ 369 00c4 01F0      		breq .L30
+  56:../../tmk_core/common/bootmagic.c ****             debug_config.mouse = !debug_config.mouse;
+ 370               		.loc 1 56 0
+ 371 00c6 93FB      		bst r25,3
+ 372 00c8 8827      		clr r24
+ 373 00ca 80F9      		bld r24,0
+ 374 00cc 21E0      		ldi r18,lo8(1)
+ 375 00ce 8227      		eor r24,r18
+ 376 00d0 80FB      		bst r24,0
+ 377 00d2 93F9      		bld r25,3
+ 378 00d4 00C0      		rjmp .L99
+ 379               	.L30:
+  58:../../tmk_core/common/bootmagic.c ****             debug_config.enable = !debug_config.enable;
+ 380               		.loc 1 58 0
+ 381 00d6 892F      		mov r24,r25
+ 382 00d8 8095      		com r24
+ 383 00da 80FB      		bst r24,0
+ 384 00dc 90F9      		bld r25,0
+ 385               	.L99:
+ 386 00de 9093 0000 		sts debug_config,r25
+ 387               	.L27:
+  61:../../tmk_core/common/bootmagic.c ****     eeconfig_write_debug(debug_config.raw);
+ 388               		.loc 1 61 0
+ 389 00e2 8091 0000 		lds r24,debug_config
+ 390 00e6 0E94 0000 		call eeconfig_write_debug
+ 391               	.LVL45:
+  64:../../tmk_core/common/bootmagic.c ****     keymap_config.raw = eeconfig_read_keymap();
+ 392               		.loc 1 64 0
+ 393 00ea 0E94 0000 		call eeconfig_read_keymap
+ 394               	.LVL46:
+ 395 00ee 8093 0000 		sts keymap_config,r24
+  65:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SWAP_CONTROL_CAPSLOCK)) {
+ 396               		.loc 1 65 0
+ 397 00f2 80EE      		ldi r24,lo8(-32)
+ 398 00f4 90E0      		ldi r25,0
+ 399 00f6 0E94 0000 		call bootmagic_scan_key
+ 400               	.LVL47:
+ 401 00fa 8823      		tst r24
+ 402 00fc 01F0      		breq .L31
+  66:../../tmk_core/common/bootmagic.c ****         keymap_config.swap_control_capslock = !keymap_config.swap_control_capslock;
+ 403               		.loc 1 66 0
+ 404 00fe 8091 0000 		lds r24,keymap_config
+ 405 0102 982F      		mov r25,r24
+ 406 0104 9095      		com r25
+ 407 0106 90FB      		bst r25,0
+ 408 0108 80F9      		bld r24,0
+ 409 010a 8093 0000 		sts keymap_config,r24
+ 410               	.L31:
+  68:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_CAPSLOCK_TO_CONTROL)) {
+ 411               		.loc 1 68 0
+ 412 010e 89E3      		ldi r24,lo8(57)
+ 413 0110 90E0      		ldi r25,0
+ 414 0112 0E94 0000 		call bootmagic_scan_key
+ 415               	.LVL48:
+ 416 0116 8823      		tst r24
+ 417 0118 01F0      		breq .L32
+  69:../../tmk_core/common/bootmagic.c ****         keymap_config.capslock_to_control = !keymap_config.capslock_to_control;
+ 418               		.loc 1 69 0
+ 419 011a 9091 0000 		lds r25,keymap_config
+ 420 011e 91FB      		bst r25,1
+ 421 0120 8827      		clr r24
+ 422 0122 80F9      		bld r24,0
+ 423 0124 21E0      		ldi r18,lo8(1)
+ 424 0126 8227      		eor r24,r18
+ 425 0128 80FB      		bst r24,0
+ 426 012a 91F9      		bld r25,1
+ 427 012c 9093 0000 		sts keymap_config,r25
+ 428               	.L32:
+  71:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SWAP_LALT_LGUI)) {
+ 429               		.loc 1 71 0
+ 430 0130 82EE      		ldi r24,lo8(-30)
+ 431 0132 90E0      		ldi r25,0
+ 432 0134 0E94 0000 		call bootmagic_scan_key
+ 433               	.LVL49:
+ 434 0138 8823      		tst r24
+ 435 013a 01F0      		breq .L33
+  72:../../tmk_core/common/bootmagic.c ****         keymap_config.swap_lalt_lgui = !keymap_config.swap_lalt_lgui;
+ 436               		.loc 1 72 0
+ 437 013c 9091 0000 		lds r25,keymap_config
+ 438 0140 92FB      		bst r25,2
+ 439 0142 8827      		clr r24
+ 440 0144 80F9      		bld r24,0
+ 441 0146 21E0      		ldi r18,lo8(1)
+ 442 0148 8227      		eor r24,r18
+ 443 014a 80FB      		bst r24,0
+ 444 014c 92F9      		bld r25,2
+ 445 014e 9093 0000 		sts keymap_config,r25
+ 446               	.L33:
+  74:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SWAP_RALT_RGUI)) {
+ 447               		.loc 1 74 0
+ 448 0152 86EE      		ldi r24,lo8(-26)
+ 449 0154 90E0      		ldi r25,0
+ 450 0156 0E94 0000 		call bootmagic_scan_key
+ 451               	.LVL50:
+ 452 015a 8823      		tst r24
+ 453 015c 01F0      		breq .L34
+  75:../../tmk_core/common/bootmagic.c ****         keymap_config.swap_ralt_rgui = !keymap_config.swap_ralt_rgui;
+ 454               		.loc 1 75 0
+ 455 015e 9091 0000 		lds r25,keymap_config
+ 456 0162 93FB      		bst r25,3
+ 457 0164 8827      		clr r24
+ 458 0166 80F9      		bld r24,0
+ 459 0168 21E0      		ldi r18,lo8(1)
+ 460 016a 8227      		eor r24,r18
+ 461 016c 80FB      		bst r24,0
+ 462 016e 93F9      		bld r25,3
+ 463 0170 9093 0000 		sts keymap_config,r25
+ 464               	.L34:
+  77:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_NO_GUI)) {
+ 465               		.loc 1 77 0
+ 466 0174 83EE      		ldi r24,lo8(-29)
+ 467 0176 90E0      		ldi r25,0
+ 468 0178 0E94 0000 		call bootmagic_scan_key
+ 469               	.LVL51:
+ 470 017c 8823      		tst r24
+ 471 017e 01F0      		breq .L35
+  78:../../tmk_core/common/bootmagic.c ****         keymap_config.no_gui = !keymap_config.no_gui;
+ 472               		.loc 1 78 0
+ 473 0180 9091 0000 		lds r25,keymap_config
+ 474 0184 94FB      		bst r25,4
+ 475 0186 8827      		clr r24
+ 476 0188 80F9      		bld r24,0
+ 477 018a 21E0      		ldi r18,lo8(1)
+ 478 018c 8227      		eor r24,r18
+ 479 018e 80FB      		bst r24,0
+ 480 0190 94F9      		bld r25,4
+ 481 0192 9093 0000 		sts keymap_config,r25
+ 482               	.L35:
+  80:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SWAP_GRAVE_ESC)) {
+ 483               		.loc 1 80 0
+ 484 0196 85E3      		ldi r24,lo8(53)
+ 485 0198 90E0      		ldi r25,0
+ 486 019a 0E94 0000 		call bootmagic_scan_key
+ 487               	.LVL52:
+ 488 019e 8823      		tst r24
+ 489 01a0 01F0      		breq .L36
+  81:../../tmk_core/common/bootmagic.c ****         keymap_config.swap_grave_esc = !keymap_config.swap_grave_esc;
+ 490               		.loc 1 81 0
+ 491 01a2 9091 0000 		lds r25,keymap_config
+ 492 01a6 95FB      		bst r25,5
+ 493 01a8 8827      		clr r24
+ 494 01aa 80F9      		bld r24,0
+ 495 01ac 21E0      		ldi r18,lo8(1)
+ 496 01ae 8227      		eor r24,r18
+ 497 01b0 80FB      		bst r24,0
+ 498 01b2 95F9      		bld r25,5
+ 499 01b4 9093 0000 		sts keymap_config,r25
+ 500               	.L36:
+  83:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_SWAP_BACKSLASH_BACKSPACE)) {
+ 501               		.loc 1 83 0
+ 502 01b8 81E3      		ldi r24,lo8(49)
+ 503 01ba 90E0      		ldi r25,0
+ 504 01bc 0E94 0000 		call bootmagic_scan_key
+ 505               	.LVL53:
+ 506 01c0 8823      		tst r24
+ 507 01c2 01F0      		breq .L37
+  84:../../tmk_core/common/bootmagic.c ****         keymap_config.swap_backslash_backspace = !keymap_config.swap_backslash_backspace;
+ 508               		.loc 1 84 0
+ 509 01c4 9091 0000 		lds r25,keymap_config
+ 510 01c8 96FB      		bst r25,6
+ 511 01ca 8827      		clr r24
+ 512 01cc 80F9      		bld r24,0
+ 513 01ce 21E0      		ldi r18,lo8(1)
+ 514 01d0 8227      		eor r24,r18
+ 515 01d2 80FB      		bst r24,0
+ 516 01d4 96F9      		bld r25,6
+ 517 01d6 9093 0000 		sts keymap_config,r25
+ 518               	.L37:
+  86:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_HOST_NKRO)) {
+ 519               		.loc 1 86 0
+ 520 01da 81E1      		ldi r24,lo8(17)
+ 521 01dc 90E0      		ldi r25,0
+ 522 01de 0E94 0000 		call bootmagic_scan_key
+ 523               	.LVL54:
+ 524 01e2 8823      		tst r24
+ 525 01e4 01F0      		breq .L38
+  87:../../tmk_core/common/bootmagic.c ****         keymap_config.nkro = !keymap_config.nkro;
+ 526               		.loc 1 87 0
+ 527 01e6 9091 0000 		lds r25,keymap_config
+ 528 01ea 97FB      		bst r25,7
+ 529 01ec 8827      		clr r24
+ 530 01ee 80F9      		bld r24,0
+ 531 01f0 21E0      		ldi r18,lo8(1)
+ 532 01f2 8227      		eor r24,r18
+ 533 01f4 80FB      		bst r24,0
+ 534 01f6 97F9      		bld r25,7
+ 535 01f8 9093 0000 		sts keymap_config,r25
+ 536               	.L38:
+  89:../../tmk_core/common/bootmagic.c ****     eeconfig_write_keymap(keymap_config.raw);
+ 537               		.loc 1 89 0
+ 538 01fc 8091 0000 		lds r24,keymap_config
+ 539 0200 0E94 0000 		call eeconfig_write_keymap
+ 540               	.LVL55:
+  92:../../tmk_core/common/bootmagic.c ****     keyboard_nkro = keymap_config.nkro;
+ 541               		.loc 1 92 0
+ 542 0204 8091 0000 		lds r24,keymap_config
+ 543 0208 87FB      		bst r24,7
+ 544 020a 8827      		clr r24
+ 545 020c 80F9      		bld r24,0
+ 546 020e 8093 0000 		sts keyboard_nkro,r24
+ 547               	.LVL56:
+  97:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_0)) { default_layer |= (1<<0); }
+ 548               		.loc 1 97 0
+ 549 0212 87E2      		ldi r24,lo8(39)
+ 550 0214 90E0      		ldi r25,0
+ 551 0216 0E94 0000 		call bootmagic_scan_key
+ 552               	.LVL57:
+ 553 021a C82F      		mov r28,r24
+ 554               	.LVL58:
+  98:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_1)) { default_layer |= (1<<1); }
+ 555               		.loc 1 98 0
+ 556 021c 8EE1      		ldi r24,lo8(30)
+ 557 021e 90E0      		ldi r25,0
+ 558               	.LVL59:
+ 559 0220 0E94 0000 		call bootmagic_scan_key
+ 560               	.LVL60:
+ 561 0224 8111      		cpse r24,__zero_reg__
+  98:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_1)) { default_layer |= (1<<1); }
+ 562               		.loc 1 98 0 is_stmt 0 discriminator 1
+ 563 0226 C260      		ori r28,lo8(2)
+ 564               	.LVL61:
+ 565               	.L39:
+  99:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_2)) { default_layer |= (1<<2); }
+ 566               		.loc 1 99 0 is_stmt 1
+ 567 0228 8FE1      		ldi r24,lo8(31)
+ 568 022a 90E0      		ldi r25,0
+ 569 022c 0E94 0000 		call bootmagic_scan_key
+ 570               	.LVL62:
+ 571 0230 8111      		cpse r24,__zero_reg__
+  99:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_2)) { default_layer |= (1<<2); }
+ 572               		.loc 1 99 0 is_stmt 0 discriminator 1
+ 573 0232 C460      		ori r28,lo8(4)
+ 574               	.LVL63:
+ 575               	.L40:
+ 100:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_3)) { default_layer |= (1<<3); }
+ 576               		.loc 1 100 0 is_stmt 1
+ 577 0234 80E2      		ldi r24,lo8(32)
+ 578 0236 90E0      		ldi r25,0
+ 579 0238 0E94 0000 		call bootmagic_scan_key
+ 580               	.LVL64:
+ 581 023c 8111      		cpse r24,__zero_reg__
+ 100:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_3)) { default_layer |= (1<<3); }
+ 582               		.loc 1 100 0 is_stmt 0 discriminator 1
+ 583 023e C860      		ori r28,lo8(8)
+ 584               	.LVL65:
+ 585               	.L41:
+ 101:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_4)) { default_layer |= (1<<4); }
+ 586               		.loc 1 101 0 is_stmt 1
+ 587 0240 81E2      		ldi r24,lo8(33)
+ 588 0242 90E0      		ldi r25,0
+ 589 0244 0E94 0000 		call bootmagic_scan_key
+ 590               	.LVL66:
+ 591 0248 8111      		cpse r24,__zero_reg__
+ 101:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_4)) { default_layer |= (1<<4); }
+ 592               		.loc 1 101 0 is_stmt 0 discriminator 1
+ 593 024a C061      		ori r28,lo8(16)
+ 594               	.LVL67:
+ 595               	.L42:
+ 102:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_5)) { default_layer |= (1<<5); }
+ 596               		.loc 1 102 0 is_stmt 1
+ 597 024c 82E2      		ldi r24,lo8(34)
+ 598 024e 90E0      		ldi r25,0
+ 599 0250 0E94 0000 		call bootmagic_scan_key
+ 600               	.LVL68:
+ 601 0254 8111      		cpse r24,__zero_reg__
+ 102:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_5)) { default_layer |= (1<<5); }
+ 602               		.loc 1 102 0 is_stmt 0 discriminator 1
+ 603 0256 C062      		ori r28,lo8(32)
+ 604               	.LVL69:
+ 605               	.L43:
+ 103:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_6)) { default_layer |= (1<<6); }
+ 606               		.loc 1 103 0 is_stmt 1
+ 607 0258 83E2      		ldi r24,lo8(35)
+ 608 025a 90E0      		ldi r25,0
+ 609 025c 0E94 0000 		call bootmagic_scan_key
+ 610               	.LVL70:
+ 611 0260 8111      		cpse r24,__zero_reg__
+ 103:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_6)) { default_layer |= (1<<6); }
+ 612               		.loc 1 103 0 is_stmt 0 discriminator 1
+ 613 0262 C064      		ori r28,lo8(64)
+ 614               	.LVL71:
+ 615               	.L44:
+ 104:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_7)) { default_layer |= (1<<7); }
+ 616               		.loc 1 104 0 is_stmt 1
+ 617 0264 84E2      		ldi r24,lo8(36)
+ 618 0266 90E0      		ldi r25,0
+ 619 0268 0E94 0000 		call bootmagic_scan_key
+ 620               	.LVL72:
+ 621 026c 8823      		tst r24
+ 622 026e 01F0      		breq .L45
+ 104:../../tmk_core/common/bootmagic.c ****     if (bootmagic_scan_key(BOOTMAGIC_KEY_DEFAULT_LAYER_7)) { default_layer |= (1<<7); }
+ 623               		.loc 1 104 0 is_stmt 0 discriminator 1
+ 624 0270 C068      		ori r28,lo8(-128)
+ 625               	.LVL73:
+ 626 0272 00C0      		rjmp .L46
+ 627               	.L45:
+ 105:../../tmk_core/common/bootmagic.c ****     if (default_layer) {
+ 628               		.loc 1 105 0 is_stmt 1
+ 629 0274 CC23      		tst r28
+ 630 0276 01F0      		breq .L47
+ 631               	.L46:
+ 106:../../tmk_core/common/bootmagic.c ****         eeconfig_write_default_layer(default_layer);
+ 632               		.loc 1 106 0
+ 633 0278 8C2F      		mov r24,r28
+ 634 027a 0E94 0000 		call eeconfig_write_default_layer
+ 635               	.LVL74:
+ 107:../../tmk_core/common/bootmagic.c ****         default_layer_set((uint32_t)default_layer);
+ 636               		.loc 1 107 0
+ 637 027e 6C2F      		mov r22,r28
+ 638 0280 00C0      		rjmp .L100
+ 639               	.L47:
+ 109:../../tmk_core/common/bootmagic.c ****         default_layer = eeconfig_read_default_layer();
+ 640               		.loc 1 109 0
+ 641 0282 0E94 0000 		call eeconfig_read_default_layer
+ 642               	.LVL75:
+ 110:../../tmk_core/common/bootmagic.c ****         default_layer_set((uint32_t)default_layer);
+ 643               		.loc 1 110 0
+ 644 0286 682F      		mov r22,r24
+ 645               	.LVL76:
+ 646               	.L100:
+ 647 0288 70E0      		ldi r23,0
+ 648 028a 80E0      		ldi r24,0
+ 649 028c 90E0      		ldi r25,0
+ 650               	/* epilogue start */
+ 112:../../tmk_core/common/bootmagic.c **** }
+ 651               		.loc 1 112 0
+ 652 028e CF91      		pop r28
+ 110:../../tmk_core/common/bootmagic.c ****         default_layer_set((uint32_t)default_layer);
+ 653               		.loc 1 110 0
+ 654 0290 0C94 0000 		jmp default_layer_set
+ 655               	.LVL77:
+ 656               	.L20:
+ 657               	/* epilogue start */
+ 112:../../tmk_core/common/bootmagic.c **** }
+ 658               		.loc 1 112 0
+ 659 0294 CF91      		pop r28
+ 660               	.LVL78:
+ 661 0296 0895      		ret
+ 662               		.cfi_endproc
+ 663               	.LFE103:
+ 665               		.section	.progmem.data.__c.4701,"a",@progbits
+ 668               	__c.4701:
+ 669 0000 646F 6E65 		.string	"done.\n"
+ 669      2E0A 00
+ 670               		.section	.progmem.data.__c.4695,"a",@progbits
+ 673               	__c.4695:
+ 674 0000 626F 6F74 		.string	"bootmagic scan: ... "
+ 674      6D61 6769 
+ 674      6320 7363 
+ 674      616E 3A20 
+ 674      2E2E 2E20 
+ 675               		.comm	keymap_config,1,1
+ 676               		.text
+ 677               	.Letext0:
+ 678               		.file 3 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
+ 679               		.file 4 "../../tmk_core/common/matrix.h"
+ 680               		.file 5 "../../tmk_core/common/debug.h"
+ 681               		.file 6 "../../tmk_core/common/keyboard.h"
+ 682               		.file 7 "../../tmk_core/common/keycode.h"
+ 683               		.file 8 "../../tmk_core/common/action_code.h"
+ 684               		.file 9 "../../tmk_core/common/keymap.h"
+ 685               		.file 10 "../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+ 686               		.file 11 "../../tmk_core/common/host.h"
+ 687               		.file 12 "../../tmk_core/common/action.h"
+ 688               		.file 13 "../../tmk_core/common/eeconfig.h"
+ 689               		.file 14 "../../tmk_core/common/bootloader.h"
+ 690               		.file 15 "../../tmk_core/common/hook.h"
+ 691               		.file 16 "../../tmk_core/common/avr/xprintf.h"
+ 692               		.file 17 "../../tmk_core/common/action_layer.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 bootmagic.c
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:2      *ABS*:0000003f __SREG__
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:3      *ABS*:0000003e __SP_H__
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:4      *ABS*:0000003d __SP_L__
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:5      *ABS*:00000034 __CCP__
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:6      *ABS*:00000000 __tmp_reg__
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:7      *ABS*:00000001 __zero_reg__
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:18     .text.scan_key:00000000 scan_key
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:149    .text.bootmagic_scan_key:00000000 bootmagic_scan_key
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:180    .text.bootmagic:00000000 bootmagic
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:616    .progmem.data:00000007 __c.4865
-C:\Users\owner\AppData\Local\Temp/ccltuTXC.s:612    .progmem.data:00000000 __c.4871
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccyHXZxe.s:2      *ABS*:0000003e __SP_H__
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccyHXZxe.s:3      *ABS*:0000003d __SP_L__
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccyHXZxe.s:4      *ABS*:0000003f __SREG__
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccyHXZxe.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccyHXZxe.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccyHXZxe.s:12     .text.scan_key:00000000 scan_key
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccyHXZxe.s:177    .text.bootmagic_scan_key:00000000 bootmagic_scan_key
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccyHXZxe.s:227    .text.bootmagic:00000000 bootmagic
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccyHXZxe.s:673    .progmem.data.__c.4695:00000000 __c.4695
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccyHXZxe.s:668    .progmem.data.__c.4701:00000000 __c.4701
                             *COM*:00000001 keymap_config
 
 UNDEFINED SYMBOLS
