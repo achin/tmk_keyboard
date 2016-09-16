@@ -546,7 +546,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x54e8
+.text           0x00000000     0x54ea
  *(.vectors)
  .vectors       0x00000000       0xac /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
                 0x00000000                __vectors
@@ -565,380 +565,380 @@ END GROUP
                 0x000000e0                __trampolines_end = .
  *(.progmem*)
  .progmem.data.fn_actions
-                0x000000e0        0x6 obj_Minorca_lufa/keymap_minorca.o
+                0x000000e0        0x8 obj_Minorca_lufa/keymap_minorca.o
                 0x000000e0                fn_actions
  .progmem.data.keymaps
-                0x000000e6       0xc0 obj_Minorca_lufa/keymap_minorca.o
-                0x000000e6                keymaps
+                0x000000e8       0xc0 obj_Minorca_lufa/keymap_minorca.o
+                0x000000e8                keymaps
  .progmem.data.__c.1891
-                0x000001a6        0x2 obj_Minorca_lufa/matrix.o
+                0x000001a8        0x2 obj_Minorca_lufa/matrix.o
  .progmem.data.__c.1889
-                0x000001a8        0x6 obj_Minorca_lufa/matrix.o
+                0x000001aa        0x6 obj_Minorca_lufa/matrix.o
  .progmem.data.__c.1887
-                0x000001ae        0x3 obj_Minorca_lufa/matrix.o
+                0x000001b0        0x3 obj_Minorca_lufa/matrix.o
  .progmem.data.__c.1885
-                0x000001b1        0x5 obj_Minorca_lufa/matrix.o
+                0x000001b3        0x5 obj_Minorca_lufa/matrix.o
  .progmem.data.__c.1882
-                0x000001b6       0x17 obj_Minorca_lufa/matrix.o
+                0x000001b8       0x17 obj_Minorca_lufa/matrix.o
  .progmem.data.__c.1860
-                0x000001cd        0x2 obj_Minorca_lufa/matrix.o
+                0x000001cf        0x2 obj_Minorca_lufa/matrix.o
  .progmem.data.__c.1858
-                0x000001cf        0x5 obj_Minorca_lufa/matrix.o
+                0x000001d1        0x5 obj_Minorca_lufa/matrix.o
  .progmem.data.__c.1856
-                0x000001d4        0xa obj_Minorca_lufa/matrix.o
+                0x000001d6        0xa obj_Minorca_lufa/matrix.o
  .progmem.data.__c.4770
-                0x000001de        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x000001e0        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
  .progmem.data.__c.4768
-                0x000001e2       0x11 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x000001e4       0x11 obj_Minorca_lufa/protocol/lufa/lufa.o
  .progmem.data.__c.4766
-                0x000001f3       0x11 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x000001f5       0x11 obj_Minorca_lufa/protocol/lufa/lufa.o
  .progmem.data.__c.4664
-                0x00000204        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00000206        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
  .progmem.data.__c.4660
-                0x00000208        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x0000020a        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
  .progmem.data.__c.4656
-                0x0000020c        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x0000020e        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
  .progmem.data.__c.4651
-                0x00000210        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00000212        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
  .progmem.data.__c.4646
-                0x00000214        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00000216        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
  .progmem.data.ProductString
-                0x00000218       0x12 obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x00000218                ProductString
+                0x0000021a       0x12 obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x0000021a                ProductString
  .progmem.data.ManufacturerString
-                0x0000022a       0x24 obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x0000022a                ManufacturerString
+                0x0000022c       0x24 obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x0000022c                ManufacturerString
  .progmem.data.LanguageString
-                0x0000024e        0x4 obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x0000024e                LanguageString
+                0x00000250        0x4 obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x00000250                LanguageString
  .progmem.data.ConfigurationDescriptor
-                0x00000252       0x8d obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x00000252                ConfigurationDescriptor
+                0x00000254       0x8d obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x00000254                ConfigurationDescriptor
  .progmem.data.DeviceDescriptor
-                0x000002df       0x12 obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x000002df                DeviceDescriptor
+                0x000002e1       0x12 obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x000002e1                DeviceDescriptor
  .progmem.data.NKROReport
-                0x000002f1       0x39 obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x000002f1                NKROReport
+                0x000002f3       0x39 obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x000002f3                NKROReport
  .progmem.data.ConsoleReport
-                0x0000032a       0x20 obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x0000032a                ConsoleReport
+                0x0000032c       0x20 obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x0000032c                ConsoleReport
  .progmem.data.ExtrakeyReport
-                0x0000034a       0x36 obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x0000034a                ExtrakeyReport
+                0x0000034c       0x36 obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x0000034c                ExtrakeyReport
  .progmem.data.MouseReport
-                0x00000380       0x4d obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x00000380                MouseReport
+                0x00000382       0x4d obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x00000382                MouseReport
  .progmem.data.KeyboardReport
-                0x000003cd       0x3f obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x000003cd                KeyboardReport
+                0x000003cf       0x3f obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x000003cf                KeyboardReport
  .progmem.data.__c.4396
-                0x0000040c        0x2 obj_Minorca_lufa/common/host.o
+                0x0000040e        0x2 obj_Minorca_lufa/common/host.o
  .progmem.data.__c.4391
-                0x0000040e        0x6 obj_Minorca_lufa/common/host.o
+                0x00000410        0x6 obj_Minorca_lufa/common/host.o
  .progmem.data.__c.4388
-                0x00000414       0x12 obj_Minorca_lufa/common/host.o
+                0x00000416       0x12 obj_Minorca_lufa/common/host.o
  .progmem.data.__c.4751
-                0x00000426        0xb obj_Minorca_lufa/common/keyboard.o
+                0x00000428        0xb obj_Minorca_lufa/common/keyboard.o
  .progmem.data.__c.4536
-                0x00000431       0x1e obj_Minorca_lufa/common/action_util.o
+                0x00000433       0x1e obj_Minorca_lufa/common/action_util.o
  .progmem.data.__c.4531
-                0x0000044f       0x1e obj_Minorca_lufa/common/action_util.o
+                0x00000451       0x1e obj_Minorca_lufa/common/action_util.o
  .progmem.data.__c.4701
-                0x0000046d        0x7 obj_Minorca_lufa/common/bootmagic.o
+                0x0000046f        0x7 obj_Minorca_lufa/common/bootmagic.o
  .progmem.data.__c.4695
-                0x00000474       0x15 obj_Minorca_lufa/common/bootmagic.o
+                0x00000476       0x15 obj_Minorca_lufa/common/bootmagic.o
  .progmem.data.__c.4468
-                0x00000489        0x3 obj_Minorca_lufa/common/mousekey.o
+                0x0000048b        0x3 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4466
-                0x0000048c        0x3 obj_Minorca_lufa/common/mousekey.o
+                0x0000048e        0x3 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4464
-                0x0000048f        0x2 obj_Minorca_lufa/common/mousekey.o
+                0x00000491        0x2 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4462
-                0x00000491        0x3 obj_Minorca_lufa/common/mousekey.o
+                0x00000493        0x3 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4460
-                0x00000494        0x3 obj_Minorca_lufa/common/mousekey.o
+                0x00000496        0x3 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4458
-                0x00000497        0x3 obj_Minorca_lufa/common/mousekey.o
+                0x00000499        0x3 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4456
-                0x0000049a        0x2 obj_Minorca_lufa/common/mousekey.o
+                0x0000049c        0x2 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4454
-                0x0000049c        0x3 obj_Minorca_lufa/common/mousekey.o
+                0x0000049e        0x3 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4452
-                0x0000049f        0x2 obj_Minorca_lufa/common/mousekey.o
+                0x000004a1        0x2 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4450
-                0x000004a1        0x3 obj_Minorca_lufa/common/mousekey.o
+                0x000004a3        0x3 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4448
-                0x000004a4        0x2 obj_Minorca_lufa/common/mousekey.o
+                0x000004a6        0x2 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4446
-                0x000004a6        0x3 obj_Minorca_lufa/common/mousekey.o
+                0x000004a8        0x3 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4444
-                0x000004a9        0x2 obj_Minorca_lufa/common/mousekey.o
+                0x000004ab        0x2 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4442
-                0x000004ab        0x5 obj_Minorca_lufa/common/mousekey.o
+                0x000004ad        0x5 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.4440
-                0x000004b0       0x23 obj_Minorca_lufa/common/mousekey.o
+                0x000004b2       0x23 obj_Minorca_lufa/common/mousekey.o
  .progmem.data.__c.5065
-                0x000004d3       0x1b obj_Minorca_lufa/common/command.o
+                0x000004d5       0x1b obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5062
-                0x000004ee       0x19 obj_Minorca_lufa/common/command.o
+                0x000004f0       0x19 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5059
-                0x00000507       0x15 obj_Minorca_lufa/common/command.o
+                0x00000509       0x15 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5056
-                0x0000051c       0x13 obj_Minorca_lufa/common/command.o
+                0x0000051e       0x13 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5053
-                0x0000052f       0x12 obj_Minorca_lufa/common/command.o
+                0x00000531       0x12 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5049
-                0x00000541        0xf obj_Minorca_lufa/common/command.o
+                0x00000543        0xf obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5042
-                0x00000550       0x1b obj_Minorca_lufa/common/command.o
+                0x00000552       0x1b obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5039
-                0x0000056b       0x19 obj_Minorca_lufa/common/command.o
+                0x0000056d       0x19 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5036
-                0x00000584       0x15 obj_Minorca_lufa/common/command.o
+                0x00000586       0x15 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5033
-                0x00000599       0x13 obj_Minorca_lufa/common/command.o
+                0x0000059b       0x13 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5030
-                0x000005ac       0x12 obj_Minorca_lufa/common/command.o
+                0x000005ae       0x12 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5026
-                0x000005be        0xf obj_Minorca_lufa/common/command.o
+                0x000005c0        0xf obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5019
-                0x000005cd        0x2 obj_Minorca_lufa/common/command.o
+                0x000005cf        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5017
-                0x000005cf        0x3 obj_Minorca_lufa/common/command.o
+                0x000005d1        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5015
-                0x000005d2       0x17 obj_Minorca_lufa/common/command.o
+                0x000005d4       0x17 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5013
-                0x000005e9        0x2 obj_Minorca_lufa/common/command.o
+                0x000005eb        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5011
-                0x000005eb        0x3 obj_Minorca_lufa/common/command.o
+                0x000005ed        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5009
-                0x000005ee       0x15 obj_Minorca_lufa/common/command.o
+                0x000005f0       0x15 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5007
-                0x00000603        0x2 obj_Minorca_lufa/common/command.o
+                0x00000605        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5005
-                0x00000605        0x3 obj_Minorca_lufa/common/command.o
+                0x00000607        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5003
-                0x00000608       0x11 obj_Minorca_lufa/common/command.o
+                0x0000060a       0x11 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5001
-                0x00000619        0x2 obj_Minorca_lufa/common/command.o
+                0x0000061b        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4999
-                0x0000061b        0x3 obj_Minorca_lufa/common/command.o
+                0x0000061d        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4997
-                0x0000061e        0xf obj_Minorca_lufa/common/command.o
+                0x00000620        0xf obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4995
-                0x0000062d        0x2 obj_Minorca_lufa/common/command.o
+                0x0000062f        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4993
-                0x0000062f        0x3 obj_Minorca_lufa/common/command.o
+                0x00000631        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4991
-                0x00000632       0x12 obj_Minorca_lufa/common/command.o
+                0x00000634       0x12 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4989
-                0x00000644        0x2 obj_Minorca_lufa/common/command.o
+                0x00000646        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4987
-                0x00000646        0x3 obj_Minorca_lufa/common/command.o
+                0x00000648        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4985
-                0x00000649       0x12 obj_Minorca_lufa/common/command.o
+                0x0000064b       0x12 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4983
-                0x0000065b        0xe obj_Minorca_lufa/common/command.o
+                0x0000065d        0xe obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5103
-                0x00000669        0x3 obj_Minorca_lufa/common/command.o
+                0x0000066b        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5101
-                0x0000066c        0x6 obj_Minorca_lufa/common/command.o
+                0x0000066e        0x6 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5099
-                0x00000672        0x2 obj_Minorca_lufa/common/command.o
+                0x00000674        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5096
-                0x00000674        0xd obj_Minorca_lufa/common/command.o
+                0x00000676        0xd obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5082
-                0x00000681        0x4 obj_Minorca_lufa/common/command.o
+                0x00000683        0x4 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5072
-                0x00000685       0x4e obj_Minorca_lufa/common/command.o
+                0x00000687       0x4e obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5070
-                0x000006d3       0xfb obj_Minorca_lufa/common/command.o
+                0x000006d5       0xfb obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4975
-                0x000007ce        0x2 obj_Minorca_lufa/common/command.o
+                0x000007d0        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4972
-                0x000007d0        0x4 obj_Minorca_lufa/common/command.o
+                0x000007d2        0x4 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4977
-                0x000007d4        0x4 obj_Minorca_lufa/common/command.o
+                0x000007d6        0x4 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.5121
-                0x000007d8        0x5 obj_Minorca_lufa/common/command.o
+                0x000007da        0x5 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4961
-                0x000007dd       0x27 obj_Minorca_lufa/common/command.o
+                0x000007df       0x27 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4786
-                0x00000804       0xa5 obj_Minorca_lufa/common/command.o
+                0x00000806       0xa5 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4881
-                0x000008a9        0x2 obj_Minorca_lufa/common/command.o
+                0x000008ab        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4879
-                0x000008ab        0x3 obj_Minorca_lufa/common/command.o
+                0x000008ad        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4877
-                0x000008ae        0x8 obj_Minorca_lufa/common/command.o
+                0x000008b0        0x8 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4875
-                0x000008b6        0x2 obj_Minorca_lufa/common/command.o
+                0x000008b8        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4873
-                0x000008b8        0x3 obj_Minorca_lufa/common/command.o
+                0x000008ba        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4871
-                0x000008bb       0x1c obj_Minorca_lufa/common/command.o
+                0x000008bd       0x1c obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4869
-                0x000008d7        0x2 obj_Minorca_lufa/common/command.o
+                0x000008d9        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4867
-                0x000008d9        0x3 obj_Minorca_lufa/common/command.o
+                0x000008db        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4865
-                0x000008dc       0x12 obj_Minorca_lufa/common/command.o
+                0x000008de       0x12 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4863
-                0x000008ee        0x2 obj_Minorca_lufa/common/command.o
+                0x000008f0        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4861
-                0x000008f0        0x3 obj_Minorca_lufa/common/command.o
+                0x000008f2        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4859
-                0x000008f3        0xa obj_Minorca_lufa/common/command.o
+                0x000008f5        0xa obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4857
-                0x000008fd        0x2 obj_Minorca_lufa/common/command.o
+                0x000008ff        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4855
-                0x000008ff        0x3 obj_Minorca_lufa/common/command.o
+                0x00000901        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4853
-                0x00000902       0x12 obj_Minorca_lufa/common/command.o
+                0x00000904       0x12 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4851
-                0x00000914        0x2 obj_Minorca_lufa/common/command.o
+                0x00000916        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4849
-                0x00000916        0x3 obj_Minorca_lufa/common/command.o
+                0x00000918        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4847
-                0x00000919       0x12 obj_Minorca_lufa/common/command.o
+                0x0000091b       0x12 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4845
-                0x0000092b        0x2 obj_Minorca_lufa/common/command.o
+                0x0000092d        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4843
-                0x0000092d        0x3 obj_Minorca_lufa/common/command.o
+                0x0000092f        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4841
-                0x00000930       0x17 obj_Minorca_lufa/common/command.o
+                0x00000932       0x17 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4839
-                0x00000947        0x2 obj_Minorca_lufa/common/command.o
+                0x00000949        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4837
-                0x00000949        0x3 obj_Minorca_lufa/common/command.o
+                0x0000094b        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4835
-                0x0000094c       0x19 obj_Minorca_lufa/common/command.o
+                0x0000094e       0x19 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4833
-                0x00000965        0x2 obj_Minorca_lufa/common/command.o
+                0x00000967        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4831
-                0x00000967        0x5 obj_Minorca_lufa/common/command.o
+                0x00000969        0x5 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4829
-                0x0000096c       0x14 obj_Minorca_lufa/common/command.o
+                0x0000096e       0x14 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4826
-                0x00000980        0x2 obj_Minorca_lufa/common/command.o
+                0x00000982        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4824
-                0x00000982        0x3 obj_Minorca_lufa/common/command.o
+                0x00000984        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4822
-                0x00000985        0x9 obj_Minorca_lufa/common/command.o
+                0x00000987        0x9 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4820
-                0x0000098e        0x2 obj_Minorca_lufa/common/command.o
+                0x00000990        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4818
-                0x00000990        0x3 obj_Minorca_lufa/common/command.o
+                0x00000992        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4816
-                0x00000993        0xc obj_Minorca_lufa/common/command.o
+                0x00000995        0xc obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4814
-                0x0000099f        0x2 obj_Minorca_lufa/common/command.o
+                0x000009a1        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4812
-                0x000009a1        0x3 obj_Minorca_lufa/common/command.o
+                0x000009a3        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4810
-                0x000009a4        0xa obj_Minorca_lufa/common/command.o
+                0x000009a6        0xa obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4808
-                0x000009ae        0x2 obj_Minorca_lufa/common/command.o
+                0x000009b0        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4806
-                0x000009b0        0x3 obj_Minorca_lufa/common/command.o
+                0x000009b2        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4804
-                0x000009b3        0xa obj_Minorca_lufa/common/command.o
+                0x000009b5        0xa obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4802
-                0x000009bd        0x2 obj_Minorca_lufa/common/command.o
+                0x000009bf        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4800
-                0x000009bf        0x5 obj_Minorca_lufa/common/command.o
+                0x000009c1        0x5 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4798
-                0x000009c4       0x13 obj_Minorca_lufa/common/command.o
+                0x000009c6       0x13 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4795
-                0x000009d7        0x2 obj_Minorca_lufa/common/command.o
+                0x000009d9        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4793
-                0x000009d9        0x3 obj_Minorca_lufa/common/command.o
+                0x000009db        0x3 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4791
-                0x000009dc       0x10 obj_Minorca_lufa/common/command.o
+                0x000009de       0x10 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4956
-                0x000009ec        0x2 obj_Minorca_lufa/common/command.o
+                0x000009ee        0x2 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4947
-                0x000009ee        0xb obj_Minorca_lufa/common/command.o
+                0x000009f0        0xb obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4945
-                0x000009f9        0xa obj_Minorca_lufa/common/command.o
+                0x000009fb        0xa obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4942
-                0x00000a03       0x17 obj_Minorca_lufa/common/command.o
+                0x00000a05       0x17 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4940
-                0x00000a1a       0x13 obj_Minorca_lufa/common/command.o
+                0x00000a1c       0x13 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4938
-                0x00000a2d       0x13 obj_Minorca_lufa/common/command.o
+                0x00000a2f       0x13 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4936
-                0x00000a40       0x17 obj_Minorca_lufa/common/command.o
+                0x00000a42       0x17 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4934
-                0x00000a57       0x1a obj_Minorca_lufa/common/command.o
+                0x00000a59       0x1a obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4932
-                0x00000a71        0xe obj_Minorca_lufa/common/command.o
+                0x00000a73        0xe obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4929
-                0x00000a7f       0x2e obj_Minorca_lufa/common/command.o
+                0x00000a81       0x2e obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4927
-                0x00000aad       0x45 obj_Minorca_lufa/common/command.o
+                0x00000aaf       0x45 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4925
-                0x00000af2       0x2d obj_Minorca_lufa/common/command.o
+                0x00000af4       0x2d obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4923
-                0x00000b1f       0x40 obj_Minorca_lufa/common/command.o
+                0x00000b21       0x40 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4921
-                0x00000b5f       0x2c obj_Minorca_lufa/common/command.o
+                0x00000b61       0x2c obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4919
-                0x00000b8b        0xf obj_Minorca_lufa/common/command.o
+                0x00000b8d        0xf obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4916
-                0x00000b9a        0xd obj_Minorca_lufa/common/command.o
+                0x00000b9c        0xd obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4914
-                0x00000ba7        0xc obj_Minorca_lufa/common/command.o
+                0x00000ba9        0xc obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4911
-                0x00000bb3       0x10 obj_Minorca_lufa/common/command.o
+                0x00000bb5       0x10 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4909
-                0x00000bc3        0xf obj_Minorca_lufa/common/command.o
+                0x00000bc5        0xf obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4906
-                0x00000bd2        0xe obj_Minorca_lufa/common/command.o
+                0x00000bd4        0xe obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4904
-                0x00000be0        0xd obj_Minorca_lufa/common/command.o
+                0x00000be2        0xd obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4901
-                0x00000bed        0xc obj_Minorca_lufa/common/command.o
+                0x00000bef        0xc obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4899
-                0x00000bf9        0xd obj_Minorca_lufa/common/command.o
+                0x00000bfb        0xd obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4896
-                0x00000c06       0x11 obj_Minorca_lufa/common/command.o
+                0x00000c08       0x11 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4893
-                0x00000c17        0x4 obj_Minorca_lufa/common/command.o
+                0x00000c19        0x4 obj_Minorca_lufa/common/command.o
  .progmem.data.__c.4887
-                0x00000c1b        0xb obj_Minorca_lufa/common/command.o
-                0x00000c26                . = ALIGN (0x2)
+                0x00000c1d        0xb obj_Minorca_lufa/common/command.o
+                0x00000c28                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x00000c26                __ctors_start = .
+                0x00000c28                __ctors_start = .
  *(.ctors)
-                0x00000c26                __ctors_end = .
-                0x00000c26                __dtors_start = .
+                0x00000c28                __ctors_end = .
+                0x00000c28                __dtors_start = .
  *(.dtors)
-                0x00000c26                __dtors_end = .
+                0x00000c28                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x00000c26        0x0 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
-                0x00000c26                __init
+ .init0         0x00000c28        0x0 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
+                0x00000c28                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x00000c26        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
+ .init2         0x00000c28        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
  *(.init2)
  *(.init3)
- .init3         0x00000c32       0x4e obj_Minorca_lufa/common/avr/bootloader.o
-                0x00000c32                bootloader_jump_after_watchdog_reset
+ .init3         0x00000c34       0x4e obj_Minorca_lufa/common/avr/bootloader.o
+                0x00000c34                bootloader_jump_after_watchdog_reset
  *(.init3)
  *(.init4)
- .init4         0x00000c80       0x16 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_copy_data.o)
-                0x00000c80                __do_copy_data
- .init4         0x00000c96       0x10 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_clear_bss.o)
-                0x00000c96                __do_clear_bss
+ .init4         0x00000c82       0x16 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_copy_data.o)
+                0x00000c82                __do_copy_data
+ .init4         0x00000c98       0x10 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_clear_bss.o)
+                0x00000c98                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -949,571 +949,571 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x00000ca6        0x8 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
+ .init9         0x00000ca8        0x8 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
  *(.init9)
  *(.text)
- .text          0x00000cae        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
-                0x00000cae                __vector_42
-                0x00000cae                __vector_22
-                0x00000cae                __vector_28
-                0x00000cae                __vector_1
-                0x00000cae                __vector_32
-                0x00000cae                __vector_34
-                0x00000cae                __vector_24
-                0x00000cae                __bad_interrupt
-                0x00000cae                __vector_6
-                0x00000cae                __vector_31
-                0x00000cae                __vector_35
-                0x00000cae                __vector_39
-                0x00000cae                __vector_3
-                0x00000cae                __vector_23
-                0x00000cae                __vector_30
-                0x00000cae                __vector_25
-                0x00000cae                __vector_13
-                0x00000cae                __vector_17
-                0x00000cae                __vector_19
-                0x00000cae                __vector_7
-                0x00000cae                __vector_41
-                0x00000cae                __vector_27
-                0x00000cae                __vector_5
-                0x00000cae                __vector_33
-                0x00000cae                __vector_37
-                0x00000cae                __vector_4
-                0x00000cae                __vector_9
-                0x00000cae                __vector_2
-                0x00000cae                __vector_15
-                0x00000cae                __vector_36
-                0x00000cae                __vector_29
-                0x00000cae                __vector_40
-                0x00000cae                __vector_8
-                0x00000cae                __vector_26
-                0x00000cae                __vector_14
-                0x00000cae                __vector_16
-                0x00000cae                __vector_18
-                0x00000cae                __vector_20
-                0x00000cae                __vector_38
- .text          0x00000cb2      0x15c obj_Minorca_lufa/common/avr/xprintf.o
-                0x00000cb2                xputc
-                0x00000cca                xputs
-                0x00000cd8                xitoa
-                0x00000dfc                __xprintf
-                0x00000e0e                . = ALIGN (0x2)
+ .text          0x00000cb0        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
+                0x00000cb0                __vector_42
+                0x00000cb0                __vector_22
+                0x00000cb0                __vector_28
+                0x00000cb0                __vector_1
+                0x00000cb0                __vector_32
+                0x00000cb0                __vector_34
+                0x00000cb0                __vector_24
+                0x00000cb0                __bad_interrupt
+                0x00000cb0                __vector_6
+                0x00000cb0                __vector_31
+                0x00000cb0                __vector_35
+                0x00000cb0                __vector_39
+                0x00000cb0                __vector_3
+                0x00000cb0                __vector_23
+                0x00000cb0                __vector_30
+                0x00000cb0                __vector_25
+                0x00000cb0                __vector_13
+                0x00000cb0                __vector_17
+                0x00000cb0                __vector_19
+                0x00000cb0                __vector_7
+                0x00000cb0                __vector_41
+                0x00000cb0                __vector_27
+                0x00000cb0                __vector_5
+                0x00000cb0                __vector_33
+                0x00000cb0                __vector_37
+                0x00000cb0                __vector_4
+                0x00000cb0                __vector_9
+                0x00000cb0                __vector_2
+                0x00000cb0                __vector_15
+                0x00000cb0                __vector_36
+                0x00000cb0                __vector_29
+                0x00000cb0                __vector_40
+                0x00000cb0                __vector_8
+                0x00000cb0                __vector_26
+                0x00000cb0                __vector_14
+                0x00000cb0                __vector_16
+                0x00000cb0                __vector_18
+                0x00000cb0                __vector_20
+                0x00000cb0                __vector_38
+ .text          0x00000cb4      0x15c obj_Minorca_lufa/common/avr/xprintf.o
+                0x00000cb4                xputc
+                0x00000ccc                xputs
+                0x00000cda                xitoa
+                0x00000dfe                __xprintf
+                0x00000e10                . = ALIGN (0x2)
  *(.text.*)
  .text.keymap_key_to_keycode
-                0x00000e0e       0x1e obj_Minorca_lufa/keymap_common.o
-                0x00000e0e                keymap_key_to_keycode
+                0x00000e10       0x1e obj_Minorca_lufa/keymap_common.o
+                0x00000e10                keymap_key_to_keycode
  .text.keymap_fn_to_action
-                0x00000e2c       0x12 obj_Minorca_lufa/keymap_common.o
-                0x00000e2c                keymap_fn_to_action
+                0x00000e2e       0x12 obj_Minorca_lufa/keymap_common.o
+                0x00000e2e                keymap_fn_to_action
  .text.unselect_rows
-                0x00000e3e        0xe obj_Minorca_lufa/matrix.o
+                0x00000e40        0xe obj_Minorca_lufa/matrix.o
  .text.matrix_init
-                0x00000e4c       0x76 obj_Minorca_lufa/matrix.o
-                0x00000e4c                matrix_init
+                0x00000e4e       0x76 obj_Minorca_lufa/matrix.o
+                0x00000e4e                matrix_init
  .text.matrix_scan
-                0x00000ec2      0x236 obj_Minorca_lufa/matrix.o
-                0x00000ec2                matrix_scan
+                0x00000ec4      0x236 obj_Minorca_lufa/matrix.o
+                0x00000ec4                matrix_scan
  .text.matrix_get_row
-                0x000010f8       0x12 obj_Minorca_lufa/matrix.o
-                0x000010f8                matrix_get_row
+                0x000010fa       0x12 obj_Minorca_lufa/matrix.o
+                0x000010fa                matrix_get_row
  .text.matrix_print
-                0x0000110a       0x8e obj_Minorca_lufa/matrix.o
-                0x0000110a                matrix_print
- .text.led_set  0x00001198        0xe obj_Minorca_lufa/led.o
-                0x00001198                led_set
+                0x0000110c       0x8e obj_Minorca_lufa/matrix.o
+                0x0000110c                matrix_print
+ .text.led_set  0x0000119a        0xe obj_Minorca_lufa/led.o
+                0x0000119a                led_set
  .text.keyboard_leds
-                0x000011a6        0x6 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x000011a8        0x6 obj_Minorca_lufa/protocol/lufa/lufa.o
  .text.sendchar
-                0x000011ac       0xc8 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x000011ac                sendchar
+                0x000011ae       0xc8 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x000011ae                sendchar
  .text.send_consumer
-                0x00001274       0x66 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00001276       0x66 obj_Minorca_lufa/protocol/lufa/lufa.o
  .text.send_system
-                0x000012da       0x68 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x000012dc       0x68 obj_Minorca_lufa/protocol/lufa/lufa.o
  .text.send_mouse
-                0x00001342       0x46 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00001344       0x46 obj_Minorca_lufa/protocol/lufa/lufa.o
  .text.send_keyboard
-                0x00001388       0xa4 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x0000138a       0xa4 obj_Minorca_lufa/protocol/lufa/lufa.o
  .text.EVENT_USB_Device_Connect
-                0x0000142c       0x24 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x0000142c                EVENT_USB_Device_Connect
+                0x0000142e       0x24 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x0000142e                EVENT_USB_Device_Connect
  .text.EVENT_USB_Device_Disconnect
-                0x00001450        0xe obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x00001450                EVENT_USB_Device_Disconnect
+                0x00001452        0xe obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00001452                EVENT_USB_Device_Disconnect
  .text.EVENT_USB_Device_Reset
-                0x0000145e        0x8 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x0000145e                EVENT_USB_Device_Reset
+                0x00001460        0x8 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00001460                EVENT_USB_Device_Reset
  .text.EVENT_USB_Device_StartOfFrame
-                0x00001466       0x80 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x00001466                EVENT_USB_Device_StartOfFrame
+                0x00001468       0x80 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00001468                EVENT_USB_Device_StartOfFrame
  .text.EVENT_USB_Device_ConfigurationChanged
-                0x000014e6       0x32 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x000014e6                EVENT_USB_Device_ConfigurationChanged
+                0x000014e8       0x32 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x000014e8                EVENT_USB_Device_ConfigurationChanged
  .text.EVENT_USB_Device_ControlRequest
-                0x00001518      0x164 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x00001518                EVENT_USB_Device_ControlRequest
+                0x0000151a      0x164 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x0000151a                EVENT_USB_Device_ControlRequest
  .text.hook_early_init
-                0x0000167c        0x2 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x0000167c                hook_early_init
- .text.hook_late_init
                 0x0000167e        0x2 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x0000167e                hook_late_init
- .text.hook_usb_suspend_entry
+                0x0000167e                hook_early_init
+ .text.hook_late_init
                 0x00001680        0x2 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x00001680                hook_usb_suspend_entry
+                0x00001680                hook_late_init
+ .text.hook_usb_suspend_entry
+                0x00001682        0x2 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00001682                hook_usb_suspend_entry
  .text.EVENT_USB_Device_Suspend
-                0x00001682        0xc obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x00001682                EVENT_USB_Device_Suspend
+                0x00001684        0xc obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00001684                EVENT_USB_Device_Suspend
  .text.hook_usb_suspend_loop
-                0x0000168e       0x18 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x0000168e                hook_usb_suspend_loop
+                0x00001690       0x18 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00001690                hook_usb_suspend_loop
  .text.startup.main
-                0x000016a6       0x90 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x000016a6                main
+                0x000016a8       0x90 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x000016a8                main
  .text.hook_usb_wakeup
-                0x00001736        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x00001736                hook_usb_wakeup
+                0x00001738        0x4 obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x00001738                hook_usb_wakeup
  .text.EVENT_USB_Device_WakeUp
-                0x0000173a        0xc obj_Minorca_lufa/protocol/lufa/lufa.o
-                0x0000173a                EVENT_USB_Device_WakeUp
+                0x0000173c        0xc obj_Minorca_lufa/protocol/lufa/lufa.o
+                0x0000173c                EVENT_USB_Device_WakeUp
  .text.CALLBACK_USB_GetDescriptor
-                0x00001746       0xb2 obj_Minorca_lufa/protocol/lufa/descriptor.o
-                0x00001746                CALLBACK_USB_GetDescriptor
+                0x00001748       0xb2 obj_Minorca_lufa/protocol/lufa/descriptor.o
+                0x00001748                CALLBACK_USB_GetDescriptor
  .text.USB_Device_SendRemoteWakeup
-                0x000017f8       0x2c obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
-                0x000017f8                USB_Device_SendRemoteWakeup
+                0x000017fa       0x2c obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+                0x000017fa                USB_Device_SendRemoteWakeup
  .text.Endpoint_Write_Stream_LE
-                0x00001824       0x92 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x00001824                Endpoint_Write_Stream_LE
+                0x00001826       0x92 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x00001826                Endpoint_Write_Stream_LE
  .text.Endpoint_Write_Control_Stream_LE
-                0x000018b6       0xc2 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x000018b6                Endpoint_Write_Control_Stream_LE
+                0x000018b8       0xc2 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x000018b8                Endpoint_Write_Control_Stream_LE
  .text.Endpoint_Write_Control_PStream_LE
-                0x00001978       0xc4 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x00001978                Endpoint_Write_Control_PStream_LE
+                0x0000197a       0xc4 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x0000197a                Endpoint_Write_Control_PStream_LE
  .text.Endpoint_ConfigureEndpoint_Prv
-                0x00001a3c       0x6a obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x00001a3c                Endpoint_ConfigureEndpoint_Prv
+                0x00001a3e       0x6a obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x00001a3e                Endpoint_ConfigureEndpoint_Prv
  .text.Endpoint_ClearStatusStage
-                0x00001aa6       0x42 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x00001aa6                Endpoint_ClearStatusStage
+                0x00001aa8       0x42 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x00001aa8                Endpoint_ClearStatusStage
  .text.Endpoint_WaitUntilReady
-                0x00001ae8       0x60 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x00001ae8                Endpoint_WaitUntilReady
+                0x00001aea       0x60 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x00001aea                Endpoint_WaitUntilReady
  .text.USB_Disable
-                0x00001b48       0x34 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x00001b48                USB_Disable
+                0x00001b4a       0x34 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x00001b4a                USB_Disable
  .text.USB_ResetInterface
-                0x00001b7c       0x86 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x00001b7c                USB_ResetInterface
+                0x00001b7e       0x86 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x00001b7e                USB_ResetInterface
  .text.USB_Init
-                0x00001c02       0x22 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x00001c02                USB_Init
+                0x00001c04       0x22 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x00001c04                USB_Init
  .text.USB_INT_DisableAllInterrupts
-                0x00001c24       0x10 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x00001c24                USB_INT_DisableAllInterrupts
+                0x00001c26       0x10 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00001c26                USB_INT_DisableAllInterrupts
  .text.USB_INT_ClearAllInterrupts
-                0x00001c34        0xa obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x00001c34                USB_INT_ClearAllInterrupts
+                0x00001c36        0xa obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00001c36                USB_INT_ClearAllInterrupts
  .text.__vector_10
-                0x00001c3e      0x1a4 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x00001c3e                __vector_10
+                0x00001c40      0x1a4 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00001c40                __vector_10
  .text.__vector_11
-                0x00001de2       0x78 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x00001de2                __vector_11
+                0x00001de4       0x78 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00001de4                __vector_11
  .text.USB_Device_ProcessControlRequest
-                0x00001e5a      0x29c obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
-                0x00001e5a                USB_Device_ProcessControlRequest
+                0x00001e5c      0x29c obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+                0x00001e5c                USB_Device_ProcessControlRequest
  .text.host_set_driver
-                0x000020f6        0xa obj_Minorca_lufa/common/host.o
-                0x000020f6                host_set_driver
+                0x000020f8        0xa obj_Minorca_lufa/common/host.o
+                0x000020f8                host_set_driver
  .text.host_keyboard_leds
-                0x00002100       0x18 obj_Minorca_lufa/common/host.o
-                0x00002100                host_keyboard_leds
+                0x00002102       0x18 obj_Minorca_lufa/common/host.o
+                0x00002102                host_keyboard_leds
  .text.host_keyboard_send
-                0x00002118       0x8a obj_Minorca_lufa/common/host.o
-                0x00002118                host_keyboard_send
+                0x0000211a       0x8a obj_Minorca_lufa/common/host.o
+                0x0000211a                host_keyboard_send
  .text.host_mouse_send
-                0x000021a2       0x16 obj_Minorca_lufa/common/host.o
-                0x000021a2                host_mouse_send
+                0x000021a4       0x16 obj_Minorca_lufa/common/host.o
+                0x000021a4                host_mouse_send
  .text.host_system_send
-                0x000021b8       0x2c obj_Minorca_lufa/common/host.o
-                0x000021b8                host_system_send
+                0x000021ba       0x2c obj_Minorca_lufa/common/host.o
+                0x000021ba                host_system_send
  .text.host_consumer_send
-                0x000021e4       0x2c obj_Minorca_lufa/common/host.o
-                0x000021e4                host_consumer_send
+                0x000021e6       0x2c obj_Minorca_lufa/common/host.o
+                0x000021e6                host_consumer_send
  .text.matrix_setup
-                0x00002210        0x2 obj_Minorca_lufa/common/keyboard.o
-                0x00002210                matrix_setup
+                0x00002212        0x2 obj_Minorca_lufa/common/keyboard.o
+                0x00002212                matrix_setup
  .text.keyboard_setup
-                0x00002212        0x4 obj_Minorca_lufa/common/keyboard.o
-                0x00002212                keyboard_setup
+                0x00002214        0x4 obj_Minorca_lufa/common/keyboard.o
+                0x00002214                keyboard_setup
  .text.keyboard_init
-                0x00002216        0xc obj_Minorca_lufa/common/keyboard.o
-                0x00002216                keyboard_init
+                0x00002218        0xc obj_Minorca_lufa/common/keyboard.o
+                0x00002218                keyboard_init
  .text.keyboard_task
-                0x00002222      0x1a2 obj_Minorca_lufa/common/keyboard.o
-                0x00002222                keyboard_task
+                0x00002224      0x1a2 obj_Minorca_lufa/common/keyboard.o
+                0x00002224                keyboard_task
  .text.keyboard_set_leds
-                0x000023c4        0x4 obj_Minorca_lufa/common/keyboard.o
-                0x000023c4                keyboard_set_leds
+                0x000023c6        0x4 obj_Minorca_lufa/common/keyboard.o
+                0x000023c6                keyboard_set_leds
  .text.action_exec
-                0x000023c8       0x84 obj_Minorca_lufa/common/action.o
-                0x000023c8                action_exec
+                0x000023ca       0x84 obj_Minorca_lufa/common/action.o
+                0x000023ca                action_exec
  .text.register_code
-                0x0000244c      0x1a6 obj_Minorca_lufa/common/action.o
-                0x0000244c                register_code
+                0x0000244e      0x1a6 obj_Minorca_lufa/common/action.o
+                0x0000244e                register_code
  .text.unregister_code
-                0x000025f2       0x9e obj_Minorca_lufa/common/action.o
-                0x000025f2                unregister_code
+                0x000025f4       0x9e obj_Minorca_lufa/common/action.o
+                0x000025f4                unregister_code
  .text.register_mods
-                0x00002690        0xe obj_Minorca_lufa/common/action.o
-                0x00002690                register_mods
+                0x00002692        0xe obj_Minorca_lufa/common/action.o
+                0x00002692                register_mods
  .text.unregister_mods
-                0x0000269e        0xe obj_Minorca_lufa/common/action.o
-                0x0000269e                unregister_mods
+                0x000026a0        0xe obj_Minorca_lufa/common/action.o
+                0x000026a0                unregister_mods
  .text.process_action
-                0x000026ac      0x61a obj_Minorca_lufa/common/action.o
-                0x000026ac                process_action
+                0x000026ae      0x61a obj_Minorca_lufa/common/action.o
+                0x000026ae                process_action
  .text.clear_keyboard_but_mods
-                0x00002cc6       0x24 obj_Minorca_lufa/common/action.o
-                0x00002cc6                clear_keyboard_but_mods
+                0x00002cc8       0x24 obj_Minorca_lufa/common/action.o
+                0x00002cc8                clear_keyboard_but_mods
  .text.clear_keyboard
-                0x00002cea        0x8 obj_Minorca_lufa/common/action.o
-                0x00002cea                clear_keyboard
+                0x00002cec        0x8 obj_Minorca_lufa/common/action.o
+                0x00002cec                clear_keyboard
  .text.is_tap_key
-                0x00002cf2       0x4a obj_Minorca_lufa/common/action.o
-                0x00002cf2                is_tap_key
+                0x00002cf4       0x4a obj_Minorca_lufa/common/action.o
+                0x00002cf4                is_tap_key
  .text.debug_event
-                0x00002d3c       0x1e obj_Minorca_lufa/common/action.o
-                0x00002d3c                debug_event
+                0x00002d3e       0x1e obj_Minorca_lufa/common/action.o
+                0x00002d3e                debug_event
  .text.debug_record
-                0x00002d5a       0x20 obj_Minorca_lufa/common/action.o
-                0x00002d5a                debug_record
+                0x00002d5c       0x20 obj_Minorca_lufa/common/action.o
+                0x00002d5c                debug_record
  .text.debug_waiting_buffer
-                0x00002d7a       0x42 obj_Minorca_lufa/common/action_tapping.o
+                0x00002d7c       0x42 obj_Minorca_lufa/common/action_tapping.o
  .text.debug_tapping_key
-                0x00002dbc       0x1c obj_Minorca_lufa/common/action_tapping.o
+                0x00002dbe       0x1c obj_Minorca_lufa/common/action_tapping.o
  .text.waiting_buffer_scan_tap
-                0x00002dd8       0xd0 obj_Minorca_lufa/common/action_tapping.o
+                0x00002dda       0xd0 obj_Minorca_lufa/common/action_tapping.o
  .text.process_tapping
-                0x00002ea8      0x3da obj_Minorca_lufa/common/action_tapping.o
+                0x00002eaa      0x3da obj_Minorca_lufa/common/action_tapping.o
  .text.action_tapping_process
-                0x00003282      0x15a obj_Minorca_lufa/common/action_tapping.o
-                0x00003282                action_tapping_process
+                0x00003284      0x15a obj_Minorca_lufa/common/action_tapping.o
+                0x00003284                action_tapping_process
  .text.action_macro_play
-                0x000033dc      0x13a obj_Minorca_lufa/common/action_macro.o
-                0x000033dc                action_macro_play
+                0x000033de      0x13a obj_Minorca_lufa/common/action_macro.o
+                0x000033de                action_macro_play
  .text.default_layer_state_set
-                0x00003516       0x18 obj_Minorca_lufa/common/action_layer.o
+                0x00003518       0x18 obj_Minorca_lufa/common/action_layer.o
  .text.layer_state_set
-                0x0000352e       0x18 obj_Minorca_lufa/common/action_layer.o
+                0x00003530       0x18 obj_Minorca_lufa/common/action_layer.o
  .text.default_layer_debug
-                0x00003546        0x2 obj_Minorca_lufa/common/action_layer.o
-                0x00003546                default_layer_debug
+                0x00003548        0x2 obj_Minorca_lufa/common/action_layer.o
+                0x00003548                default_layer_debug
  .text.default_layer_set
-                0x00003548        0x4 obj_Minorca_lufa/common/action_layer.o
-                0x00003548                default_layer_set
+                0x0000354a        0x4 obj_Minorca_lufa/common/action_layer.o
+                0x0000354a                default_layer_set
  .text.default_layer_or
-                0x0000354c       0x24 obj_Minorca_lufa/common/action_layer.o
-                0x0000354c                default_layer_or
+                0x0000354e       0x24 obj_Minorca_lufa/common/action_layer.o
+                0x0000354e                default_layer_or
  .text.default_layer_and
-                0x00003570       0x24 obj_Minorca_lufa/common/action_layer.o
-                0x00003570                default_layer_and
+                0x00003572       0x24 obj_Minorca_lufa/common/action_layer.o
+                0x00003572                default_layer_and
  .text.default_layer_xor
-                0x00003594       0x24 obj_Minorca_lufa/common/action_layer.o
-                0x00003594                default_layer_xor
+                0x00003596       0x24 obj_Minorca_lufa/common/action_layer.o
+                0x00003596                default_layer_xor
  .text.layer_clear
-                0x000035b8        0xa obj_Minorca_lufa/common/action_layer.o
-                0x000035b8                layer_clear
+                0x000035ba        0xa obj_Minorca_lufa/common/action_layer.o
+                0x000035ba                layer_clear
  .text.layer_move
-                0x000035c2       0x1e obj_Minorca_lufa/common/action_layer.o
-                0x000035c2                layer_move
+                0x000035c4       0x1e obj_Minorca_lufa/common/action_layer.o
+                0x000035c4                layer_move
  .text.layer_on
-                0x000035e0       0x36 obj_Minorca_lufa/common/action_layer.o
-                0x000035e0                layer_on
+                0x000035e2       0x36 obj_Minorca_lufa/common/action_layer.o
+                0x000035e2                layer_on
  .text.layer_off
-                0x00003616       0x3e obj_Minorca_lufa/common/action_layer.o
-                0x00003616                layer_off
+                0x00003618       0x3e obj_Minorca_lufa/common/action_layer.o
+                0x00003618                layer_off
  .text.layer_invert
-                0x00003654       0x36 obj_Minorca_lufa/common/action_layer.o
-                0x00003654                layer_invert
+                0x00003656       0x36 obj_Minorca_lufa/common/action_layer.o
+                0x00003656                layer_invert
  .text.layer_or
-                0x0000368a       0x24 obj_Minorca_lufa/common/action_layer.o
-                0x0000368a                layer_or
+                0x0000368c       0x24 obj_Minorca_lufa/common/action_layer.o
+                0x0000368c                layer_or
  .text.layer_and
-                0x000036ae       0x24 obj_Minorca_lufa/common/action_layer.o
-                0x000036ae                layer_and
+                0x000036b0       0x24 obj_Minorca_lufa/common/action_layer.o
+                0x000036b0                layer_and
  .text.layer_xor
-                0x000036d2       0x24 obj_Minorca_lufa/common/action_layer.o
-                0x000036d2                layer_xor
+                0x000036d4       0x24 obj_Minorca_lufa/common/action_layer.o
+                0x000036d4                layer_xor
  .text.layer_debug
-                0x000036f6        0x2 obj_Minorca_lufa/common/action_layer.o
-                0x000036f6                layer_debug
+                0x000036f8        0x2 obj_Minorca_lufa/common/action_layer.o
+                0x000036f8                layer_debug
  .text.layer_switch_get_action
-                0x000036f8       0x84 obj_Minorca_lufa/common/action_layer.o
-                0x000036f8                layer_switch_get_action
- .text.add_key  0x0000377c       0xa2 obj_Minorca_lufa/common/action_util.o
-                0x0000377c                add_key
- .text.del_key  0x0000381e       0x88 obj_Minorca_lufa/common/action_util.o
-                0x0000381e                del_key
+                0x000036fa       0x84 obj_Minorca_lufa/common/action_layer.o
+                0x000036fa                layer_switch_get_action
+ .text.add_key  0x0000377e       0xa2 obj_Minorca_lufa/common/action_util.o
+                0x0000377e                add_key
+ .text.del_key  0x00003820       0x88 obj_Minorca_lufa/common/action_util.o
+                0x00003820                del_key
  .text.clear_keys
-                0x000038a6       0x1c obj_Minorca_lufa/common/action_util.o
-                0x000038a6                clear_keys
+                0x000038a8       0x1c obj_Minorca_lufa/common/action_util.o
+                0x000038a8                clear_keys
  .text.get_mods
-                0x000038c2        0x6 obj_Minorca_lufa/common/action_util.o
-                0x000038c2                get_mods
+                0x000038c4        0x6 obj_Minorca_lufa/common/action_util.o
+                0x000038c4                get_mods
  .text.add_mods
-                0x000038c8        0xc obj_Minorca_lufa/common/action_util.o
-                0x000038c8                add_mods
+                0x000038ca        0xc obj_Minorca_lufa/common/action_util.o
+                0x000038ca                add_mods
  .text.del_mods
-                0x000038d4        0xe obj_Minorca_lufa/common/action_util.o
-                0x000038d4                del_mods
+                0x000038d6        0xe obj_Minorca_lufa/common/action_util.o
+                0x000038d6                del_mods
  .text.set_mods
-                0x000038e2        0x6 obj_Minorca_lufa/common/action_util.o
-                0x000038e2                set_mods
+                0x000038e4        0x6 obj_Minorca_lufa/common/action_util.o
+                0x000038e4                set_mods
  .text.clear_mods
-                0x000038e8        0x6 obj_Minorca_lufa/common/action_util.o
-                0x000038e8                clear_mods
+                0x000038ea        0x6 obj_Minorca_lufa/common/action_util.o
+                0x000038ea                clear_mods
  .text.add_weak_mods
-                0x000038ee        0xc obj_Minorca_lufa/common/action_util.o
-                0x000038ee                add_weak_mods
+                0x000038f0        0xc obj_Minorca_lufa/common/action_util.o
+                0x000038f0                add_weak_mods
  .text.del_weak_mods
-                0x000038fa        0xe obj_Minorca_lufa/common/action_util.o
-                0x000038fa                del_weak_mods
+                0x000038fc        0xe obj_Minorca_lufa/common/action_util.o
+                0x000038fc                del_weak_mods
  .text.clear_weak_mods
-                0x00003908        0x6 obj_Minorca_lufa/common/action_util.o
-                0x00003908                clear_weak_mods
+                0x0000390a        0x6 obj_Minorca_lufa/common/action_util.o
+                0x0000390a                clear_weak_mods
  .text.set_oneshot_mods
-                0x0000390e        0x6 obj_Minorca_lufa/common/action_util.o
-                0x0000390e                set_oneshot_mods
+                0x00003910        0x6 obj_Minorca_lufa/common/action_util.o
+                0x00003910                set_oneshot_mods
  .text.clear_oneshot_mods
-                0x00003914        0x6 obj_Minorca_lufa/common/action_util.o
-                0x00003914                clear_oneshot_mods
+                0x00003916        0x6 obj_Minorca_lufa/common/action_util.o
+                0x00003916                clear_oneshot_mods
  .text.has_anykey
-                0x0000391a       0x26 obj_Minorca_lufa/common/action_util.o
-                0x0000391a                has_anykey
+                0x0000391c       0x26 obj_Minorca_lufa/common/action_util.o
+                0x0000391c                has_anykey
  .text.send_keyboard_report
-                0x00003940       0x4c obj_Minorca_lufa/common/action_util.o
-                0x00003940                send_keyboard_report
+                0x00003942       0x4c obj_Minorca_lufa/common/action_util.o
+                0x00003942                send_keyboard_report
  .text.print_set_sendchar
-                0x0000398c        0xa obj_Minorca_lufa/common/print.o
-                0x0000398c                print_set_sendchar
- .text.bitrev   0x00003996       0x24 obj_Minorca_lufa/common/util.o
-                0x00003996                bitrev
+                0x0000398e        0xa obj_Minorca_lufa/common/print.o
+                0x0000398e                print_set_sendchar
+ .text.bitrev   0x00003998       0x24 obj_Minorca_lufa/common/util.o
+                0x00003998                bitrev
  .text.bitrev16
-                0x000039ba       0x34 obj_Minorca_lufa/common/util.o
-                0x000039ba                bitrev16
+                0x000039bc       0x34 obj_Minorca_lufa/common/util.o
+                0x000039bc                bitrev16
  .text.hook_keyboard_loop
-                0x000039ee        0x2 obj_Minorca_lufa/common/hook.o
-                0x000039ee                hook_keyboard_loop
+                0x000039f0        0x2 obj_Minorca_lufa/common/hook.o
+                0x000039f0                hook_keyboard_loop
  .text.hook_matrix_change
-                0x000039f0       0x1e obj_Minorca_lufa/common/hook.o
-                0x000039f0                hook_matrix_change
+                0x000039f2       0x1e obj_Minorca_lufa/common/hook.o
+                0x000039f2                hook_matrix_change
  .text.hook_default_layer_change
-                0x00003a0e        0x2 obj_Minorca_lufa/common/hook.o
-                0x00003a0e                hook_default_layer_change
- .text.hook_layer_change
                 0x00003a10        0x2 obj_Minorca_lufa/common/hook.o
-                0x00003a10                hook_layer_change
+                0x00003a10                hook_default_layer_change
+ .text.hook_layer_change
+                0x00003a12        0x2 obj_Minorca_lufa/common/hook.o
+                0x00003a12                hook_layer_change
  .text.hook_keyboard_leds_change
-                0x00003a12        0x4 obj_Minorca_lufa/common/hook.o
-                0x00003a12                hook_keyboard_leds_change
+                0x00003a14        0x4 obj_Minorca_lufa/common/hook.o
+                0x00003a14                hook_keyboard_leds_change
  .text.hook_bootmagic
-                0x00003a16        0x2 obj_Minorca_lufa/common/hook.o
-                0x00003a16                hook_bootmagic
+                0x00003a18        0x2 obj_Minorca_lufa/common/hook.o
+                0x00003a18                hook_bootmagic
  .text.suspend_power_down
-                0x00003a18       0x4c obj_Minorca_lufa/common/avr/suspend.o
-                0x00003a18                suspend_power_down
+                0x00003a1a       0x4c obj_Minorca_lufa/common/avr/suspend.o
+                0x00003a1a                suspend_power_down
  .text.matrix_power_up
-                0x00003a64        0x2 obj_Minorca_lufa/common/avr/suspend.o
-                0x00003a64                matrix_power_up
- .text.matrix_power_down
                 0x00003a66        0x2 obj_Minorca_lufa/common/avr/suspend.o
-                0x00003a66                matrix_power_down
+                0x00003a66                matrix_power_up
+ .text.matrix_power_down
+                0x00003a68        0x2 obj_Minorca_lufa/common/avr/suspend.o
+                0x00003a68                matrix_power_down
  .text.suspend_wakeup_condition
-                0x00003a68       0x2a obj_Minorca_lufa/common/avr/suspend.o
-                0x00003a68                suspend_wakeup_condition
+                0x00003a6a       0x2a obj_Minorca_lufa/common/avr/suspend.o
+                0x00003a6a                suspend_wakeup_condition
  .text.suspend_wakeup_init
-                0x00003a92        0x4 obj_Minorca_lufa/common/avr/suspend.o
-                0x00003a92                suspend_wakeup_init
+                0x00003a94        0x4 obj_Minorca_lufa/common/avr/suspend.o
+                0x00003a94                suspend_wakeup_init
  .text.__vector_12
-                0x00003a96       0x52 obj_Minorca_lufa/common/avr/suspend.o
-                0x00003a96                __vector_12
+                0x00003a98       0x52 obj_Minorca_lufa/common/avr/suspend.o
+                0x00003a98                __vector_12
  .text.timer_init
-                0x00003ae8       0x12 obj_Minorca_lufa/common/avr/timer.o
-                0x00003ae8                timer_init
+                0x00003aea       0x12 obj_Minorca_lufa/common/avr/timer.o
+                0x00003aea                timer_init
  .text.timer_read
-                0x00003afa       0x18 obj_Minorca_lufa/common/avr/timer.o
-                0x00003afa                timer_read
+                0x00003afc       0x18 obj_Minorca_lufa/common/avr/timer.o
+                0x00003afc                timer_read
  .text.timer_read32
-                0x00003b12       0x18 obj_Minorca_lufa/common/avr/timer.o
-                0x00003b12                timer_read32
+                0x00003b14       0x18 obj_Minorca_lufa/common/avr/timer.o
+                0x00003b14                timer_read32
  .text.timer_elapsed
-                0x00003b2a       0x52 obj_Minorca_lufa/common/avr/timer.o
-                0x00003b2a                timer_elapsed
+                0x00003b2c       0x52 obj_Minorca_lufa/common/avr/timer.o
+                0x00003b2c                timer_elapsed
  .text.__vector_21
-                0x00003b7c       0x4a obj_Minorca_lufa/common/avr/timer.o
-                0x00003b7c                __vector_21
+                0x00003b7e       0x4a obj_Minorca_lufa/common/avr/timer.o
+                0x00003b7e                __vector_21
  .text.bootloader_jump
-                0x00003bc6       0x46 obj_Minorca_lufa/common/avr/bootloader.o
-                0x00003bc6                bootloader_jump
+                0x00003bc8       0x46 obj_Minorca_lufa/common/avr/bootloader.o
+                0x00003bc8                bootloader_jump
  .text.keycode_to_action
-                0x00003c0c      0x17c obj_Minorca_lufa/common/keymap.o
+                0x00003c0e      0x17c obj_Minorca_lufa/common/keymap.o
  .text.action_for_key
-                0x00003d88       0xe6 obj_Minorca_lufa/common/keymap.o
-                0x00003d88                action_for_key
+                0x00003d8a       0xe6 obj_Minorca_lufa/common/keymap.o
+                0x00003d8a                action_for_key
  .text.action_get_macro
-                0x00003e6e        0x6 obj_Minorca_lufa/common/keymap.o
-                0x00003e6e                action_get_macro
+                0x00003e70        0x6 obj_Minorca_lufa/common/keymap.o
+                0x00003e70                action_get_macro
  .text.action_function
-                0x00003e74        0x2 obj_Minorca_lufa/common/keymap.o
-                0x00003e74                action_function
+                0x00003e76        0x2 obj_Minorca_lufa/common/keymap.o
+                0x00003e76                action_function
  .text.scan_key
-                0x00003e76       0x90 obj_Minorca_lufa/common/bootmagic.o
+                0x00003e78       0x90 obj_Minorca_lufa/common/bootmagic.o
  .text.bootmagic_scan_key
-                0x00003f06       0x24 obj_Minorca_lufa/common/bootmagic.o
-                0x00003f06                bootmagic_scan_key
+                0x00003f08       0x24 obj_Minorca_lufa/common/bootmagic.o
+                0x00003f08                bootmagic_scan_key
  .text.bootmagic
-                0x00003f2a      0x298 obj_Minorca_lufa/common/bootmagic.o
-                0x00003f2a                bootmagic
+                0x00003f2c      0x298 obj_Minorca_lufa/common/bootmagic.o
+                0x00003f2c                bootmagic
  .text.eeconfig_init
-                0x000041c2       0x34 obj_Minorca_lufa/common/avr/eeconfig.o
-                0x000041c2                eeconfig_init
+                0x000041c4       0x34 obj_Minorca_lufa/common/avr/eeconfig.o
+                0x000041c4                eeconfig_init
  .text.eeconfig_is_enabled
-                0x000041f6       0x16 obj_Minorca_lufa/common/avr/eeconfig.o
-                0x000041f6                eeconfig_is_enabled
+                0x000041f8       0x16 obj_Minorca_lufa/common/avr/eeconfig.o
+                0x000041f8                eeconfig_is_enabled
  .text.eeconfig_read_debug
-                0x0000420c        0x8 obj_Minorca_lufa/common/avr/eeconfig.o
-                0x0000420c                eeconfig_read_debug
+                0x0000420e        0x8 obj_Minorca_lufa/common/avr/eeconfig.o
+                0x0000420e                eeconfig_read_debug
  .text.eeconfig_write_debug
-                0x00004214        0xa obj_Minorca_lufa/common/avr/eeconfig.o
-                0x00004214                eeconfig_write_debug
+                0x00004216        0xa obj_Minorca_lufa/common/avr/eeconfig.o
+                0x00004216                eeconfig_write_debug
  .text.eeconfig_read_default_layer
-                0x0000421e        0x8 obj_Minorca_lufa/common/avr/eeconfig.o
-                0x0000421e                eeconfig_read_default_layer
+                0x00004220        0x8 obj_Minorca_lufa/common/avr/eeconfig.o
+                0x00004220                eeconfig_read_default_layer
  .text.eeconfig_write_default_layer
-                0x00004226        0xa obj_Minorca_lufa/common/avr/eeconfig.o
-                0x00004226                eeconfig_write_default_layer
+                0x00004228        0xa obj_Minorca_lufa/common/avr/eeconfig.o
+                0x00004228                eeconfig_write_default_layer
  .text.eeconfig_read_keymap
-                0x00004230        0x8 obj_Minorca_lufa/common/avr/eeconfig.o
-                0x00004230                eeconfig_read_keymap
+                0x00004232        0x8 obj_Minorca_lufa/common/avr/eeconfig.o
+                0x00004232                eeconfig_read_keymap
  .text.eeconfig_write_keymap
-                0x00004238        0xa obj_Minorca_lufa/common/avr/eeconfig.o
-                0x00004238                eeconfig_write_keymap
+                0x0000423a        0xa obj_Minorca_lufa/common/avr/eeconfig.o
+                0x0000423a                eeconfig_write_keymap
  .text.move_unit
-                0x00004242       0x90 obj_Minorca_lufa/common/mousekey.o
+                0x00004244       0x90 obj_Minorca_lufa/common/mousekey.o
  .text.wheel_unit
-                0x000042d2       0x72 obj_Minorca_lufa/common/mousekey.o
+                0x000042d4       0x72 obj_Minorca_lufa/common/mousekey.o
  .text.mousekey_on
-                0x00004344       0xd0 obj_Minorca_lufa/common/mousekey.o
-                0x00004344                mousekey_on
+                0x00004346       0xd0 obj_Minorca_lufa/common/mousekey.o
+                0x00004346                mousekey_on
  .text.mousekey_off
-                0x00004414      0x10a obj_Minorca_lufa/common/mousekey.o
-                0x00004414                mousekey_off
+                0x00004416      0x10a obj_Minorca_lufa/common/mousekey.o
+                0x00004416                mousekey_off
  .text.mousekey_send
-                0x0000451e      0x11a obj_Minorca_lufa/common/mousekey.o
-                0x0000451e                mousekey_send
+                0x00004520      0x11a obj_Minorca_lufa/common/mousekey.o
+                0x00004520                mousekey_send
  .text.mousekey_task
-                0x00004638      0x142 obj_Minorca_lufa/common/mousekey.o
-                0x00004638                mousekey_task
+                0x0000463a      0x142 obj_Minorca_lufa/common/mousekey.o
+                0x0000463a                mousekey_task
  .text.mousekey_clear
-                0x0000477a       0x18 obj_Minorca_lufa/common/mousekey.o
-                0x0000477a                mousekey_clear
+                0x0000477c       0x18 obj_Minorca_lufa/common/mousekey.o
+                0x0000477c                mousekey_clear
  .text.mousekey_console_help
-                0x00004792       0x2e obj_Minorca_lufa/common/command.o
+                0x00004794       0x2e obj_Minorca_lufa/common/command.o
  .text.mousekey_param_inc
-                0x000047c0      0x146 obj_Minorca_lufa/common/command.o
+                0x000047c2      0x146 obj_Minorca_lufa/common/command.o
  .text.mousekey_param_dec
-                0x00004906       0xfc obj_Minorca_lufa/common/command.o
+                0x00004908       0xfc obj_Minorca_lufa/common/command.o
  .text.switch_default_layer
-                0x00004a02       0x3c obj_Minorca_lufa/common/command.o
+                0x00004a04       0x3c obj_Minorca_lufa/common/command.o
  .text.command_common
-                0x00004a3e      0x4e0 obj_Minorca_lufa/common/command.o
+                0x00004a40      0x4e0 obj_Minorca_lufa/common/command.o
  .text.command_extra
-                0x00004f1e        0x4 obj_Minorca_lufa/common/command.o
-                0x00004f1e                command_extra
+                0x00004f20        0x4 obj_Minorca_lufa/common/command.o
+                0x00004f20                command_extra
  .text.command_console_extra
-                0x00004f22        0x4 obj_Minorca_lufa/common/command.o
-                0x00004f22                command_console_extra
+                0x00004f24        0x4 obj_Minorca_lufa/common/command.o
+                0x00004f24                command_console_extra
  .text.command_proc
-                0x00004f26      0x2a4 obj_Minorca_lufa/common/command.o
-                0x00004f26                command_proc
+                0x00004f28      0x2a4 obj_Minorca_lufa/common/command.o
+                0x00004f28                command_proc
  .text.avr-libc.fplib
-                0x000051ca        0xa /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fixsfsi.o)
-                0x000051ca                __fixsfsi
+                0x000051cc        0xa /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fixsfsi.o)
+                0x000051cc                __fixsfsi
  .text.avr-libc.fplib
-                0x000051d4       0x58 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
-                0x000051d4                __fixunssfsi
+                0x000051d6       0x58 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                0x000051d6                __fixunssfsi
  .text.avr-libc.fplib
-                0x0000522c       0x7a /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(floatsisf.o)
-                0x0000522c                __floatunsisf
-                0x00005230                __floatsisf
+                0x0000522e       0x7a /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(floatsisf.o)
+                0x0000522e                __floatunsisf
+                0x00005232                __floatsisf
  .text.avr-libc.fplib
-                0x000052a6       0x44 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_split3.o)
-                0x000052a6                __fp_split3
-                0x000052b6                __fp_splitA
+                0x000052a8       0x44 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+                0x000052a8                __fp_split3
+                0x000052b8                __fp_splitA
  .text.avr-libc.fplib
-                0x000052ea        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_zero.o)
-                0x000052ea                __fp_zero
-                0x000052ec                __fp_szero
+                0x000052ec        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+                0x000052ec                __fp_zero
+                0x000052ee                __fp_szero
  .text.avr-libc.fplib
-                0x000052f8        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(mulsf3.o)
-                0x000052f8                __mulsf3
+                0x000052fa        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+                0x000052fa                __mulsf3
  .text.avr-libc.fplib
-                0x000052fc       0xc2 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
-                0x00005310                __mulsf3x
-                0x00005314                __mulsf3_pse
+                0x000052fe       0xc2 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                0x00005312                __mulsf3x
+                0x00005316                __mulsf3_pse
  .text.avr-libc.fplib
-                0x000053be        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_inf.o)
-                0x000053be                __fp_inf
+                0x000053c0        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+                0x000053c0                __fp_inf
  .text.avr-libc.fplib
-                0x000053ca        0x6 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_nan.o)
-                0x000053ca                __fp_nan
+                0x000053cc        0x6 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+                0x000053cc                __fp_nan
  .text.avr-libc.fplib
-                0x000053d0        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
-                0x000053d0                __fp_pscA
+                0x000053d2        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                0x000053d2                __fp_pscA
  .text.avr-libc.fplib
-                0x000053de        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
-                0x000053de                __fp_pscB
+                0x000053e0        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                0x000053e0                __fp_pscB
  .text.avr-libc.fplib
-                0x000053ec       0x22 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_round.o)
-                0x000053ec                __fp_round
+                0x000053ee       0x22 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_round.o)
+                0x000053ee                __fp_round
  .text.libgcc.div
-                0x0000540e       0x18 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodqi4.o)
-                0x0000540e                __udivmodqi4
+                0x00005410       0x18 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodqi4.o)
+                0x00005410                __udivmodqi4
  .text.libgcc.div
-                0x00005426       0x28 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_divmodhi4.o)
-                0x00005426                __divmodhi4
-                0x00005426                _div
- .text.libgcc   0x0000544e        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_tablejump.o)
-                0x0000544e                __tablejump2__
-                0x00005452                __tablejump__
+                0x00005428       0x28 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_divmodhi4.o)
+                0x00005428                __divmodhi4
+                0x00005428                _div
+ .text.libgcc   0x00005450        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_tablejump.o)
+                0x00005450                __tablejump2__
+                0x00005454                __tablejump__
  .text.libgcc.div
-                0x0000545a       0x28 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodhi4.o)
-                0x0000545a                __udivmodhi4
+                0x0000545c       0x28 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodhi4.o)
+                0x0000545c                __udivmodhi4
  .text.avr-libc
-                0x00005482       0x10 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega32u4.o)
-                0x00005482                __eerd_byte_m32u4
+                0x00005484       0x10 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega32u4.o)
+                0x00005484                __eerd_byte_m32u4
  .text.avr-libc
-                0x00005492        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_word_atmega32u4.o)
-                0x00005492                __eerd_word_m32u4
+                0x00005494        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_word_atmega32u4.o)
+                0x00005494                __eerd_word_m32u4
  .text.avr-libc
-                0x0000549e       0x1c /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega32u4.o)
-                0x0000549e                __eewr_byte_m32u4
-                0x000054a0                __eewr_r18_m32u4
+                0x000054a0       0x1c /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega32u4.o)
+                0x000054a0                __eewr_byte_m32u4
+                0x000054a2                __eewr_r18_m32u4
  .text.avr-libc
-                0x000054ba        0xa /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eewr_word_atmega32u4.o)
-                0x000054ba                __eewr_word_m32u4
+                0x000054bc        0xa /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eewr_word_atmega32u4.o)
+                0x000054bc                __eewr_word_m32u4
  .text.avr-libc
-                0x000054c4       0x20 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_block_atmega32u4.o)
-                0x000054c4                __eerd_block_m32u4
-                0x000054c8                __eerd_blraw_m32u4
-                0x000054e4                . = ALIGN (0x2)
+                0x000054c6       0x20 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_block_atmega32u4.o)
+                0x000054c6                __eerd_block_m32u4
+                0x000054ca                __eerd_blraw_m32u4
+                0x000054e6                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000054e4        0x0 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
-                0x000054e4                exit
-                0x000054e4                _exit
+ .fini9         0x000054e6        0x0 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
+                0x000054e6                exit
+                0x000054e6                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1532,11 +1532,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000054e4        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
+ .fini0         0x000054e6        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x000054e8                _etext = .
+                0x000054ea                _etext = .
 
-.data           0x00800100       0x38 load address 0x000054e8
+.data           0x00800100       0x38 load address 0x000054ea
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
@@ -1739,8 +1739,8 @@ END GROUP
  COMMON         0x008001df        0x1 obj_Minorca_lufa/common/bootmagic.o
                 0x008001df                keymap_config
                 0x008001e0                PROVIDE (__bss_end, .)
-                0x000054e8                __data_load_start = LOADADDR (.data)
-                0x00005520                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000054ea                __data_load_start = LOADADDR (.data)
+                0x00005522                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008001e0        0x4
                 0x008001e0                PROVIDE (__noinit_start, .)
@@ -1943,54 +1943,54 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x10c28
+.debug_info     0x00000000    0x10c65
  *(.debug_info)
- .debug_info    0x00000000      0x812 obj_Minorca_lufa/keymap_minorca.o
- .debug_info    0x00000812      0x66a obj_Minorca_lufa/keymap_common.o
- .debug_info    0x00000e7c      0x55b obj_Minorca_lufa/matrix.o
- .debug_info    0x000013d7       0x91 obj_Minorca_lufa/led.o
- .debug_info    0x00001468     0x15ed obj_Minorca_lufa/protocol/lufa/lufa.o
- .debug_info    0x00002a55      0x818 obj_Minorca_lufa/protocol/lufa/descriptor.o
- .debug_info    0x0000326d      0x73e obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
- .debug_info    0x000039ab       0xd2 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
- .debug_info    0x00003a7d     0x17b4 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
- .debug_info    0x00005231      0x614 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
- .debug_info    0x00005845       0x56 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
- .debug_info    0x0000589b       0x56 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
- .debug_info    0x000058f1       0x56 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
- .debug_info    0x00005947      0x4cb obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
- .debug_info    0x00005e12      0x7c4 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
- .debug_info    0x000065d6      0x3cd obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
- .debug_info    0x000069a3      0xa57 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
- .debug_info    0x000073fa       0x78 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
- .debug_info    0x00007472       0x56 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
- .debug_info    0x000074c8      0x26b obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
- .debug_info    0x00007733      0x546 obj_Minorca_lufa/common/host.o
- .debug_info    0x00007c79      0x483 obj_Minorca_lufa/common/keyboard.o
- .debug_info    0x000080fc     0x1609 obj_Minorca_lufa/common/action.o
- .debug_info    0x00009705      0xe2e obj_Minorca_lufa/common/action_tapping.o
- .debug_info    0x0000a533      0x88b obj_Minorca_lufa/common/action_macro.o
- .debug_info    0x0000adbe      0x7d3 obj_Minorca_lufa/common/action_layer.o
- .debug_info    0x0000b591      0x719 obj_Minorca_lufa/common/action_util.o
- .debug_info    0x0000bcaa       0xda obj_Minorca_lufa/common/print.o
- .debug_info    0x0000bd84       0xfc obj_Minorca_lufa/common/debug.o
- .debug_info    0x0000be80      0x29b obj_Minorca_lufa/common/util.o
- .debug_info    0x0000c11b      0x1ff obj_Minorca_lufa/common/hook.o
- .debug_info    0x0000c31a      0x275 obj_Minorca_lufa/common/avr/suspend.o
- .debug_info    0x0000c58f      0x204 obj_Minorca_lufa/common/avr/timer.o
- .debug_info    0x0000c793      0x18a obj_Minorca_lufa/common/avr/bootloader.o
- .debug_info    0x0000c91d      0xe44 obj_Minorca_lufa/common/keymap.o
- .debug_info    0x0000d761      0xf7b obj_Minorca_lufa/common/bootmagic.o
- .debug_info    0x0000e6dc      0x3cf obj_Minorca_lufa/common/avr/eeconfig.o
- .debug_info    0x0000eaab      0x7c6 obj_Minorca_lufa/common/mousekey.o
- .debug_info    0x0000f271     0x1485 obj_Minorca_lufa/common/command.o
- .debug_info    0x000106f6       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodqi4.o)
- .debug_info    0x000107b4       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_divmodhi4.o)
- .debug_info    0x00010872       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
- .debug_info    0x00010930       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_tablejump.o)
- .debug_info    0x000109ee       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_copy_data.o)
- .debug_info    0x00010aac       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_clear_bss.o)
- .debug_info    0x00010b6a       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodhi4.o)
+ .debug_info    0x00000000      0x84f obj_Minorca_lufa/keymap_minorca.o
+ .debug_info    0x0000084f      0x66a obj_Minorca_lufa/keymap_common.o
+ .debug_info    0x00000eb9      0x55b obj_Minorca_lufa/matrix.o
+ .debug_info    0x00001414       0x91 obj_Minorca_lufa/led.o
+ .debug_info    0x000014a5     0x15ed obj_Minorca_lufa/protocol/lufa/lufa.o
+ .debug_info    0x00002a92      0x818 obj_Minorca_lufa/protocol/lufa/descriptor.o
+ .debug_info    0x000032aa      0x73e obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
+ .debug_info    0x000039e8       0xd2 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+ .debug_info    0x00003aba     0x17b4 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+ .debug_info    0x0000526e      0x614 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+ .debug_info    0x00005882       0x56 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
+ .debug_info    0x000058d8       0x56 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
+ .debug_info    0x0000592e       0x56 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
+ .debug_info    0x00005984      0x4cb obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+ .debug_info    0x00005e4f      0x7c4 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+ .debug_info    0x00006613      0x3cd obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
+ .debug_info    0x000069e0      0xa57 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+ .debug_info    0x00007437       0x78 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
+ .debug_info    0x000074af       0x56 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
+ .debug_info    0x00007505      0x26b obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+ .debug_info    0x00007770      0x546 obj_Minorca_lufa/common/host.o
+ .debug_info    0x00007cb6      0x483 obj_Minorca_lufa/common/keyboard.o
+ .debug_info    0x00008139     0x1609 obj_Minorca_lufa/common/action.o
+ .debug_info    0x00009742      0xe2e obj_Minorca_lufa/common/action_tapping.o
+ .debug_info    0x0000a570      0x88b obj_Minorca_lufa/common/action_macro.o
+ .debug_info    0x0000adfb      0x7d3 obj_Minorca_lufa/common/action_layer.o
+ .debug_info    0x0000b5ce      0x719 obj_Minorca_lufa/common/action_util.o
+ .debug_info    0x0000bce7       0xda obj_Minorca_lufa/common/print.o
+ .debug_info    0x0000bdc1       0xfc obj_Minorca_lufa/common/debug.o
+ .debug_info    0x0000bebd      0x29b obj_Minorca_lufa/common/util.o
+ .debug_info    0x0000c158      0x1ff obj_Minorca_lufa/common/hook.o
+ .debug_info    0x0000c357      0x275 obj_Minorca_lufa/common/avr/suspend.o
+ .debug_info    0x0000c5cc      0x204 obj_Minorca_lufa/common/avr/timer.o
+ .debug_info    0x0000c7d0      0x18a obj_Minorca_lufa/common/avr/bootloader.o
+ .debug_info    0x0000c95a      0xe44 obj_Minorca_lufa/common/keymap.o
+ .debug_info    0x0000d79e      0xf7b obj_Minorca_lufa/common/bootmagic.o
+ .debug_info    0x0000e719      0x3cf obj_Minorca_lufa/common/avr/eeconfig.o
+ .debug_info    0x0000eae8      0x7c6 obj_Minorca_lufa/common/mousekey.o
+ .debug_info    0x0000f2ae     0x1485 obj_Minorca_lufa/common/command.o
+ .debug_info    0x00010733       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodqi4.o)
+ .debug_info    0x000107f1       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_divmodhi4.o)
+ .debug_info    0x000108af       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
+ .debug_info    0x0001096d       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_tablejump.o)
+ .debug_info    0x00010a2b       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_copy_data.o)
+ .debug_info    0x00010ae9       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_clear_bss.o)
+ .debug_info    0x00010ba7       0xbe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodhi4.o)
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev   0x00000000     0x405f
@@ -2127,85 +2127,85 @@ END GROUP
  .debug_frame   0x00001894       0xf0 obj_Minorca_lufa/common/mousekey.o
  .debug_frame   0x00001984      0x2b8 obj_Minorca_lufa/common/command.o
 
-.debug_str      0x00000000     0x46fe
+.debug_str      0x00000000     0x474f
  *(.debug_str)
- .debug_str     0x00000000      0xb9d obj_Minorca_lufa/keymap_minorca.o
-                                0xbd6 (size before relaxing)
- .debug_str     0x00000b9d       0xf0 obj_Minorca_lufa/keymap_common.o
+ .debug_str     0x00000000      0xbee obj_Minorca_lufa/keymap_minorca.o
+                                0xc27 (size before relaxing)
+ .debug_str     0x00000bee       0xf0 obj_Minorca_lufa/keymap_common.o
                                 0x647 (size before relaxing)
- .debug_str     0x00000c8d      0x171 obj_Minorca_lufa/matrix.o
+ .debug_str     0x00000cde      0x171 obj_Minorca_lufa/matrix.o
                                 0x329 (size before relaxing)
- .debug_str     0x00000dfe       0x16 obj_Minorca_lufa/led.o
+ .debug_str     0x00000e4f       0x16 obj_Minorca_lufa/led.o
                                 0x185 (size before relaxing)
- .debug_str     0x00000e14      0x83f obj_Minorca_lufa/protocol/lufa/lufa.o
+ .debug_str     0x00000e65      0x83f obj_Minorca_lufa/protocol/lufa/lufa.o
                                 0xac0 (size before relaxing)
- .debug_str     0x00001653      0x7c5 obj_Minorca_lufa/protocol/lufa/descriptor.o
+ .debug_str     0x000016a4      0x7c5 obj_Minorca_lufa/protocol/lufa/descriptor.o
                                 0x9c8 (size before relaxing)
- .debug_str     0x00001e18      0x4b4 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
+ .debug_str     0x00001e69      0x4b4 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Common/HIDParser.o
                                 0x6d9 (size before relaxing)
- .debug_str     0x000022cc       0x7b obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+ .debug_str     0x0000231d       0x7b obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
                                 0x215 (size before relaxing)
- .debug_str     0x00002347      0x4fe obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+ .debug_str     0x00002398      0x4fe obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
                                 0x878 (size before relaxing)
- .debug_str     0x00002845      0x22a obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+ .debug_str     0x00002896      0x22a obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
                                 0x637 (size before relaxing)
- .debug_str     0x00002a6f       0x4d obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
+ .debug_str     0x00002ac0       0x4d obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
                                 0x1b4 (size before relaxing)
- .debug_str     0x00002abc       0x53 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
+ .debug_str     0x00002b0d       0x53 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
                                 0x1ba (size before relaxing)
- .debug_str     0x00002b0f       0x4d obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
+ .debug_str     0x00002b60       0x4d obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
                                 0x1b4 (size before relaxing)
- .debug_str     0x00002b5c      0x1dd obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+ .debug_str     0x00002bad      0x1dd obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
                                 0x576 (size before relaxing)
- .debug_str     0x00002d39      0x129 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+ .debug_str     0x00002d8a      0x129 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
                                 0x5f5 (size before relaxing)
- .debug_str     0x00002e62      0x247 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
+ .debug_str     0x00002eb3      0x247 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.o
                                 0x3fd (size before relaxing)
- .debug_str     0x000030a9      0x408 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+ .debug_str     0x000030fa      0x408 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.o
                                 0x9e9 (size before relaxing)
- .debug_str     0x000034b1       0x54 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
+ .debug_str     0x00003502       0x54 obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.o
                                 0x1bb (size before relaxing)
- .debug_str     0x00003505       0x4e obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
+ .debug_str     0x00003556       0x4e obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.o
                                 0x1b5 (size before relaxing)
- .debug_str     0x00003553       0x6e obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
+ .debug_str     0x000035a4       0x6e obj_Minorca_lufa/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.o
                                 0x39c (size before relaxing)
- .debug_str     0x000035c1       0xcd obj_Minorca_lufa/common/host.o
+ .debug_str     0x00003612       0xcd obj_Minorca_lufa/common/host.o
                                 0x38f (size before relaxing)
- .debug_str     0x0000368e       0xfa obj_Minorca_lufa/common/keyboard.o
+ .debug_str     0x000036df       0xfa obj_Minorca_lufa/common/keyboard.o
                                 0x38f (size before relaxing)
- .debug_str     0x00003788      0x384 obj_Minorca_lufa/common/action.o
+ .debug_str     0x000037d9      0x384 obj_Minorca_lufa/common/action.o
                                0x1107 (size before relaxing)
- .debug_str     0x00003b0c       0xec obj_Minorca_lufa/common/action_tapping.o
+ .debug_str     0x00003b5d       0xec obj_Minorca_lufa/common/action_tapping.o
                                 0xae7 (size before relaxing)
- .debug_str     0x00003bf8       0x91 obj_Minorca_lufa/common/action_macro.o
+ .debug_str     0x00003c49       0x91 obj_Minorca_lufa/common/action_macro.o
                                 0x8d2 (size before relaxing)
- .debug_str     0x00003c89       0xa5 obj_Minorca_lufa/common/action_layer.o
+ .debug_str     0x00003cda       0xa5 obj_Minorca_lufa/common/action_layer.o
                                 0x427 (size before relaxing)
- .debug_str     0x00003d2e       0xef obj_Minorca_lufa/common/action_util.o
+ .debug_str     0x00003d7f       0xef obj_Minorca_lufa/common/action_util.o
                                 0x409 (size before relaxing)
- .debug_str     0x00003e1d       0x36 obj_Minorca_lufa/common/print.o
+ .debug_str     0x00003e6e       0x36 obj_Minorca_lufa/common/print.o
                                 0x1bf (size before relaxing)
- .debug_str     0x00003e53       0x1e obj_Minorca_lufa/common/debug.o
+ .debug_str     0x00003ea4       0x1e obj_Minorca_lufa/common/debug.o
                                 0x1d5 (size before relaxing)
- .debug_str     0x00003e71       0x4f obj_Minorca_lufa/common/util.o
+ .debug_str     0x00003ec2       0x4f obj_Minorca_lufa/common/util.o
                                 0x1eb (size before relaxing)
- .debug_str     0x00003ec0       0x2c obj_Minorca_lufa/common/hook.o
+ .debug_str     0x00003f11       0x2c obj_Minorca_lufa/common/hook.o
                                 0x283 (size before relaxing)
- .debug_str     0x00003eec       0x7c obj_Minorca_lufa/common/avr/suspend.o
+ .debug_str     0x00003f3d       0x7c obj_Minorca_lufa/common/avr/suspend.o
                                 0x344 (size before relaxing)
- .debug_str     0x00003f68       0x6a obj_Minorca_lufa/common/avr/timer.o
+ .debug_str     0x00003fb9       0x6a obj_Minorca_lufa/common/avr/timer.o
                                 0x212 (size before relaxing)
- .debug_str     0x00003fd2       0x66 obj_Minorca_lufa/common/avr/bootloader.o
+ .debug_str     0x00004023       0x66 obj_Minorca_lufa/common/avr/bootloader.o
                                 0x259 (size before relaxing)
- .debug_str     0x00004038       0xc6 obj_Minorca_lufa/common/keymap.o
+ .debug_str     0x00004089       0xc6 obj_Minorca_lufa/common/keymap.o
                                 0xe86 (size before relaxing)
- .debug_str     0x000040fe       0xe4 obj_Minorca_lufa/common/bootmagic.o
+ .debug_str     0x0000414f       0xe4 obj_Minorca_lufa/common/bootmagic.o
                                 0xbca (size before relaxing)
- .debug_str     0x000041e2       0x7c obj_Minorca_lufa/common/avr/eeconfig.o
+ .debug_str     0x00004233       0x7c obj_Minorca_lufa/common/avr/eeconfig.o
                                 0x2bb (size before relaxing)
- .debug_str     0x0000425e       0xfd obj_Minorca_lufa/common/mousekey.o
+ .debug_str     0x000042af       0xfd obj_Minorca_lufa/common/mousekey.o
                                 0x6a7 (size before relaxing)
- .debug_str     0x0000435b      0x3a3 obj_Minorca_lufa/common/command.o
+ .debug_str     0x000043ac      0x3a3 obj_Minorca_lufa/common/command.o
                                 0xd28 (size before relaxing)
 
 .debug_loc      0x00000000     0x8ce3
