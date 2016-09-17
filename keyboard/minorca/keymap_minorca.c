@@ -16,8 +16,8 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             FN0,  LALT, LGUI,       ENT,        SPC,              FN2,  QUOT, RSFT),
 
     /* 1: Arrows */
-     KEYMAP(TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, \
-            TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, LEFT, DOWN, UP,   RIGHT,TRNS, \
+     KEYMAP(TRNS, TRNS, PGUP, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, MINS, EQL, \
+            TRNS, HOME, PGDN, END,  TRNS, TRNS, LEFT, DOWN, UP,   RIGHT,TRNS, \
             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, TRNS, \
             FN0 , TRNS, TRNS,       TRNS,       TRNS,             TRNS, TRNS, TRNS),
 
@@ -28,8 +28,8 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             TRNS, TRNS, TRNS,       TRNS,       TRNS,             TRNS, TRNS, TRNS),
 
     /* 3: Numbers */
-     KEYMAP(TRNS, 1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    TRNS, \
-            TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, \
+     KEYMAP(GRV,  1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    DEL, \
+            TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, LBRC, RBRC, BSLS, \
             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, BTLD, \
             TRNS, TRNS, TRNS,       TRNS,       TRNS,             FN2,  TRNS, TRNS),
 };
