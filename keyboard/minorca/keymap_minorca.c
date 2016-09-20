@@ -31,7 +31,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KEYMAP(TRNS, F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  TRNS, \
             TRNS, TRNS, PGDN, HOME, END,  PGUP, LEFT, DOWN, UP,   RIGHT,TRNS, \
             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, BTLD, \
-            FN0 , TRNS, TRNS,       TRNS,       TRNS,             TRNS, TRNS, TRNS),
+            TRNS, TRNS, TRNS,       TRNS,       TRNS,             TRNS, TRNS, TRNS),
 };
 
 const uint16_t PROGMEM fn_actions[] = {
