@@ -17,7 +17,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* 1: Arrows */
      KEYMAP(TRNS, TRNS, PGUP, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, MINS, EQL, \
-            TRNS, HOME, PGDN, END,  TRNS, TRNS, LEFT, DOWN, UP,   RIGHT,TRNS, \
+            TRNS, HOME, PGDN, END,  TRNS, TRNS, LEFT, DOWN, UP,   RIGHT,QUOT, \
             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, TRNS, \
             FN0 , TRNS, TRNS,       TRNS,       TRNS,             TRNS, TRNS, TRNS),
 
