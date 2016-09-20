@@ -17,13 +17,13 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* 1: Raise */
      KEYMAP(GRV,  1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    MINS, \
-            TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, FN22, FN23, EQL,  SCLN, \
+            TRNS, TRNS, TRNS, TRNS, QUOT, TRNS, TRNS, FN22, FN23, EQL,  SCLN, \
             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, BSLS, \
             TRNS, TRNS, TRNS,       TRNS,       TRNS,             TRNS, TRNS, TRNS),
 
     /* 2: Lower */
      KEYMAP(FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN19, FN20, FN21, \
-            TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, TRNS, LBRC, RBRC, FN24, FN25, \
+            TRNS, TRNS, TRNS, TRNS, FN27, TRNS, TRNS, LBRC, RBRC, FN24, FN25, \
             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, FN26, \
             TRNS, TRNS, TRNS,       TRNS,       TRNS,             TRNS, TRNS, TRNS),
 
@@ -57,4 +57,5 @@ const uint16_t PROGMEM fn_actions[] = {
     [24] = ACTION_MODS_KEY(MOD_LSFT, KC_EQL),
     [25] = ACTION_MODS_KEY(MOD_LSFT, KC_SCLN),
     [26] = ACTION_MODS_KEY(MOD_LSFT, KC_BSLS),
+    [27] = ACTION_MODS_KEY(MOD_LSFT, KC_QUOT),
 };
