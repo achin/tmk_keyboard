@@ -209,7 +209,7 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
      108:	10 36 37 38 c0 e2 00 e3 28 00 2c 00 00 c2 34 e5     .678....(.,...4.
      118:	01 01 4b 01 01 01 01 01 01 01 2d 2e 01 4a 4e 4d     ..K.......-..JNM
 			                       ((uint16_t)ReportData[1] << 8)  | ReportData[0]);
-     128:	01 01 50 51 52 4f 00 01 01 00 01 01 01 01 01 01     ..PQRO..........
+     128:	01 01 50 51 52 4f 00 34 01 00 01 01 01 01 01 01     ..PQRO.4........
 		ReportSize--;
 
 		switch (HIDReportItem & HID_RI_DATA_SIZE_MASK)
