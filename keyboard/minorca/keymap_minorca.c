@@ -10,22 +10,22 @@
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* 0: default */
-     KEYMAP(ESC,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    BSPC, \
+     KEYMAP(TAB,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,    P,    BSPC, \
             LCTL, A,    S,    D,    F,    G,    H,    J,    K,    L,    ENT, \
             LSFT, Z,    X,    C,    V,    B,          N,    M,    COMM, DOT,  SLSH, \
-            FN2,  LALT, LGUI,       FN0,        FN1,              TAB,  RALT, FN2),
+            FN2,  LALT, LGUI,       FN0,        FN1,              ESC,  RGUI, FN2),
 
     /* 1: Raise */
      KEYMAP(GRV,  1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    MINS, \
             TRNS, TRNS, TRNS, TRNS, QUOT, TRNS, TRNS, FN22, FN23, EQL,  SCLN, \
             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, BSLS, \
-            TRNS, TRNS, TRNS,       TRNS,       TRNS,             TRNS, TRNS, TRNS),
+            TRNS, TRNS, TRNS,       TRNS,       SPC,              TRNS, TRNS, TRNS),
 
     /* 2: Lower */
      KEYMAP(FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN19, FN20, FN21, \
             TRNS, TRNS, TRNS, TRNS, FN27, TRNS, TRNS, LBRC, RBRC, FN24, FN25, \
             TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, TRNS, TRNS, TRNS, FN26, \
-            TRNS, TRNS, TRNS,       TRNS,       TRNS,             TRNS, TRNS, TRNS),
+            TRNS, TRNS, TRNS,       SPC,        TRNS,             TRNS, TRNS, TRNS),
 
     /* 3: Function */
      KEYMAP(TRNS, F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  TRNS, \

@@ -38,7 +38,7 @@
   37               	.global	keymaps
   38               		.section	.progmem.data.keymaps,"a",@progbits
   41               	keymaps:
-  42 0000 29        		.byte	41
+  42 0000 2B        		.byte	43
   43 0001 14        		.byte	20
   44 0002 1A        		.byte	26
   45 0003 08        		.byte	8
@@ -83,8 +83,8 @@
   84 002a C1        		.byte	-63
   85 002b 00        		.byte	0
   86 002c 00        		.byte	0
-  87 002d 2B        		.byte	43
-  88 002e E6        		.byte	-26
+  87 002d 29        		.byte	41
+  88 002e E7        		.byte	-25
   89 002f C2        		.byte	-62
   90 0030 35        		.byte	53
   91 0031 1E        		.byte	30
@@ -128,7 +128,7 @@
  129 0057 01        		.byte	1
  130 0058 01        		.byte	1
  131 0059 00        		.byte	0
- 132 005a 01        		.byte	1
+ 132 005a 2C        		.byte	44
  133 005b 00        		.byte	0
  134 005c 00        		.byte	0
  135 005d 01        		.byte	1
@@ -174,7 +174,7 @@
  175 0085 01        		.byte	1
  176 0086 00        		.byte	0
  177 0087 01        		.byte	1
- 178 0088 01        		.byte	1
+ 178 0088 2C        		.byte	44
  179 0089 00        		.byte	0
  180 008a 01        		.byte	1
  181 008b 00        		.byte	0
@@ -239,12 +239,12 @@
  240               		.file 5 "keymap_minorca.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 keymap_minorca.c
-/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccVaZJOw.s:2      *ABS*:0000003e __SP_H__
-/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccVaZJOw.s:3      *ABS*:0000003d __SP_L__
-/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccVaZJOw.s:4      *ABS*:0000003f __SREG__
-/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccVaZJOw.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccVaZJOw.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccVaZJOw.s:14     .progmem.data.fn_actions:00000000 fn_actions
-/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccVaZJOw.s:41     .progmem.data.keymaps:00000000 keymaps
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccqZ5Lo9.s:2      *ABS*:0000003e __SP_H__
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccqZ5Lo9.s:3      *ABS*:0000003d __SP_L__
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccqZ5Lo9.s:4      *ABS*:0000003f __SREG__
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccqZ5Lo9.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccqZ5Lo9.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccqZ5Lo9.s:14     .progmem.data.fn_actions:00000000 fn_actions
+/var/folders/2z/c12fxwxd0fq_9pv432zq655r0000gn/T//ccqZ5Lo9.s:41     .progmem.data.keymaps:00000000 keymaps
 
 NO UNDEFINED SYMBOLS

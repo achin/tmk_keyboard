@@ -236,7 +236,7 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
      116:	34 02       	muls	r19, r20
 
 00000118 <keymaps>:
-     118:	29 14 1a 08 15 17 1c 18 0c 12 13 2a e0 04 16 07     )..........*....
+     118:	2b 14 1a 08 15 17 1c 18 0c 12 13 2a e0 04 16 07     +..........*....
 			                       ((uint16_t)ReportData[1] << 8)  | ReportData[0]);
      128:	09 0a 0b 0d 0e 0f 00 28 e1 00 1d 1b 06 19 05 11     .......(........
 		ReportSize--;
@@ -245,7 +245,7 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
 		{
 			case HID_RI_DATA_BITS_32:
 				ReportItemData  = (((uint32_t)ReportData[3] << 24) | ((uint32_t)ReportData[2] << 16) |
-     138:	10 36 37 38 c2 e2 00 e3 c0 00 c1 00 00 2b e6 c2     .678.........+..
+     138:	10 36 37 38 c2 e2 00 e3 c0 00 c1 00 00 29 e7 c2     .678.........)..
 				ReportSize     -= 4;
 				ReportData     += 4;
 				break;
@@ -260,7 +260,7 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
 
 			case HID_RI_DATA_BITS_8:
 				ReportItemData  = ReportData[0];
-     168:	01 01 01 31 01 01 00 01 01 00 01 00 00 01 01 01     ...1............
+     168:	01 01 01 31 01 01 00 01 01 00 2c 00 00 01 01 01     ...1......,.....
 				ReportSize     -= 1;
 				ReportData     += 1;
      178:	ca cb cc cd ce cf d0 d1 d2 d3 d4 d5 01 01 01 01     ................
@@ -271,7 +271,7 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
 
 		switch (HIDReportItem & (HID_RI_TYPE_MASK | HID_RI_TAG_MASK))
      188:	db 01 01 2f 30 d8 00 d9 01 00 01 01 01 01 01 01     .../0...........
-     198:	01 01 01 da 01 01 00 01 01 00 01 00 00 01 01 01     ................
+     198:	01 01 01 da 01 01 00 01 2c 00 01 00 00 01 01 01     ........,.......
 
 			case HID_RI_USAGE_PAGE(0):
 				if ((HIDReportItem & HID_RI_DATA_SIZE_MASK) == HID_RI_DATA_BITS_32)
